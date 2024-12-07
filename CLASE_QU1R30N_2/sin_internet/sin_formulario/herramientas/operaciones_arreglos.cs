@@ -61,15 +61,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         public string[,] agregar_registro_del_array_bidimensional(string[,] arreglo, string registro, object caracter_separacion_objeto = null, string al_inicio = null)
         {
 
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
-
-
             if (arreglo == null)
             {
                 // Si el arreglo es null, crear un nuevo arreglo bidimensional con un solo elemento que es el registro proporcionado.
 
                 // Dividir el registro usando el carácter de separación
-                string[] partes = registro.Split(caracter_separacion[0][0]);
+                string[] partes = registro.Split(G_caracter_separacion[0][0]);
 
                 // Crear un nuevo arreglo bidimensional con una fila y la longitud de partes
                 string[,] temp = new string[1, partes.Length];
@@ -101,7 +98,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                     }
 
                     // Dividir el nuevo registro usando el carácter de separación
-                    string[] partes = registro.Split(caracter_separacion[0][0]);
+                    string[] partes = registro.Split(G_caracter_separacion[0][0]);
 
                     // Agregar el nuevo registro en la última fila
                     for (int j = 0; j < partes.Length; j++)
@@ -192,13 +189,10 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         public string busqueda_profunda_arreglo(string[] areglo, string columnas_a_recorrer, string comparar, string columnas_a_retornar = null, object caracter_separacion_objeto = null, int donde_iniciar = 0)
         {
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
-
-
-
+            
             string[] arr_col_rec = null;
             //caracter_separacion[0][0] el primer [0] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-            arr_col_rec = columnas_a_recorrer.Split(caracter_separacion[0][0]);
+            arr_col_rec = columnas_a_recorrer.Split(G_caracter_separacion[0][0]);
 
             for (int i = donde_iniciar; i < areglo.Length; i++)
             {
@@ -210,7 +204,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 {
 
                     //caracter_separacion[j][0] el primer [j] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-                    niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(caracter_separacion[j][0]));
+                    niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(G_caracter_separacion[j][0]));
                     tem_linea = niveles_de_profundidad[j][Convert.ToInt32(arr_col_rec[j])];
 
                     j++;
@@ -227,7 +221,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                     else
                     {
 
-                        string[] info_a_recorrer = columnas_a_retornar.Split(caracter_separacion[0][0]);
+                        string[] info_a_recorrer = columnas_a_retornar.Split(G_caracter_separacion[0][0]);
                         for (int l = 0; l < info_a_recorrer.Length; l++)
                         {
                             tem_linea_2 = info_a_recorrer[l];
@@ -237,7 +231,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                             {
 
                                 //caracter_separacion[k][0] el primer [k] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-                                niveles_de_profundidad_2 = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad_2, tem_linea_2.Split(caracter_separacion[k][0]));
+                                niveles_de_profundidad_2 = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad_2, tem_linea_2.Split(G_caracter_separacion[k][0]));
                                 tem_linea_2 = niveles_de_profundidad_2[k][Convert.ToInt32(arr_col_rec[k])];
 
                                 k++;
@@ -260,13 +254,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         {
             operaciones_textos op_tex = new operaciones_textos();
             //editar_busqueda_multiple_edicion_profunda_arreglo(arreglo, "2|1|1~2|1|0", "5~9", "2|1|1~1~2|1|0", "10~10~10","1~1~0");
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
+            
 
-            string[] caracter_separacion_para_busqueda_multiple_profuda = vf_GG.GG_funcion_caracter_separacion_funciones_especificas(caracter_separacion_para_busqueda_multiple_profuda_obj);
+            
 
             //caracter_separacion[0][0] el primer [0] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-            string[] arr_comparaciones_a_rec = columnas_a_recorrer.Split(caracter_separacion_para_busqueda_multiple_profuda[0][0]);
-            string[] arr_comparaciones = comparaciones.Split(caracter_separacion_para_busqueda_multiple_profuda[0][0]);
+            string[] arr_comparaciones_a_rec = columnas_a_recorrer.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
+            string[] arr_comparaciones = comparaciones.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
 
             for (int i = 0; i < areglo.Length; i++)
             {
@@ -278,7 +272,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 for (int l = 0; l < arr_comparaciones_a_rec.Length; l++)
                 {
                     string tem_linea = areglo[i];
-                    string[] arr_col_rec = arr_comparaciones_a_rec[l].Split(caracter_separacion[0][0]);
+                    string[] arr_col_rec = arr_comparaciones_a_rec[l].Split(G_caracter_separacion[0][0]);
 
                     if (arr_col_rec.Length > 1)
                     {
@@ -287,14 +281,14 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                         string[] arr_info = extraer_arreglo_dentro_de_un_string(tem_linea, temp_opciones_comp);
                         for (int m = 0; m < arr_info.Length; m++)
                         {
-                            string[] elemento_espliteado = arr_info[m].Split(caracter_separacion[arr_col_rec.Length][0]);
+                            string[] elemento_espliteado = arr_info[m].Split(G_caracter_separacion[arr_col_rec.Length][0]);
                             tem_linea = elemento_espliteado[Convert.ToInt32(arr_col_rec[arr_col_rec.Length - 1])];
                         }
 
                     }
                     else
                     {
-                        niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(caracter_separacion[0][0]));
+                        niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(G_caracter_separacion[0][0]));
                         tem_linea = niveles_de_profundidad[0][Convert.ToInt32(arr_col_rec[0])];
                     }
 
@@ -332,13 +326,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         public string busqueda_con_OO_profunda_arreglo(string[] areglo, string columnas_a_recorrer, string comparaciones, object caracter_separacion_objeto = null, object caracter_separacion_para_busqueda_multiple_profuda_obj = null)
         {
             //editar_busqueda_multiple_edicion_profunda_arreglo(arreglo, "2|1|1~2|1|0", "5~9", "2|1|1~1~2|1|0", "10~10~10","1~1~0");
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
+            
 
-            string[] caracter_separacion_para_busqueda_multiple_profuda = vf_GG.GG_funcion_caracter_separacion_funciones_especificas(caracter_separacion_para_busqueda_multiple_profuda_obj);
+            
 
             //caracter_separacion[0][0] el primer [0] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-            string[] arr_comparaciones_a_rec = columnas_a_recorrer.Split(caracter_separacion_para_busqueda_multiple_profuda[0][0]);
-            string[] arr_comparaciones = comparaciones.Split(caracter_separacion_para_busqueda_multiple_profuda[0][0]);
+            string[] arr_comparaciones_a_rec = columnas_a_recorrer.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
+            string[] arr_comparaciones = comparaciones.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
 
             for (int i = 0; i < areglo.Length; i++)
             {
@@ -349,7 +343,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 for (int l = 0; l < arr_comparaciones_a_rec.Length; l++)
                 {
 
-                    string[] arr_col_rec = arr_comparaciones_a_rec[l].Split(caracter_separacion[0][0]);
+                    string[] arr_col_rec = arr_comparaciones_a_rec[l].Split(G_caracter_separacion[0][0]);
 
                     string[][] niveles_de_profundidad = null;
                     int j = 0;
@@ -357,7 +351,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                     {
 
                         //caracter_separacion[j][0] el primer [j] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-                        niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(caracter_separacion[j][0]));
+                        niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(G_caracter_separacion[j][0]));
                         tem_linea = niveles_de_profundidad[j][Convert.ToInt32(arr_col_rec[j])];
 
                         j++;
@@ -398,12 +392,10 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         public string[] editar_busqueda_profunda_arreglo(string[] areglo, string columnas_a_recorrer, string comparar, object columnas_a_recorrer_editar, string info_a_sustituir, object caracter_separacion_objeto = null)
         {
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
-
 
             string[] arr_col_rec = null;
             //caracter_separacion[0][0] el primer [0] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-            arr_col_rec = columnas_a_recorrer.Split(caracter_separacion[0][0]);
+            arr_col_rec = columnas_a_recorrer.Split(G_caracter_separacion[0][0]);
 
             for (int i = 0; i < areglo.Length; i++)
             {
@@ -415,7 +407,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 {
 
                     //caracter_separacion[j][0] el primer [j] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-                    niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(caracter_separacion[j][0]));
+                    niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(G_caracter_separacion[j][0]));
                     tem_linea = niveles_de_profundidad[j][Convert.ToInt32(arr_col_rec[j])];
 
                     j++;
@@ -437,12 +429,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         public string[] editar_inc_busqueda_multiple_edicion_profunda_arreglo(string[] areglo, string columnas_a_recorrer, string comparaciones, string indices_a_editar, string info_editar, string edit_0_o_increm_1 = null, object caracter_separacion_objeto = null, string caracter_separacion_para_busqueda_multiple_profuda_objeto = null)
         {
             //editar_busqueda_multiple_edicion_profunda_arreglo(arreglo, "2|1|1", "5", "2|1|1~1~2|1|0", "10~10~10","1~1~0");
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
-            string[] caracter_separacion_para_busqueda_multiple_profuda = vf_GG.GG_funcion_caracter_separacion_funciones_especificas(caracter_separacion_para_busqueda_multiple_profuda_objeto);
+
+            
 
 
             //caracter_separacion[0][0] el primer [0] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-            string[] arr_col_rec = columnas_a_recorrer.Split(caracter_separacion[0][0]);
+            string[] arr_col_rec = columnas_a_recorrer.Split(G_caracter_separacion[0][0]);
 
             for (int i = 0; i < areglo.Length; i++)
             {
@@ -454,7 +446,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 {
 
                     //caracter_separacion[j][0] el primer [j] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-                    niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(caracter_separacion[j][0]));
+                    niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(G_caracter_separacion[j][0]));
                     tem_linea = niveles_de_profundidad[j][Convert.ToInt32(arr_col_rec[j])];
 
                     j++;
@@ -466,12 +458,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 {
 
 
-                    string[] indices_espliteado = indices_a_editar.Split(caracter_separacion_para_busqueda_multiple_profuda[0][0]);
-                    string[] info_editar_espliteado = info_editar.Split(caracter_separacion_para_busqueda_multiple_profuda[0][0]);
-                    string[] edit_0_o_increm_1_espliteado = edit_0_o_increm_1.Split(caracter_separacion_para_busqueda_multiple_profuda[0][0]);
+                    string[] indices_espliteado = indices_a_editar.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
+                    string[] info_editar_espliteado = info_editar.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
+                    string[] edit_0_o_increm_1_espliteado = edit_0_o_increm_1.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
                     for (int k = 0; k < indices_espliteado.Length; k++)
                     {
-                        areglo[i] = op_tex.editar_incr_string_funcion_recursiva(areglo[i], indices_espliteado[k], info_editar_espliteado[k], edit_0_o_increm_1_espliteado[k], caracter_separacion_funciones_especificas_obj: caracter_separacion_para_busqueda_multiple_profuda[0]);
+                        areglo[i] = op_tex.editar_incr_string_funcion_recursiva(areglo[i], indices_espliteado[k], info_editar_espliteado[k], edit_0_o_increm_1_espliteado[k], caracter_separacion_funciones_especificas_obj: G_caracter_separacion_para_funciones_espesificas[0]);
                     }
 
                     return areglo;
@@ -498,7 +490,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                     }
             
             */
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
+            
 
             string[] espliteado_columnas_recorrer = { };
 
@@ -507,7 +499,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             {
                 if (caracter_separacion_dif_a_texto == null)
                 {
-                    espliteado_columnas_recorrer = columnas_a_recorrer.ToString().Split(caracter_separacion[0][0]);
+                    espliteado_columnas_recorrer = columnas_a_recorrer.ToString().Split(G_caracter_separacion[0][0]);
 
                 }
                 else
@@ -522,13 +514,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 espliteado_columnas_recorrer = temp;
             }
 
-            string[] espliteado_texto = texto.Split(caracter_separacion[0][0]);
+            string[] espliteado_texto = texto.Split(G_caracter_separacion[0][0]);
 
             //En esta parte Se inicia desde el segundo elemento y se guardan los caracteres y
             //las columnas para sí hay otro elemento En el arreglo múltiple 
             string texto_a_retornar = "";
 
-            string[] tem_array_caracter_separacion = caracter_separacion;
+            string[] tem_array_caracter_separacion = G_caracter_separacion;
             if (espliteado_columnas_recorrer.Length > 0)
             {
                 string[] tem_array_col_recorrer = espliteado_columnas_recorrer;
@@ -536,16 +528,16 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 texto_a_retornar = espliteado_texto[Convert.ToInt32(tem_array_col_recorrer[0])];
 
                 tem_array_col_recorrer = new string[espliteado_columnas_recorrer.Length - 1];
-                tem_array_caracter_separacion = new string[caracter_separacion.Length - 1];
+                tem_array_caracter_separacion = new string[G_caracter_separacion.Length - 1];
                 for (int i = 1; i < espliteado_columnas_recorrer.Length; i++)
                 {
 
                     tem_array_col_recorrer[i - 1] = espliteado_columnas_recorrer[i];
 
                 }
-                for (int i = 1; i < caracter_separacion.Length; i++)
+                for (int i = 1; i < G_caracter_separacion.Length; i++)
                 {
-                    tem_array_caracter_separacion[i - 1] = caracter_separacion[i];
+                    tem_array_caracter_separacion[i - 1] = G_caracter_separacion[i];
                 }
 
 
@@ -566,7 +558,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
             }
 
-            string retornar = string.Join(caracter_separacion[0], espliteado_texto);
+            string retornar = string.Join(G_caracter_separacion[0], espliteado_texto);
             return retornar;
         }
 
@@ -612,7 +604,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         {
             operaciones_textos op_tex = new operaciones_textos();
             operaciones_arreglos op_arr = new operaciones_arreglos();
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_obj);
+            
             //retorna objet porque retoran un string del buscado y si no lo encuentra retorna un arreglo del agregado
             if (arreglo != null)
             {
@@ -621,17 +613,17 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
                 for (int i = 0; i < arreglo.Length; i++)
                 {
-                    string[] elemento_espliteado = arreglo[i].Split(caracter_separacion[0][0]);
+                    string[] elemento_espliteado = arreglo[i].Split(G_caracter_separacion[0][0]);
 
 
 
-                    elemento_espliteado[Convert.ToInt32(columnas_agregar)] = op_tex.concatenacion_caracter_separacion(elemento_espliteado[Convert.ToInt32(columnas_agregar)], texto_a_agregar, caracter_separacion[1]);
+                    elemento_espliteado[Convert.ToInt32(columnas_agregar)] = op_tex.concatenacion_caracter_separacion(elemento_espliteado[Convert.ToInt32(columnas_agregar)], texto_a_agregar, G_caracter_separacion[1]);
 
 
 
 
 
-                    arreglo[i] = op_tex.joineada_paraesida_y_quitador_de_extremos_del_string(elemento_espliteado, caracter_separacion[0]);
+                    arreglo[i] = op_tex.joineada_paraesida_y_quitador_de_extremos_del_string(elemento_espliteado, G_caracter_separacion[0]);
                     return arreglo;
                 }
 
@@ -684,7 +676,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         public string[] busqueda_multiple_edicion_multiple_arreglo_profunda(string[] areglo, string columnas_a_recorrer, string comparar, string indices_a_editar, string info_editar, string edit_0_o_increm_1 = null, object caracter_separacion_objeto = null, string caracter_separacion_para_busqueda_multiple_profuda = null)
         {
             //editar_busqueda_multiple_edicion_profunda_arreglo(arreglo, "2|1|1~2|1|1~2|1|1", "5~5~5", "2|1|1~1~2|1|0", "10~10~10","1~1~0");
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
+            
 
             if (caracter_separacion_para_busqueda_multiple_profuda == null)
             {
@@ -696,7 +688,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             for (int j = 0; j < arr_column_a_recorrer.Length; j++)
             {
                 //caracter_separacion[0][0] el primer [0] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-                string[] col_rec_espliteado = arr_column_a_recorrer[j].Split(caracter_separacion[0][0]);
+                string[] col_rec_espliteado = arr_column_a_recorrer[j].Split(G_caracter_separacion[0][0]);
 
                 for (int i = 0; i < areglo.Length; i++)
                 {
@@ -708,7 +700,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                     {
 
                         //caracter_separacion[h][0] el primer [h] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-                        niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(caracter_separacion[h][0]));
+                        niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, tem_linea.Split(G_caracter_separacion[h][0]));
                         tem_linea = niveles_de_profundidad[h][Convert.ToInt32(col_rec_espliteado[h])];
 
                         h++;
@@ -879,9 +871,9 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         public string[] extraer_arreglo_dentro_de_un_string(string linea_con_arreglo_dentro, string columnas_a_recorrer = null, object caracteres_separacion_obj = null)
         {
-            string[] caracteres_separacion = vf_GG.GG_funcion_caracter_separacion(caracteres_separacion_obj);
+            
 
-            string[] arr_col_rec = columnas_a_recorrer.Split(caracteres_separacion[0][0]);
+            string[] arr_col_rec = columnas_a_recorrer.Split(G_caracter_separacion[0][0]);
 
             int j = 0;
             string[][] niveles_de_profundidad = null;
@@ -889,21 +881,21 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             {
 
                 //caracter_separacion[j][0] el primer [j] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-                niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, linea_con_arreglo_dentro.Split(caracteres_separacion[j][0]));
+                niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, linea_con_arreglo_dentro.Split(G_caracter_separacion[j][0]));
                 linea_con_arreglo_dentro = niveles_de_profundidad[j][Convert.ToInt32(arr_col_rec[j])];
 
                 j++;
 
             } while (j < arr_col_rec.Length);
-            string[] arreglo_a_retoranar = linea_con_arreglo_dentro.Split(caracteres_separacion[j][0]);
+            string[] arreglo_a_retoranar = linea_con_arreglo_dentro.Split(G_caracter_separacion[j][0]);
             return arreglo_a_retoranar;
         }
 
         public string extraer_arreglo_dentro_de_un_string_y_ponerolo_en_string(string linea_con_arreglo_dentro, string columnas_a_recorrer = null, object caracteres_separacion_obj = null)
         {
-            string[] caracteres_separacion = vf_GG.GG_funcion_caracter_separacion(caracteres_separacion_obj);
+            
 
-            string[] arr_col_rec = columnas_a_recorrer.Split(caracteres_separacion[0][0]);
+            string[] arr_col_rec = columnas_a_recorrer.Split(G_caracter_separacion[0][0]);
 
             int j = 0;
             string[][] niveles_de_profundidad = null;
@@ -911,13 +903,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             {
 
                 //caracter_separacion[j][0] el primer [j] es la celda y el segundo [0] es el caracter para no usar convert.tochar
-                niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, linea_con_arreglo_dentro.Split(caracteres_separacion[j][0]));
+                niveles_de_profundidad = agregar_arreglo_a_arreglo_de_arreglos(niveles_de_profundidad, linea_con_arreglo_dentro.Split(G_caracter_separacion[j][0]));
                 linea_con_arreglo_dentro = niveles_de_profundidad[j][Convert.ToInt32(arr_col_rec[j])];
 
                 j++;
 
             } while (j < arr_col_rec.Length);
-            string[] arreglo_a_retoranar = linea_con_arreglo_dentro.Split(caracteres_separacion[j][0]);
+            string[] arreglo_a_retoranar = linea_con_arreglo_dentro.Split(G_caracter_separacion[j][0]);
 
             return "1" + G_caracter_para_confirmacion_o_error[0] + linea_con_arreglo_dentro + G_caracter_para_confirmacion_o_error[0] + j;
         }
@@ -925,7 +917,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         public string[,] suma_elementos_iguales_dentro_de_un_arreglo_retorna_un_bidimencional(string[] arreglo_entrada, object caracter_separacion_func_esp_obj = null)
         {
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion_funciones_especificas(caracter_separacion_func_esp_obj);
+            
             string[] arreglo = new string[arreglo_entrada.Length];
             Array.Copy(arreglo_entrada, arreglo, arreglo_entrada.Length);
 
@@ -960,13 +952,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                     }
 
                 }
-                string sin_nulos = join_para_bidimensional(cantidad_de_elementos, G_caracter_separacion_para_funciones_espesificas[1], G_caracter_separacion_para_funciones_espesificas[0]);
-                string[] arr1 = sin_nulos.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
-                string[] arr2 = arr1[0].Split(G_caracter_separacion_para_funciones_espesificas[1][0]);
+                string sin_nulos = join_para_bidimensional(cantidad_de_elementos, this.G_caracter_separacion_para_funciones_espesificas[1], this.G_caracter_separacion_para_funciones_espesificas[0]);
+                string[] arr1 = sin_nulos.Split(this.G_caracter_separacion_para_funciones_espesificas[0][0]);
+                string[] arr2 = arr1[0].Split(this.G_caracter_separacion_para_funciones_espesificas[1][0]);
                 arreglo_a_retornar = new string[arr1.Length, arr2.Length];
                 for (int i = 0; i < arr1.Length; i++)
                 {
-                    arr2 = arr1[i].Split(G_caracter_separacion_para_funciones_espesificas[1][0]);
+                    arr2 = arr1[i].Split(this.G_caracter_separacion_para_funciones_espesificas[1][0]);
                     for (int j = 0; j < arr2.Length; j++)
                     {
                         arreglo_a_retornar[i, j] = arr2[j];
@@ -986,8 +978,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         public string suma_elementos_iguales_dentro_de_un_arreglo_retorna_un_string_al_final_de_cada_elemento(string[] arreglo_entrada, object caracter_separacion_obj = null, object caracter_separacion_func_esp_obj = null)
         {
 
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_obj);
-            string[] caracter_separacion_funciones_esp = vf_GG.GG_funcion_caracter_separacion_funciones_especificas(caracter_separacion_func_esp_obj);
+            
+            
             string[] arreglo = new string[arreglo_entrada.Length];
             Array.Copy(arreglo_entrada, arreglo, arreglo_entrada.Length);
 
@@ -1035,13 +1027,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                     }
 
                 }
-                string sin_nulos = join_para_bidimensional(cantidad_de_elementos, caracter_separacion_funciones_esp[1], caracter_separacion_funciones_esp[0]);
-                string[] arr1 = sin_nulos.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
-                string[] arr2 = arr1[0].Split(G_caracter_separacion_para_funciones_espesificas[1][0]);
+                string sin_nulos = join_para_bidimensional(cantidad_de_elementos, G_caracter_separacion_para_funciones_espesificas[1], G_caracter_separacion_para_funciones_espesificas[0]);
+                string[] arr1 = sin_nulos.Split(this.G_caracter_separacion_para_funciones_espesificas[0][0]);
+                string[] arr2 = arr1[0].Split(this.G_caracter_separacion_para_funciones_espesificas[1][0]);
                 arreglo_a_retornar = new string[arr1.Length, arr2.Length];
                 for (int i = 0; i < arr1.Length; i++)
                 {
-                    arr2 = arr1[i].Split(G_caracter_separacion_para_funciones_espesificas[1][0]);
+                    arr2 = arr1[i].Split(this.G_caracter_separacion_para_funciones_espesificas[1][0]);
                     for (int j = 0; j < arr2.Length; j++)
                     {
                         arreglo_a_retornar[i, j] = arr2[j];
@@ -1055,15 +1047,15 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 cantidad_de_elementos[0, 1] = "1";
                 arreglo_a_retornar = new string[,] { { cantidad_de_elementos[0, 0], cantidad_de_elementos[0, 1] } };
             }
-            string info_a_devolver = join_para_bidimensional(arreglo_a_retornar, caracter_separacion[1], caracter_separacion[0]);
+            string info_a_devolver = join_para_bidimensional(arreglo_a_retornar, G_caracter_separacion[1], G_caracter_separacion[0]);
             return info_a_devolver;
         }
 
         public string[] suma_elementos_iguales_dentro_de_un_arreglo_retorna_un_arreglo_y_al_final_de_cada_elemento_el_elmento_sumado(string[] arreglo_entrada, object caracter_separacion_obj = null, object caracter_separacion_func_esp_obj = null)
         {
 
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_obj);
-            string[] caracter_separacion_funciones_esp = vf_GG.GG_funcion_caracter_separacion_funciones_especificas(caracter_separacion_func_esp_obj);
+            
+            
             string[] arreglo = new string[arreglo_entrada.Length];
             Array.Copy(arreglo_entrada, arreglo, arreglo_entrada.Length);
 
@@ -1117,13 +1109,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                     }
 
                 }
-                string sin_nulos = join_para_bidimensional(cantidad_de_elementos, caracter_separacion_funciones_esp[1], caracter_separacion_funciones_esp[0]);
-                string[] arr1 = sin_nulos.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
-                string[] arr2 = arr1[0].Split(G_caracter_separacion_para_funciones_espesificas[1][0]);
+                string sin_nulos = join_para_bidimensional(cantidad_de_elementos, G_caracter_separacion_para_funciones_espesificas[1], G_caracter_separacion_para_funciones_espesificas[0]);
+                string[] arr1 = sin_nulos.Split(this.G_caracter_separacion_para_funciones_espesificas[0][0]);
+                string[] arr2 = arr1[0].Split(this.G_caracter_separacion_para_funciones_espesificas[1][0]);
                 arreglo_bidimencional_a_retornar = new string[arr1.Length, arr2.Length];
                 for (int i = 0; i < arr1.Length; i++)
                 {
-                    arr2 = arr1[i].Split(G_caracter_separacion_para_funciones_espesificas[1][0]);
+                    arr2 = arr1[i].Split(this.G_caracter_separacion_para_funciones_espesificas[1][0]);
                     for (int j = 0; j < arr2.Length; j++)
                     {
                         arreglo_bidimencional_a_retornar[i, j] = arr2[j];
@@ -1137,8 +1129,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 cantidad_de_elementos[0, 1] = "1";
                 arreglo_bidimencional_a_retornar = new string[,] { { cantidad_de_elementos[0, 0], cantidad_de_elementos[0, 1] } };
             }
-            string info_a_devolver = join_para_bidimensional(arreglo_bidimencional_a_retornar, caracter_separacion[1], caracter_separacion[0]);
-            string[] arrelgo_a_devolver = info_a_devolver.Split(caracter_separacion[0][0]);
+            string info_a_devolver = join_para_bidimensional(arreglo_bidimencional_a_retornar, G_caracter_separacion[1], G_caracter_separacion[0]);
+            string[] arrelgo_a_devolver = info_a_devolver.Split(G_caracter_separacion[0][0]);
             return arrelgo_a_devolver;
         }
 
@@ -1178,16 +1170,16 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         public string[] ordenar_arreglo(string[] arreglo, int columna, string tipo = "MENOR_A_MAYOR", object caracter_separacion_obj = null)
         {
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_obj);
+            
 
 
             string variable_para_hacer_intercambio = "";
             for (int i = 0; i < arreglo.Length; i++)
             {
-                string[] info_1 = arreglo[i].Split(caracter_separacion[0][0]);
+                string[] info_1 = arreglo[i].Split(G_caracter_separacion[0][0]);
                 for (int j = i + 1; j < arreglo.Length; j++)
                 {
-                    string[] info_2 = arreglo[j].Split(caracter_separacion[0][0]);
+                    string[] info_2 = arreglo[j].Split(G_caracter_separacion[0][0]);
 
                     double valor_1 = Convert.ToDouble(info_1[columna]);
                     double valor_2 = Convert.ToDouble(info_2[columna]);

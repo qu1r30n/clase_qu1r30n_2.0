@@ -31,7 +31,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         
         //funciones---------------------------------------------------------------------------------------------------------
 
-        public string[] GG_funcion_caracter_separacion(object caracter_separacion_objeto = null)
+        public string[] GG_funcion_caracter_separacion_(object caracter_separacion_objeto = null)
         {
             string[] caracter_separacion = null;
             if (caracter_separacion_objeto == null)
@@ -66,7 +66,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         }
 
-        public string[] GG_funcion_caracter_separacion_funciones_especificas(object caracter_separacion_objeto = null)
+        public string[] GG_funcion_caracter_separacion_funciones_especificas_(object caracter_separacion_objeto = null)
         {
             string[] caracter_separacion = null;
             if (caracter_separacion_objeto == null)
@@ -116,13 +116,10 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         //----------------------------------------------------------------------------------------------------------------------------------------------
 
-
-        public static AutoCompleteStringCollection GG_autoCompleteCollection_codbar_venta = new AutoCompleteStringCollection();
-        public static AutoCompleteStringCollection GG_autoCompleteCollection_nom_produc_venta = new AutoCompleteStringCollection();
         //-----------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public static ReadOnlyCollection<string> GG_inv_solo_lect;
+        
 
     }
 }
