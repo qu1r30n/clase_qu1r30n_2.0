@@ -1,0 +1,10 @@
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.csproj.AssemblyReference.cache
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.Form1.resources
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.Properties.Resources.resources
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.csproj.GenerateResource.cache
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.csproj.CoreCompileInputs.cache
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\bin\Debug\CLASE_QU1R30N_2.exe.config
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\bin\Debug\CLASE_QU1R30N_2.exe
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\bin\Debug\CLASE_QU1R30N_2.pdb
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.exe
+C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.pdb
