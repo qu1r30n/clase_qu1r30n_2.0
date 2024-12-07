@@ -6,8 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using clase_QU1R30N.sin_internet.sin_formularios;
-using clase_QU1R30N.sin_internet.sin_formularios.herramientas;
+using clase_qu1r30n_2._0.sin_internet.sin_formularios;
+using clase_qu1r30n_2._0.sin_internet.sin_formularios.herramientas;
 
 namespace clase_qu1r30n_2._0.con_internet.herramientas_internet
 {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace clase_qu1r30n_2._0.Properties
+namespace clase_qu1r30n_2._0_2._0.Properties
 {
 
 

@@ -56,6 +56,40 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sin_internet\herramientas\iniciar_archivos.cs" />
+    <Compile Include="sin_internet\herramientas\operaciones_archivos.cs" />
+    <Compile Include="sin_internet\herramientas\operaciones_arreglos.cs" />
+    <Compile Include="sin_internet\herramientas\operaciones_textos.cs" />
+    <Compile Include="sin_internet\herramientas\Tex_base.cs" />
+    <Compile Include="sin_internet\herramientas\var_fun_GG.cs" />
+    <Compile Include="sin_internet\herramientas\var_fun_GG_dir_arch_crear.cs" />
+    <Compile Include="sin_internet\modelos\_00_modelo_AnalisisDeDatos.cs" />
+    <Compile Include="sin_internet\modelos\_01_modelo_compras.cs" />
+    <Compile Include="sin_internet\modelos\_02_modelo_ventas.cs" />
+    <Compile Include="sin_internet\modelos\_03_modelo_productos_e_inventario.cs" />
+    <Compile Include="sin_internet\modelos\_04_modelo_aprendices_E.cs" />
+    <Compile Include="sin_internet\modelos\_05_modelo_afiliados.cs" />
+    <Compile Include="sin_internet\modelos\_06_modelo_provedores.cs" />
+    <Compile Include="sin_internet\modelos\_07_modelo_sucursales.cs" />
+    <Compile Include="sin_internet\modelos\_08_modelo_registros.cs" />
+    <Compile Include="sin_internet\modelos\_09_modelo_funciones_diversas.cs" />
+    <Compile Include="sin_internet\modelos\_10_modelo_mul.cs" />
+    <Compile Include="sin_internet\modelos\_11_modelo_intermediario_acendente.cs" />
+    <Compile Include="sin_internet\modelos\_12_modelo_publicidad.cs" />
+    <Compile Include="sin_internet\principal.cs" />
+    <Compile Include="sin_internet\procesos\_00_proceso_AnalisisDeDatos.cs" />
+    <Compile Include="sin_internet\procesos\_01_proceso_compras.cs" />
+    <Compile Include="sin_internet\procesos\_02_proceso_ventas.cs" />
+    <Compile Include="sin_internet\procesos\_03_proceso_productos_e_inventario.cs" />
+    <Compile Include="sin_internet\procesos\_04_proceso_aprendices_E.cs" />
+    <Compile Include="sin_internet\procesos\_05_proceso_afiliados.cs" />
+    <Compile Include="sin_internet\procesos\_06_proceso_provedores.cs" />
+    <Compile Include="sin_internet\procesos\_07_proceso_sucursales.cs" />
+    <Compile Include="sin_internet\procesos\_08_proceso_registros.cs" />
+    <Compile Include="sin_internet\procesos\_09_proceso_funciones_diversas.cs" />
+    <Compile Include="sin_internet\procesos\_10_proceso_mul.cs" />
+    <Compile Include="sin_internet\procesos\_11_proceso_intermediario_acendente.cs" />
+    <Compile Include="sin_internet\procesos\_12_proceso_publicidad.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,8 +115,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="sin_internet\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

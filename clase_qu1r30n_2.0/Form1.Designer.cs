@@ -1,4 +1,4 @@
-﻿namespace clase_qu1r30n_2._0
+﻿namespace clase_qu1r30n_2._0_2._0
 {
     partial class Form1
     {

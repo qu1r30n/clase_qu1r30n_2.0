@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using clase_qu1r30n_2._0.sin_internet.sin_formularios;
-using clase_qu1r30n_2._0.sin_internet.con_formularios.tienda;
+
 using clase_qu1r30n_2._0.sin_internet.sin_formularios.herramientas;
 
 using System.Diagnostics.Contracts;

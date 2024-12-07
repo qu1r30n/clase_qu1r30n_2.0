@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace clase_qu1r30n_2._0
+namespace clase_qu1r30n_2._0_2._0
 {
     internal static class Program
     {

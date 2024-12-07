@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace clase_qu1r30n_2._0
+namespace clase_qu1r30n_2._0_2._0
 {
     public partial class Form1 : Form
     {
