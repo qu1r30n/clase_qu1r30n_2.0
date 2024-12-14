@@ -19,7 +19,6 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
             var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[0,0],
             var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[1,0],
             var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[2,0],
-            var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[4,0],
         };
 
 
@@ -92,41 +91,49 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
 
         }
 
-        public void datos_recibidos_a_procesar_y_borrar(string ia_ws)
+        public void datos_recibidos_a_procesar_y_borrar()
         {
-            //S_1_4_ia
-            if (ia_ws == "IA")//envia info de archivos respuesta y elimina la informacion
+            // S_1_4_ia
+            // Leer datos de usuarios desde un archivo
+            string[] usuarios_lectura = bas.Leer(G_dir_arch_transferencia[0]);
+
+            // Verificar si el ID del programa actual coincide con el primer usuario en el archivo
+            if (usuarios_lectura[0] == var_fun_GG.GG_id_programa)
             {
-                string[] usuarios_lectura = bas.Leer(G_dir_arch_transferencia[0]);
+                // Leer las respuestas IA desde otro archivo
+                string[] respuestas_ia = bas.Leer(G_dir_arch_transferencia[1]);
 
-                if (usuarios_lectura[0] == var_fun_GG.GG_id_programa)
+                // Verificar si hay más de una línea en las respuestas
+                if (respuestas_ia.Length > 1)
                 {
-
-                    string[] respuestas_ia = bas.Leer(G_dir_arch_transferencia[1]);
-
-                    if (respuestas_ia.Length > 1)
+                    // Iterar sobre las respuestas comenzando desde una posición específica
+                    for (int i = G_donde_inicia_la_tabla; i < respuestas_ia.Length; i++)
                     {
-                        for (int i = G_donde_inicia_la_tabla; i < respuestas_ia.Length; i++)
+                        // Dividir la línea en elementos usando un carácter delimitador
+                        string[] id_programa_comparar = respuestas_ia[i].Split(G_caracter_para_transferencia_entre_archivos[0][0]);
+
+                        // Procesar datos si el ID coincide con el programa actual
+                        if (id_programa_comparar[0] == var_fun_GG.GG_id_programa)
                         {
-                            string[] id_programa_comparar = respuestas_ia[i].Split(G_caracter_para_transferencia_entre_archivos[0][0]);
-                            if (id_programa_comparar[0] == var_fun_GG.GG_id_programa)
-                            {
-
-                                //preferentemente pon funciones aqui 
-                                conmut.conmutar_datos(id_programa_comparar[1]);
-                            }
-
+                            // Llamar a una función para manejar los datos
+                            conmut.conmutar_datos(id_programa_comparar[1]);
                         }
-
-                        bas.eliminar_fila_PARA_MULTIPLES_PROGRAMAS(G_dir_arch_transferencia[1], 0, var_fun_GG.GG_id_programa, G_caracter_para_transferencia_entre_archivos[0]);
-                        //bas.cambiar_archivo_con_arreglo(G_dir_arch_transferencia[id_atras_actual_adelante_2[1]], new string[] { "sin_informacion" });
-
                     }
 
-                    cambiar_id_programa_al_siguiente(usuarios_lectura);
-                }
-                enl_princ.enlasador("MODELO_FUNCIONES_DIVERSAS~CHECAR_RECORDATORIO§");
+                    // Eliminar filas relacionadas con múltiples programas del archivo
+                    bas.eliminar_fila_PARA_MULTIPLES_PROGRAMAS(
+                        G_dir_arch_transferencia[1],
+                        0,
+                        var_fun_GG.GG_id_programa,
+                        G_caracter_para_transferencia_entre_archivos[0]
+                    );
 
+                    // Comentado: Reemplazo del archivo con un mensaje de "sin información"
+                    // bas.cambiar_archivo_con_arreglo(G_dir_arch_transferencia[id_atras_actual_adelante_2[1]], new string[] { "sin_informacion" });
+                }
+
+                // Cambiar al siguiente ID de programa en la lista de usuarios
+                cambiar_id_programa_al_siguiente(usuarios_lectura);
             }
         }
 

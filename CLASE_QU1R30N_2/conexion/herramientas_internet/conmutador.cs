@@ -31,25 +31,47 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
 
         public void conmutar_datos(string parametro)
         {
+            // Dividir el parámetro de entrada en partes utilizando un carácter delimitador
             string[] res_espliteada = parametro.Split(G_caracter_para_transferencia_entre_archivos[1][0]);
 
-            // Implementa la lógica aquí
-
-
+            // Procesar la información específica eliminando espacios
             string info_a_procesar = res_espliteada[2].Replace(" ", "");
+
+            // Dividir la información en líneas usando un delimitador para saltos de línea
             string[] lineas_del_mensaje = info_a_procesar.Split(new string[] { "\r\n" }, StringSplitOptions.None);
 
-            conexiones con = new conexiones();
 
+
+
+
+            // Enlazar y procesar la información utilizando el método `enlasador`
+            //ESTE ES LA PRINCIPAL FUNCION DONDE TU PROGRAMARAS
             string res = enlace_principal.enlasador(info_a_procesar);
+
+
+
+
+
+
+
+            // Extraer el contacto del parámetro dividido
             string contacto = res_espliteada[3];
+
+            // Procesar el texto eliminando separadores específicos
             string[] temp1 = info_a_procesar.Split(G_caracter_separacion_funciones_espesificas[1][0]);
             string[] proceso = temp1[0].Split(G_caracter_separacion_funciones_espesificas[0][0]);
 
-            string info_a_enviar = proceso[1] + G_caracter_para_transferencia_entre_archivos[1] + res + G_caracter_para_transferencia_entre_archivos[1] + contacto;
+            // Crear la información a enviar combinando múltiples datos y delimitadores
+            string info_a_enviar = proceso[1] + G_caracter_para_transferencia_entre_archivos[1] +
+                                   res + G_caracter_para_transferencia_entre_archivos[1] + 
+                                   contacto;
+
+            
+            
+            // Crear una instancia de la clase `conexiones` para manejar las conexiones
+            conexiones con = new conexiones();
+            // Enviar los datos procesados mediante el método `datos_a_enviar`
             con.datos_a_enviar(res_espliteada[1], info_a_enviar, res_espliteada[0]);
-
-
         }
 
 

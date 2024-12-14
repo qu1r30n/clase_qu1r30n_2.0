@@ -33,7 +33,7 @@
             // 
             // btn_proceso
             // 
-            this.btn_proceso.Location = new System.Drawing.Point(0, 0);
+            this.btn_proceso.Location = new System.Drawing.Point(12, 12);
             this.btn_proceso.Name = "btn_proceso";
             this.btn_proceso.Size = new System.Drawing.Size(75, 23);
             this.btn_proceso.TabIndex = 0;
