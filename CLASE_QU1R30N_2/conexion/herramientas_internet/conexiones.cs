@@ -210,6 +210,7 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
 
                 }
                 sw_bandera.Close();
+                
             }
             catch
             {

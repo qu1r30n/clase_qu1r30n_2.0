@@ -64,8 +64,10 @@
     <Compile Include="sin_internet\sin_formulario\herramientas\var_fun_GG.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\var_fun_GG_dir_arch_crear.cs" />
     <Compile Include="sin_internet\sin_formulario\modelos\_00_mod_inicial.cs" />
+    <Compile Include="sin_internet\sin_formulario\modelos\_01_mod_tex_base.cs" />
     <Compile Include="sin_internet\sin_formulario\principal.cs" />
     <Compile Include="sin_internet\sin_formulario\procesos\_00_proc_inicial.cs" />
+    <Compile Include="sin_internet\sin_formulario\procesos\_01_proc_tex_base.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

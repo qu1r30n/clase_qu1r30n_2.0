@@ -43,7 +43,11 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios
                     _00_mod_inicial mod_inicial = new _00_mod_inicial();
                     info_a_retornar = mod_inicial.operacion_a_hacer(info);
                     break;
-                
+                case "TEX_BASE":
+                    _01_mod_tex_base mod_tex_base = new _01_mod_tex_base();
+                    info_a_retornar = mod_tex_base.operacion_a_hacer(info);
+                    break;
+
             }
 
             return info_a_retornar;
