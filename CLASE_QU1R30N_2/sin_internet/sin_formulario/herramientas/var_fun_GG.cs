@@ -14,9 +14,9 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         static public int GG_indice_donde_comensar = 1;
 
-        static public string[] GG_caracter_separacion = { "|", "°", "¬", "╦", "╝", "╔" };
+        static public string[] GG_caracter_separacion = { "|", "°", "¬", "╦" };
 
-        static public string[] GG_caracter_separacion_funciones_espesificas = { "~", "§", "¶", "╬" };
+        static public string[] GG_caracter_separacion_funciones_espesificas = { "~", "§", "¶", "╬", "╝", "╔" };
 
         static public string[] GG_caracter_para_confirmacion_o_error = { "╣", "╠" };
 
@@ -24,7 +24,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         static public string[] GG_caracter_para_usar_como_enter_y_nuevo_mensaje = { "•", "∆" };
 
-        static public string GG_id_programa = "CLASE_QU1R30N";
+        static public string GG_id_programa = "CLASE_QU1R30N_2";
 
         static public string GG_direccion_control_errores_try = "config\\chatbot\\errores_try\\control_errore.txt";
 

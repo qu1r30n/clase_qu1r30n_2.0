@@ -29,30 +29,24 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
 
 
             // Seleccionar el flujo de operación basado en el valor del parámetro `proceso`
-            switch (proceso)
+            if (proceso == "FUNCION_PRUEBA")
             {
                 // Caso específico para un proceso llamado "FUNCION_PRUEBA"
-                case "FUNCION_PRUEBA":
-
-                    _00_proc_inicial fun = new _00_proc_inicial();
-                    EjecutarFuncionEnDatos(fun.funcion_prueba, datos);
-
-                    break;
-
-                // Caso específico para un proceso llamado "FUNCION_PRUEBA"
-                case "CREAR_ARCHIVO":
-
-                    _01_proc_tex_base tex_base = new _01_proc_tex_base();
-                    EjecutarFuncionEnDatos(tex_base.Crear_archivo_y_directorio, datos);
-
-                    break;
-
-                    
+                _00_proc_inicial fun = new _00_proc_inicial();
+                EjecutarFuncionEnDatos(fun.funcion_prueba, datos);
+            }
+            
+            else if (proceso == "CREAR_ARCHIVO_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _01_proc_tex_base tex_base = new _01_proc_tex_base();
+                EjecutarFuncionEnDatos(tex_base.Crear_archivo_y_directorio, datos);
+            }
+            else
+            {
                 // Caso por defecto si no se reconoce el proceso
-                default:
-                    // Asignar un mensaje de error indicando que el proceso no existe
-                    info_a_retornar = "-1" + G_caracter_para_confirmacion_o_error[0] + "no existe ese PROCESO";
-                    break;
+                // Asignar un mensaje de error indicando que el proceso no existe
+                info_a_retornar = "-1" + G_caracter_para_confirmacion_o_error[0] + "no existe ese PROCESO";
             }
 
 
