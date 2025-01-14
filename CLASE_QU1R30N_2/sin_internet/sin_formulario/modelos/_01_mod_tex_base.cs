@@ -36,12 +36,19 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 EjecutarFuncionEnDatos(fun.funcion_prueba, datos);
             }
             
-            else if (proceso == "CREAR_ARCHIVO_SOLO_PROG")
+            else if (proceso == "CREAR_ARCHIVO")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _01_proc_tex_base tex_base = new _01_proc_tex_base();
-                EjecutarFuncionEnDatos(tex_base.Crear_archivo_y_directorio, datos);
+                _01_proc_tex_base bas = new _01_proc_tex_base();
+                EjecutarFuncionEnDatos(bas.Crear_archivo_y_directorio, datos);
             }
+            else if (proceso == "AGREGAR_INFO_DIV")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _01_proc_tex_base bas = new _01_proc_tex_base();
+                EjecutarFuncionEnDatos(bas.Agregar_info_dividida, datos);
+            }
+
             else
             {
                 // Caso por defecto si no se reconoce el proceso

@@ -103,6 +103,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return "0" + G_caracter_para_confirmacion_o_error[0] + "ya existe";
         }
 
+
         public string Agregar(string datos)
         {
             string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
@@ -196,32 +197,17 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
 
+            List<string> lista_datos = new List<string>();
             string linea;
             string id_total = null;
             string columnas = null;
             string cantidad_filas_por_archivo = "100";
             while ((linea = sr.ReadLine()) != null)
             {
-
-                string[] linea_esp = linea.Split(G_caracter_separacion[0][0]);
-
-                if (linea_esp[0] == "ID_TOT")
-                {
-                    id_total = linea_esp[1];
-
-                }
-                if (linea_esp[0] == "COLUMNAS")
-                {
-                    columnas = linea_esp[1].Replace(G_caracter_separacion[1], G_caracter_separacion[0]);
-                }
-                if (linea_esp[0] == "CANT_POR_ARCH")
-                {
-                    cantidad_filas_por_archivo = linea_esp[1];
-
-                }
-
+                lista_datos.Add(linea);
             }
 
+            string resul = orden_informacion(lista_datos);
 
 
             string dir_info_bas = direccion_extencion_espliteada + "_dat_\\" + generar_ruta_archivo(id_total,cantidad_filas_por_archivo);
@@ -281,14 +267,26 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return "0" + G_caracter_para_confirmacion_o_error[0] + "error no pudo guardar";
         }
 
+
+
         public string seleccionar_id(string datos)
         {
             string info_retornar = "";
 
             string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
 
+            //parametros------------------------------------------------------------------------------------
             string direccion_archivos = datos_epliteados[0];
 
+            string id = datos_epliteados[1];
+
+            string info_a_comparar = datos_epliteados[2];
+
+            string columna_comparar = datos_epliteados[3];
+            //fin parametros-----------------------------------------------------------------------------
+
+            string[] direccion_espliteada = direccion_archivos.Split('.');
+            string carpetas = direccion_espliteada[0];
 
             FileStream fs = null;
             StreamReader sr = null;
@@ -306,12 +304,410 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             }
             sr = new StreamReader(fs);
 
+            string linea;
+            List<string> filas_configuaracion = new List<string>();
+            // Lee cada línea del archivo hasta el final
+            while ((linea = sr.ReadLine()) != null)
+            {
+                // Aquí puedes procesar cada línea
+                filas_configuaracion.Add(linea);
+            }
+
+            sr.Close();
+            fs.Close();
+
+            string datos_ordenados_configuracion = orden_informacion(filas_configuaracion, "CANT_POR_ARCH");
+            string[] datos_config_esp = datos_ordenados_configuracion.Split(G_caracter_separacion[0][0]);
+
+            string cantidad_por_archivo = datos_config_esp[0];
+            string direccion = carpetas + "\\" + generar_ruta_archivo(id, cantidad_por_archivo);
 
 
 
 
+
+
+            FileStream fs2 = null;
+            StreamReader sr2 = null;
+            while (fs2 == null)
+            {
+                try
+                {
+                    fs2 = new FileStream(direccion, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr2 = new StreamReader(fs2);
+
+
+            string linea2;
+            bool encontro_informacion = false;
+            while ((linea2 = sr2.ReadLine()) != null)
+            {
+                string[] linea2_esp = linea2.Split(G_caracter_separacion[0][0]);
+                string id_fila = linea2_esp[0];
+
+                if (info_a_comparar != "" && columna_comparar != "")
+                {
+
+                    try
+                    {
+                        int col = Convert.ToInt32(columna_comparar);
+
+                        if (linea2_esp[col]==info_a_comparar)
+                        {
+                            info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + linea2;
+                            encontro_informacion = true;
+                        }
+
+                    }
+                    catch 
+                    { 
+                        info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "error";
+                        break;
+                    }
+
+                }
+                else if (id == id_fila)
+                {
+                    info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + linea2;
+                    encontro_informacion = true;
+                }
+
+            }
+            if (encontro_informacion == false)
+            {
+                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
+            }
             return info_retornar;
         }
+
+        public string editar_id(string datos)
+        {
+            string info_retornar = "";
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            // Parametros------------------------------------------------------------------------------------
+            string direccion_archivos = datos_epliteados[0];
+            string id = datos_epliteados[1];
+            string info_a_comparar = datos_epliteados[2];
+            string columna_comparar = datos_epliteados[3];
+            string nuevos_datos = datos_epliteados[4];  // Nuevos datos que se desean establecer
+            string numero_de_columna_a_editar = datos_epliteados[5]; // Número de columna a editar
+                                                                     // Fin parametros-----------------------------------------------------------------------------
+
+            string[] direccion_espliteada = direccion_archivos.Split('.');
+            string carpetas = direccion_espliteada[0];
+
+            FileStream fs = null;
+            StreamReader sr = null;
+            while (fs == null)
+            {
+                try
+                {
+                    fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+                    // Esperamos que el archivo se abra correctamente.
+                }
+            }
+            sr = new StreamReader(fs);
+
+            string linea;
+            List<string> filas_configuaracion = new List<string>();
+            // Lee cada línea del archivo hasta el final
+            while ((linea = sr.ReadLine()) != null)
+            {
+                // Aquí puedes procesar cada línea
+                filas_configuaracion.Add(linea);
+            }
+
+            sr.Close();
+            fs.Close();
+
+            string datos_ordenados_configuracion = orden_informacion(filas_configuaracion, "CANT_POR_ARCH");
+            string[] datos_config_esp = datos_ordenados_configuracion.Split(G_caracter_separacion[0][0]);
+
+            string cantidad_por_archivo = datos_config_esp[0];
+            
+            
+            
+            
+            
+
+            
+            
+            string direccion = carpetas + "\\" + generar_ruta_archivo(id, cantidad_por_archivo);
+
+            FileStream fs2 = null;
+            StreamReader sr2 = null;
+            while (fs2 == null)
+            {
+                try
+                {
+                    fs2 = new FileStream(direccion, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+                    // Esperamos que el archivo se abra correctamente.
+                }
+            }
+            sr2 = new StreamReader(fs2);
+
+            string linea2;
+            bool encontro_informacion = false;
+            List<string> nuevas_lineas = new List<string>();
+
+            while ((linea2 = sr2.ReadLine()) != null)
+            {
+                string[] linea2_esp = linea2.Split(G_caracter_separacion[0][0]);
+                string id_fila = linea2_esp[0];
+
+                if (info_a_comparar != "" && columna_comparar != "")
+                {
+                    try
+                    {
+                        int col = Convert.ToInt32(columna_comparar);
+
+                        if (linea2_esp[col] == info_a_comparar)
+                        {
+                            // Si se encuentra la coincidencia, actualizamos la columna especificada con los nuevos datos
+                            int colEdicion = Convert.ToInt32(numero_de_columna_a_editar);
+
+                            // Verificar que la columna a editar esté dentro del rango
+                            if (colEdicion >= 0 && colEdicion < linea2_esp.Length)
+                            {
+                                linea2_esp[colEdicion] = nuevos_datos;  // Editamos la columna indicada
+
+                                string nueva_linea_str = string.Join(G_caracter_separacion[0][0].ToString(), linea2_esp);
+                                nuevas_lineas.Add(nueva_linea_str);
+                                encontro_informacion = true;
+                            }
+                            else
+                            {
+                                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "columna_fuera_de_rango";
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            nuevas_lineas.Add(linea2);
+                        }
+                    }
+                    catch
+                    {
+                        info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "error";
+                        break;
+                    }
+                }
+                else if (id == id_fila)
+                {
+                    // Si encontramos el id, actualizamos la columna especificada con los nuevos datos
+                    int colEdicion = Convert.ToInt32(numero_de_columna_a_editar);
+
+                    // Verificar que la columna a editar esté dentro del rango
+                    if (colEdicion >= 0 && colEdicion < linea2_esp.Length)
+                    {
+                        linea2_esp[colEdicion] = nuevos_datos;  // Editamos la columna indicada
+
+                        string nueva_linea_str = string.Join(G_caracter_separacion[0][0].ToString(), linea2_esp);
+                        nuevas_lineas.Add(nueva_linea_str);
+                        encontro_informacion = true;
+                    }
+                    else
+                    {
+                        info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "columna_fuera_de_rango";
+                        break;
+                    }
+                }
+                else
+                {
+                    nuevas_lineas.Add(linea2);
+                }
+            }
+
+
+            // Si encontramos la información, guardamos los cambios
+            StreamWriter sw = new StreamWriter(fs2);
+            if (encontro_informacion)
+            {
+                
+                
+
+                foreach (string nueva_linea in nuevas_lineas)
+                {
+                    sw.WriteLine(nueva_linea);
+                }
+
+                sw.Close();
+                
+
+                info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + "informacion_editada";
+            }
+            else
+            {
+                sw.Close();
+                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
+            }
+            sr2.Close();
+            fs2.Close();
+            return info_retornar;
+        }
+
+
+        public string borrar_contenido_excepto_id(string datos)
+        {
+            string info_retornar = "";
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            // Parametros------------------------------------------------------------------------------------
+            string direccion_archivos = datos_epliteados[0];
+            string id = datos_epliteados[1];
+            string info_a_comparar = datos_epliteados[2];
+            string columna_comparar = datos_epliteados[3];
+            // Fin parametros-----------------------------------------------------------------------------
+
+            string[] direccion_espliteada = direccion_archivos.Split('.');
+            string carpetas = direccion_espliteada[0];
+
+            FileStream fs = null;
+            StreamReader sr = null;
+            while (fs == null)
+            {
+                try
+                {
+                    fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+                    // Esperamos que el archivo se abra correctamente.
+                }
+            }
+            sr = new StreamReader(fs);
+
+            string linea;
+            List<string> filas_configuaracion = new List<string>();
+            // Lee cada línea del archivo hasta el final
+            while ((linea = sr.ReadLine()) != null)
+            {
+                // Aquí puedes procesar cada línea
+                filas_configuaracion.Add(linea);
+            }
+
+            sr.Close();
+            fs.Close();
+
+            string datos_ordenados_configuracion = orden_informacion(filas_configuaracion, "CANT_POR_ARCH");
+            string[] datos_config_esp = datos_ordenados_configuracion.Split(G_caracter_separacion[0][0]);
+
+            string cantidad_por_archivo = datos_config_esp[0];
+            string direccion = carpetas + "\\" + generar_ruta_archivo(id, cantidad_por_archivo);
+
+            FileStream fs2 = null;
+            StreamReader sr2 = null;
+            while (fs2 == null)
+            {
+                try
+                {
+                    fs2 = new FileStream(direccion, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+                    // Esperamos que el archivo se abra correctamente.
+                }
+            }
+            sr2 = new StreamReader(fs2);
+
+            string linea2;
+            bool encontro_informacion = false;
+            List<string> nuevas_lineas = new List<string>();
+
+            while ((linea2 = sr2.ReadLine()) != null)
+            {
+                string[] linea2_esp = linea2.Split(G_caracter_separacion[0][0]);
+                string id_fila = linea2_esp[0];
+
+                if (info_a_comparar != "" && columna_comparar != "")
+                {
+                    try
+                    {
+                        int col = Convert.ToInt32(columna_comparar);
+
+                        if (linea2_esp[col] == info_a_comparar)
+                        {
+                            // Si se encuentra la coincidencia, borramos el contenido de las columnas, excepto el id
+                            for (int i = 1; i < linea2_esp.Length; i++)
+                            {
+                                linea2_esp[i] = "";  // Borra el contenido de la columna (puedes poner "BORRADO" o cualquier otro valor)
+                            }
+
+                            string nueva_linea_str = string.Join(G_caracter_separacion[0][0].ToString(), linea2_esp);
+                            nuevas_lineas.Add(nueva_linea_str);
+                            encontro_informacion = true;
+                        }
+                        else
+                        {
+                            nuevas_lineas.Add(linea2);
+                        }
+                    }
+                    catch
+                    {
+                        info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "error";
+                        break;
+                    }
+                }
+                else if (id == id_fila)
+                {
+                    // Si encontramos el id, borramos el contenido de las columnas, excepto el id
+                    for (int i = 1; i < linea2_esp.Length; i++)
+                    {
+                        linea2_esp[i] = "";  // Borra el contenido de la columna (puedes poner "BORRADO" o cualquier otro valor)
+                    }
+
+                    string nueva_linea_str = string.Join(G_caracter_separacion[0][0].ToString(), linea2_esp);
+                    nuevas_lineas.Add(nueva_linea_str);
+                    encontro_informacion = true;
+                }
+                else
+                {
+                    nuevas_lineas.Add(linea2);
+                }
+            }
+
+            // Si encontramos la información, guardamos los cambios
+            StreamWriter sw = new StreamWriter(fs2);
+            if (encontro_informacion)
+            {
+                
+                
+
+                foreach (string nueva_linea in nuevas_lineas)
+                {
+                    sw.WriteLine(nueva_linea);
+                }
+
+                sw.Close();
+                
+                info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + "informacion_borrada";
+            }
+            else
+            {
+                sw.Close();
+                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
+            }
+
+            sr2.Close();
+            fs2.Close();
+            return info_retornar;
+        }
+
 
 
         public string leer_info_dividida(string datos)
@@ -575,6 +971,54 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         }
 
 
-        //fin clase---------------------------------------------------------------------------
-    }
+
+
+
+        public string orden_informacion(List<string> resultados, string orden = "ID_TOT|COLUMNAS|CANT_POR_ARCH", string caracter_separacion = null)
+        {
+            string info_a_retornar = "";
+            
+            if (caracter_separacion == null)
+            {
+                caracter_separacion = G_caracter_separacion[0];
+            }
+            string[] orden_espliteado = orden.Split(caracter_separacion[0]);
+            
+
+            // Recorremos las líneas procesadas
+
+            for (int k = 0; k < orden_espliteado.Length; k++)
+            {
+
+
+                bool encontro_info = false;
+                // Aquí comparamos cada valor dividido con el arreglo de comparación
+                for (int i = 0; i < resultados.Count; i++)
+                {
+                    // Dividir la línea actual en partes utilizando el separador
+                    string[] linea_esp = resultados[i].Split(caracter_separacion[0]);
+
+                    if (linea_esp[0] == orden_espliteado[k])
+                    {
+                        // Si se encuentra una coincidencia, hacer algo
+                        info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, linea_esp[1], caracter_separacion[0]);
+                        encontro_info = true;
+                        break;
+                    }
+                }
+                if (encontro_info == false)
+                {
+                    info_a_retornar = info_a_retornar + caracter_separacion;
+                }
+            }
+
+
+
+            return info_a_retornar;
+        }
+    
+
+
+    //fin clase---------------------------------------------------------------------------
+}
 }
