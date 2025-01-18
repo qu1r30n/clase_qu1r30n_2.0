@@ -38,8 +38,9 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
         principal enl_princ = new principal();
         public int[] checar_numero_de_direccion_de_archivo_atras_actual_adelante(int posicion_bandera)
         {
-            string[] banderas = bas.Leer(G_dir_arch_transferencia[0]);
-
+            
+            //string[] banderas = bas.Leer(G_dir_arch_transferencia[0]);
+            string[] banderas = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0]).Split(G_caracter_separacion_funciones_espesificas[4][0]);
 
 
             int numero_actual_posision = Convert.ToInt32(banderas[posicion_bandera]);
@@ -95,13 +96,15 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
         {
             // S_1_4_ia
             // Leer datos de usuarios desde un archivo
-            string[] usuarios_lectura = bas.Leer(G_dir_arch_transferencia[0]);
+            //string[] usuarios_lectura = bas.Leer(G_dir_arch_transferencia[0]);
+            string[] usuarios_lectura = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0]).Split(G_caracter_separacion_funciones_espesificas[4][0]);
 
             // Verificar si el ID del programa actual coincide con el primer usuario en el archivo
             if (usuarios_lectura[0] == var_fun_GG.GG_id_programa)
             {
                 // Leer las respuestas IA desde otro archivo
-                string[] respuestas_ia = bas.Leer(G_dir_arch_transferencia[1]);
+                //string[] respuestas_ia = bas.Leer(G_dir_arch_transferencia[1]);
+                string[] respuestas_ia = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[1]).Split(G_caracter_separacion_funciones_espesificas[4][0]);
 
                 // Verificar si hay más de una línea en las respuestas
                 if (respuestas_ia.Length > 1)
@@ -179,7 +182,11 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
             string dir_bandera = dir_sep[0] + "\\" + dir_sep[1] + "." + dir_sep[2];
             //este archivo bandera es para que no se agarre el archivo otro programa antes de sustituirlo
             dir_bandera = dir_bandera.Replace(".TXT", "_BANDERA.TXT");
-            bas.Crear_archivo_y_directorio(dir_bandera);
+
+
+            //bas.Crear_archivo_y_directorio(dir_bandera);
+            enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + dir_bandera);
+            
 
 
             StreamWriter sw_bandera = null;
@@ -197,9 +204,11 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
 
             try
             {
-                string[] vieja_info_arch = bas.Leer(G_dir_arch_transferencia[0]);
+                //string[] vieja_info_arch = bas.Leer(G_dir_arch_transferencia[0]);
+                string[] vieja_info_arch = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0]).Split(G_caracter_separacion_funciones_espesificas[4][0]);
                 bas.eliminar_fila_PARA_MULTIPLES_PROGRAMAS(G_dir_arch_transferencia[0], 0, var_fun_GG.GG_id_programa);
-                string[] nueva_info_arch = bas.Leer(G_dir_arch_transferencia[0]);
+                //string[] nueva_info_arch = bas.Leer(G_dir_arch_transferencia[0]);
+                string[] nueva_info_arch = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0]).Split(G_caracter_separacion_funciones_espesificas[4][0]);
 
                 if (vieja_info_arch[0] == var_fun_GG.GG_id_programa)
                 {

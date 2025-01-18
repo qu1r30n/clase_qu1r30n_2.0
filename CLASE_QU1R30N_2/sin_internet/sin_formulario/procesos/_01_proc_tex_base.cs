@@ -1,5 +1,6 @@
 ﻿using CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,10 +22,27 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         public string Crear_archivo_y_directorio(string datos)
         {
             string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
-
+            //parametros-------------------------------------------------------------------------
             string direccion_archivo = datos_epliteados[0];
-            string valor_inicial = datos_epliteados[1];
-            string[] filas_iniciales = datos_epliteados[2].Split(G_caracter_separacion_funciones_espesificas[4][0]);
+            
+            string valor_inicial = null;
+            if (datos_epliteados.Length>=2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    valor_inicial = datos_epliteados[1];
+                }
+            }
+            
+            string[] filas_iniciales = null;
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    filas_iniciales = datos_epliteados[2].Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                }
+            }
+            //fin_parametros--------------------------------------------------------------------------------
             
             
 
@@ -104,14 +122,25 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         }
 
 
-        public string Agregar(string datos)
+        public string Agregar_solo_prog(string datos)
         {
             string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
 
+            //parametros--------------------------------------------------------------
+
             string direccion_archivos = datos_epliteados[0];
-            string agregando = datos_epliteados[1];
 
+            string agregando = "\n";
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                     agregando = datos_epliteados[1];
+                }
+                
+            }
 
+            //fin de parametros---------------------------------------------------------
             FileStream fs = null;
             StreamWriter sw = null;
 
@@ -149,9 +178,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             }
 
         }
-
-
-
 
         public string Agregar_info_dividida(string datos)
         {
@@ -266,9 +292,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             fs.Close();
             return "0" + G_caracter_para_confirmacion_o_error[0] + "error no pudo guardar";
         }
-
-
-
+        
         public string seleccionar_id(string datos)
         {
             string info_retornar = "";
@@ -715,9 +739,10 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             string info_retornar = "";
 
             string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
-
+            // parametros-------------------------------------------------------------------------------
             string direccion_archivos = datos_epliteados[0];
 
+            //fin parametros----------------------------------------------------------------------------
             FileStream fs = null;
             StreamReader sr = null;
             while (fs == null)
@@ -932,6 +957,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return exito_o_fallo;
         }
 
+
+
         
         public string generar_ruta_archivo(string id, string cantidad_ids_por_archivo_potenciade10 = "100")
         {
@@ -970,11 +997,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return carpetas + nom_archivo_donde_va;
         }
 
-
-
-
-
-        public string orden_informacion(List<string> resultados, string orden = "ID_TOT|COLUMNAS|CANT_POR_ARCH", string caracter_separacion = null)
+        private string orden_informacion(List<string> resultados, string orden = "ID_TOT|COLUMNAS|CANT_POR_ARCH", string caracter_separacion = null)
         {
             string info_a_retornar = "";
             
@@ -1016,9 +1039,122 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             return info_a_retornar;
         }
-    
 
 
-    //fin clase---------------------------------------------------------------------------
-}
+        
+        public string Leer_solo_prog(string datos)
+        {
+            string info_a_retornar = "";
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo = datos_epliteados[0];
+            string pos_string = null;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    pos_string = datos_epliteados[1];
+                }
+            }
+            string caracter_separacion = G_caracter_separacion[0];
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    caracter_separacion = datos_epliteados[2];
+                }
+            }
+
+            
+
+            //FIN PARAMETROS-----------------------------------------------------------------------
+
+            ArrayList linea = new ArrayList();
+            ArrayList resultado = new ArrayList();
+            string[] pos_split;
+            int[] posiciones;
+            string palabra = "";
+
+
+            FileStream fs = null;
+            StreamReader sr = null;
+            while (fs == null)
+            {
+                try
+                {
+                    fs = new FileStream(direccion_archivo, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr = new StreamReader(fs);
+
+
+
+
+            
+
+            if (pos_string == null)
+            {
+
+                while ((palabra = sr.ReadLine()) != null)
+                {
+                    if (palabra != "")
+                    {
+                        linea.Add(palabra);
+                    }
+                }
+            }
+
+            else
+            {
+                pos_split = pos_string.Split(caracter_separacion[0]);
+                posiciones = new int[pos_split.Length];
+                for (int i = 0; i < posiciones.Length; i++)
+                {
+                    posiciones[i] = Convert.ToInt32(pos_split[i]);
+                }
+
+
+                for (int i = 0; (palabra = sr.ReadLine()) != null; i++)
+                {
+                    string[] spl_linea = palabra.Split(caracter_separacion[0]);
+
+                    palabra = "";
+                    for (int j = 0; j < posiciones.Length; j++)
+                    {
+                        palabra = op_tex.concatenacion_caracter_separacion(palabra, spl_linea[posiciones[j]], G_caracter_separacion_funciones_espesificas[4]);
+
+                    }
+                    resultado.Add(palabra);
+                }
+                sr.Close();
+                fs.Close();
+                
+                for (int mnm = 0; mnm < resultado.Count; mnm++)
+                {
+                    info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, "" + resultado[mnm], G_caracter_separacion_funciones_espesificas[4]);
+                    
+                }
+                return info_a_retornar;
+            }
+
+            sr.Close();
+            fs.Close();
+            
+            for (int mnm = 0; mnm < linea.Count; mnm++)
+            {
+                info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, "" + linea[mnm], G_caracter_separacion_funciones_espesificas[3]);
+                
+            }
+            return info_a_retornar;
+        }
+
+
+        //fin clase---------------------------------------------------------------------------
+    }
 }

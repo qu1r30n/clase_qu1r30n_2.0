@@ -14,9 +14,10 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
         string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
         string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
         string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
+        string[] G_caracter_para_enter = var_fun_GG.GG_caracter_para_usar_como_enter_y_nuevo_mensaje;
 
 
-        
+
         public string operacion_a_hacer(string info)
         {
             // Variable para almacenar la información que se devolverá al final del método
@@ -33,20 +34,40 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             {
                 // Caso específico para un proceso llamado "FUNCION_PRUEBA"
                 _00_proc_inicial fun = new _00_proc_inicial();
-                EjecutarFuncionEnDatos(fun.funcion_prueba, datos);
+                info_a_retornar = EjecutarFuncionEnDatos(fun.funcion_prueba, datos);
             }
             
             else if (proceso == "CREAR_ARCHIVO")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
                 _01_proc_tex_base bas = new _01_proc_tex_base();
-                EjecutarFuncionEnDatos(bas.Crear_archivo_y_directorio, datos);
+                info_a_retornar = EjecutarFuncionEnDatos(bas.Crear_archivo_y_directorio, datos);
+            }
+            else if (proceso == "AGREGAR_USO_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _01_proc_tex_base bas = new _01_proc_tex_base();
+                info_a_retornar = EjecutarFuncionEnDatos(bas.Agregar_solo_prog, datos);
             }
             else if (proceso == "AGREGAR_INFO_DIV")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
                 _01_proc_tex_base bas = new _01_proc_tex_base();
-                EjecutarFuncionEnDatos(bas.Agregar_info_dividida, datos);
+                info_a_retornar = EjecutarFuncionEnDatos(bas.Agregar_info_dividida, datos);
+            }
+            else if (proceso == "MOSTRAR_PROCESOS")
+            {
+
+                info_a_retornar = mostrar_procesos();
+                 
+            }
+
+            else if (proceso == "LEER_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _01_proc_tex_base bas = new _01_proc_tex_base();
+                info_a_retornar = EjecutarFuncionEnDatos(bas.Leer_solo_prog, datos);
+                 
             }
 
             else
@@ -76,6 +97,36 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             return info_a_retornar;
         }
 
+        public string mostrar_procesos()
+        {
+            string info_a_retornar = "";
+
+
+            info_a_retornar =
+                "FUNCION_PRUEBA" +
+                G_caracter_para_enter[1] + "AGREGAR_INFO_DIV" + G_caracter_para_enter[0] +
+                "  direccion_archivos" + G_caracter_para_enter[0] +
+                "  agregando" + G_caracter_para_enter[0] +
+                "  nom_columnas_si_no_existe_archivo" +
+
+                G_caracter_para_enter[1] + "CREAR_ARCHIVO" + G_caracter_para_enter[0] +
+                    "direccion_archivo" + G_caracter_para_enter[0] +
+                    "valor_inicial" + G_caracter_para_enter[0] +
+                    "filas_iniciales" +
+
+
+                    G_caracter_para_enter[1] + "AGREGAR_USO_SOLO_PROG" + G_caracter_para_enter[0] +
+                    "direccion_archivos" + G_caracter_para_enter[0] +
+                    "agregando";
+
+
+            ;
+
+
+            
+
+            return info_a_retornar;
+        }
 
 
         //fin clase----------------------------------------------------

@@ -15,7 +15,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         
 
         public string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
-        public string[] G_separador_para_funciones_espesificas_ = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
+        public string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
         public string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
         public string[] G_caracter_para_transferencia_entre_archivos = var_fun_GG.GG_caracter_para_transferencia_entre_archivos;
 
@@ -26,7 +26,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         operaciones_arreglos op_arr = new operaciones_arreglos();
         operaciones_textos op_tex = new operaciones_textos();
-
+        principal enl_princ = new principal();
         public void Crear_archivo_y_directorio(string direccion_archivo, string valor_inicial = null, string[] filas_iniciales = null, object caracter_separacion_fun_esp_objeto = null)
         {
 
@@ -96,7 +96,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             sw.Close();
 
         }
-        public string[] Leer(string direccion_archivo, string pos_string = null, char caracter_separacion = '|')
+        
+        public string[] Leer(string direccion_archivo, string pos_string = null, string caracter_separacion = "|")
         {
             ArrayList linea = new ArrayList();
             ArrayList resultado = new ArrayList();
@@ -119,7 +120,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
             else
             {
-                pos_split = pos_string.Split(caracter_separacion);
+                pos_split = pos_string.Split(caracter_separacion[0]);
                 posiciones = new int[pos_split.Length];
                 for (int i = 0; i < posiciones.Length; i++)
                 {
@@ -129,7 +130,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
                 for (int i = 0; (G_palabra = sr.ReadLine()) != null; i++)
                 {
-                    string[] spl_linea = G_palabra.Split(caracter_separacion);
+                    string[] spl_linea = G_palabra.Split(caracter_separacion[0]);
 
                     G_palabra = "";
                     for (int j = 0; j < posiciones.Length; j++)
@@ -224,7 +225,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 }
                 catch (Exception e)
                 {
-                    string[] checador = Leer(var_fun_GG.GG_direccion_control_errores_try);
+                    //string[] checador = Leer(var_fun_GG.GG_direccion_control_errores_try);
+                    string[] checador = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG.GG_direccion_control_errores_try).Split(G_caracter_separacion_funciones_espesificas[4][0]);
                     chequeo_error_try(direccion_archivo, e, checador[1]);
                 }
             }
@@ -301,7 +303,9 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 }
                 catch (Exception e)
                 {
-                    string[] checador = Leer(var_fun_GG.GG_direccion_control_errores_try);
+                    //string[] checador = Leer(var_fun_GG.GG_direccion_control_errores_try);
+                    string[] checador = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG.GG_direccion_control_errores_try).Split(G_caracter_separacion_funciones_espesificas[4][0]);
+
                     chequeo_error_try(direccion_archivo, e, checador[1]);
                 }
             }
@@ -358,7 +362,9 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
             if (result == DialogResult.Yes)
             {
-                Crear_archivo_y_directorio(direccionArchivo, "sin informacion");
+                //Crear_archivo_y_directorio(direccionArchivo, "sin informacion");
+                
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + direccionArchivo + G_caracter_separacion_funciones_espesificas[4] + "SIN_INFORMACION");
             }
             else if (result == DialogResult.No)
             {

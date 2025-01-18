@@ -13,11 +13,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios
 {
     internal class principal
     {
-        
+
 
         string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
         string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
         string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
+        string[] G_caracter_para_enter = var_fun_GG.GG_caracter_para_usar_como_enter_y_nuevo_mensaje;
 
         var_fun_GG vf_GG = new var_fun_GG();
 
@@ -36,23 +37,41 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios
             string modelo = a_donde_enviara_la_informacion[0];
             string info = a_donde_enviara_la_informacion[1];
 
-
-            switch (modelo)
+            if (modelo == "MODELO_INICIAL_PRUEBA")
             {
-                case "MODELO_INICIAL_PRUEBA":
-                    _00_mod_inicial mod_inicial = new _00_mod_inicial();
-                    info_a_retornar = mod_inicial.operacion_a_hacer(info);
-                    break;
-                case "TEX_BASE":
-                    _01_mod_tex_base mod_tex_base = new _01_mod_tex_base();
-                    info_a_retornar = mod_tex_base.operacion_a_hacer(info);
-                    break;
+                _00_mod_inicial mod_inicial = new _00_mod_inicial();
+                info_a_retornar = mod_inicial.operacion_a_hacer(info);
+            }
+            else if (modelo == "TEX_BASE")
+            {
+                _01_mod_tex_base mod_tex_base = new _01_mod_tex_base();
+                info_a_retornar = mod_tex_base.operacion_a_hacer(info);
+            }
 
+            else if (modelo == "MOSTRAR_MODELOS")
+            {
+                _01_mod_tex_base mod_tex_base = new _01_mod_tex_base();
+                info_a_retornar = mod_tex_base.operacion_a_hacer(info);
             }
 
             return info_a_retornar;
         }
 
+        public string mostrar_modelos()
+        {
+            string info_a_retornar = "";
 
+
+            info_a_retornar =
+                "MODELO_INICIAL_PRUEBA"
+                + G_caracter_para_enter[0] +
+                "TEX_BASE";
+
+
+            return info_a_retornar;
+        }
+
+
+        //fin clase-------------------------------------------------------------
     }
 }

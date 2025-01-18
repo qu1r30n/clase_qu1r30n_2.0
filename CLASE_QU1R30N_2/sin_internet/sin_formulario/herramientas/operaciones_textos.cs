@@ -8,7 +8,14 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         public string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
         public string[] G_caracter_separacion_para_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
-        public string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
+        public string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_para_confirmacion_o_error;
+
+
+        principal enl_princ = new principal();
+
+
+
+
 
         int G_donde_inicia_la_tabla = var_fun_GG.GG_indice_donde_comensar;
 
@@ -260,7 +267,9 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             string texto_a_agregar_concatenacion = "";
 
 
-            string[] info_a_concarenar = bas.Leer(direccion_archivo);
+            //string[] info_a_concarenar = bas.Leer(direccion_archivo);
+            string[] info_a_concarenar = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + direccion_archivo).Split(G_caracter_separacion_funciones_espesificas[4][0]);
+
             for (int i = G_donde_inicia_la_tabla; i < info_a_concarenar.Length; i++)
             {
                 string num_fil = "";
@@ -381,11 +390,11 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             //comparacion--------------------------------------------------------------------------
             if (tem_linea == comparar___)
             {
-                return "1" + G_caracter_para_confirmacion_o_error[0] + texto;
+                return "1" + G_caracter_separacion_funciones_espesificas[0] + texto;
             }
 
 
-            return "0" + G_caracter_para_confirmacion_o_error[0] + "no se_encontro";
+            return "0" + G_caracter_separacion_funciones_espesificas[0] + "no se_encontro";
         }
 
         public string busqueda_con_YY_profunda_texto(string texto, string columnas_a_recorrer, string comparaciones, object caracter_separacion_objeto = null, object caracter_separacion_para_busqueda_multiple_profuda_obj = null)
@@ -400,7 +409,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             string[] arr_comparaciones___ = comparaciones.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
 
 
-
+                    
 
             bool[] chequeo_todas_las_comparaciones = new bool[arr_comparaciones_a_rec.Length];
 
@@ -453,12 +462,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             {
 
 
-                return "1" + G_caracter_para_confirmacion_o_error[0] + texto;
+                return "1" + G_caracter_separacion_funciones_espesificas[0] + texto;
             }
 
 
 
-            return "0" + G_caracter_para_confirmacion_o_error[0] + "no se_encontro";
+            return "0" + G_caracter_separacion_funciones_espesificas[0] + "no se_encontro";
 
         }
 
@@ -583,7 +592,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             for (int k = 0; k < indices_a_editar_esp.Length; k++)
             {
                 string res_ext = op_arr.extraer_arreglo_dentro_de_un_string_y_ponerolo_en_string(texto, indices_a_editar_esp[k]);
-                string[] res_ext_esp = res_ext.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                string[] res_ext_esp = res_ext.Split(G_caracter_separacion_funciones_espesificas[0][0]);
                 int indice_caracter = Convert.ToInt32(res_ext_esp[2]);
 
                 if (Convert.ToInt32(res_ext_esp[0]) > 0)//si res es mayor a 0 la operacioon fue exitosa si no hubo un error
@@ -705,7 +714,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             for (int k = 0; k < indices_a_editar_esp.Length; k++)
             {
                 string res_ext = op_arr.extraer_arreglo_dentro_de_un_string_y_ponerolo_en_string(texto, indices_a_editar_esp[k]);
-                string[] res_ext_esp = res_ext.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                string[] res_ext_esp = res_ext.Split(G_caracter_separacion_funciones_espesificas[0][0]);
                 int indice_caracter = Convert.ToInt32(res_ext_esp[2]);
                 //extrajo el arreglo
                 if (Convert.ToInt32(res_ext_esp[0]) > 0)//si res es mayor a 0 la operacioon fue exitosa si no hubo un error

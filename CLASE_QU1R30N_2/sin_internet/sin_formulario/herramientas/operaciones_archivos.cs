@@ -14,6 +14,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
     internal class operaciones_archivos
     {
 
+        public string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
+        public string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
+        public string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
+        public string[] G_caracter_para_transferencia_entre_archivos = var_fun_GG.GG_caracter_para_transferencia_entre_archivos;
+
+        principal enl_princ = new principal();
+
         public string[] Contenido_directorio(string direccion_archivo, string decicion = null)
         {
             ArrayList lista = new ArrayList();
@@ -100,7 +107,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             tipo = tipo.ToUpper();
 
             Tex_base bas = new Tex_base();
-            string[] lineas = bas.Leer(direccion_archivo);
+            //string[] lineas = bas.Leer(direccion_archivo);
+            string[] lineas = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + direccion_archivo).Split(G_caracter_separacion_funciones_espesificas[4][0]);
 
             if (tipo == "NUMERO")
             {
