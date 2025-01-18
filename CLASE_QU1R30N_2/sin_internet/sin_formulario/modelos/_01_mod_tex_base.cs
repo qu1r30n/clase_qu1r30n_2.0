@@ -55,6 +55,32 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 _01_proc_tex_base bas = new _01_proc_tex_base();
                 info_a_retornar = EjecutarFuncionEnDatos(bas.Agregar_info_dividida, datos);
             }
+
+
+            else if (proceso == "LEER_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _01_proc_tex_base bas = new _01_proc_tex_base();
+                info_a_retornar = EjecutarFuncionEnDatos(bas.Leer_solo_prog, datos);
+
+            }
+
+            else if (proceso == "LEER_INFO_DIVIDIDA")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _01_proc_tex_base bas = new _01_proc_tex_base();
+                info_a_retornar = EjecutarFuncionEnDatos(bas.leer_info_dividida, datos);
+
+            }
+
+            else if (proceso == "SELECCIONAR_ID")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _01_proc_tex_base bas = new _01_proc_tex_base();
+                info_a_retornar = EjecutarFuncionEnDatos(bas.seleccionar_id, datos);
+
+            }
+
             else if (proceso == "MOSTRAR_PROCESOS")
             {
 
@@ -62,13 +88,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                  
             }
 
-            else if (proceso == "LEER_SOLO_PROG")
-            {
-                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _01_proc_tex_base bas = new _01_proc_tex_base();
-                info_a_retornar = EjecutarFuncionEnDatos(bas.Leer_solo_prog, datos);
-                 
-            }
 
             else
             {
@@ -104,20 +123,37 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
 
             info_a_retornar =
                 "FUNCION_PRUEBA" +
-                G_caracter_para_enter[1] + "AGREGAR_INFO_DIV" + G_caracter_para_enter[0] +
-                "  direccion_archivos" + G_caracter_para_enter[0] +
-                "  agregando" + G_caracter_para_enter[0] +
-                "  nom_columnas_si_no_existe_archivo" +
 
                 G_caracter_para_enter[1] + "CREAR_ARCHIVO" + G_caracter_para_enter[0] +
-                    "direccion_archivo" + G_caracter_para_enter[0] +
+                    "*direccion_archivo" + G_caracter_para_enter[0] +
                     "valor_inicial" + G_caracter_para_enter[0] +
                     "filas_iniciales" +
 
 
-                    G_caracter_para_enter[1] + "AGREGAR_USO_SOLO_PROG" + G_caracter_para_enter[0] +
-                    "direccion_archivos" + G_caracter_para_enter[0] +
-                    "agregando";
+                G_caracter_para_enter[1] + "AGREGAR_INFO_DIV" + G_caracter_para_enter[0] +
+                "  *direccion_archivos" + G_caracter_para_enter[0] +
+                "  *agregando" + G_caracter_para_enter[0] +
+                "  *nom_columnas_si_no_existe_archivo" +
+
+
+
+                G_caracter_para_enter[1] + "AGREGAR_USO_SOLO_PROG" + G_caracter_para_enter[0] +
+                    "*direccion_archivos" + G_caracter_para_enter[0] +
+                    "*agregando" +
+
+
+                G_caracter_para_enter[1] + "LEER_SOLO_PROG" + G_caracter_para_enter[0] +
+                    "*direccion_archivo" + G_caracter_para_enter[0] +
+                    "pos_string" + G_caracter_para_enter[0] +
+                    "caracter_separacion" +
+
+                G_caracter_para_enter[1] + "LEER_INFO_DIVIDIDA" + G_caracter_para_enter[0] +
+                    "*direccion_archivo" +
+
+                    G_caracter_para_enter[1] + "SELECCIONAR_ID" + G_caracter_para_enter[0] +
+                    "*id" + G_caracter_para_enter[0] +
+                    "info_a_comparar" + G_caracter_para_enter[0] +
+                    "columna_comparar" 
 
 
             ;

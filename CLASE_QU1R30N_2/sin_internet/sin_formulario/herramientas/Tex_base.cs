@@ -61,7 +61,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
                     if (valor_inicial != null)// si al llamar a la funcion  le pusiste valor_inicial las escribe //se utilisa para que sea como un titulo o un eslogan pero lo utilisaremos en este prog
                     {
-                        Agregar(direccion_archivo, valor_inicial);//escribe aqui el valor inicial si es que lo pusiste
+                        //Agregar(direccion_archivo, valor_inicial);//escribe aqui el valor inicial si es que lo pusiste
+                        string resp_del_agregue = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_USO_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + direccion_archivo + G_caracter_separacion_funciones_espesificas[4] + valor_inicial);
                     }
 
                     if (filas_iniciales != null)//si al llamar a la funcion le pusistes columnas a agregar//recuerda que se separan por comas
@@ -74,7 +75,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                         {
                             for (int i = 0; i < filas_iniciales.Length; i++)
                             {
-                                Agregar(direccion_archivo, filas_iniciales[i]);//agrega las filas
+                                //Agregar(direccion_archivo, filas_iniciales[i]);//agrega las filas
+                                string resp_del_agregue = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_USO_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + direccion_archivo + G_caracter_separacion_funciones_espesificas[4] + filas_iniciales[i]);
                             }
                         }
 
@@ -375,7 +377,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 Environment.Exit(0);
             }
         }
-
 
         public string[] extraer_separado_carpetas_nombreArchivo_extencion(string direccion_archivo)
         {

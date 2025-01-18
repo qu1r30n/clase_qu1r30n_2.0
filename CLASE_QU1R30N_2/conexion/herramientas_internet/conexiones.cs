@@ -88,7 +88,9 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
             string info_a_enviar = programa_enviar + G_caracter_para_transferencia_entre_archivos[0] + var_fun_GG.GG_id_programa + G_caracter_para_transferencia_entre_archivos[1] + folio_o_palbra_clave_a_del_que_lo_recibira + G_caracter_para_transferencia_entre_archivos[1] + info;
 
 
-            bas.Agregar(G_dir_arch_transferencia[2], info_a_enviar);
+            //bas.Agregar(G_dir_arch_transferencia[2], info_a_enviar);
+
+            string resp_del_agregue = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_USO_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia + G_caracter_separacion_funciones_espesificas[4] + info_a_enviar);
 
         }
 
@@ -214,7 +216,8 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
                 {
                     if (nueva_info_arch != null)
                     {
-                        bas.Agregar(G_dir_arch_transferencia[0], nueva_info_arch[0]);
+                        //bas.Agregar(G_dir_arch_transferencia[0], nueva_info_arch[0]);
+                        string resp_del_agregue = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_USO_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0] + G_caracter_separacion_funciones_espesificas[4] + nueva_info_arch[0]);
                     }
 
                 }

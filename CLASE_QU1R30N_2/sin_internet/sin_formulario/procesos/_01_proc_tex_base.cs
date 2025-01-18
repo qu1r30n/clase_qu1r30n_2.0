@@ -185,8 +185,24 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             //parametros------------------------------------------------------------------
             string direccion_archivos = datos_epliteados[0];
-            string agregando = datos_epliteados[1];
-            string nom_columnas_si_no_existe_archivo = datos_epliteados[2];
+            string agregando = null;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    agregando = datos_epliteados[1];
+                }
+
+            }
+            string nom_columnas_si_no_existe_archivo = null;
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    nom_columnas_si_no_existe_archivo = datos_epliteados[2];
+                }
+
+            }
             //fin parametros-------------------------------------------------------------
 
             string[] temp_colum = agregando.Split(G_caracter_separacion[0][0]);
@@ -301,12 +317,26 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             //parametros------------------------------------------------------------------------------------
             string direccion_archivos = datos_epliteados[0];
-
             string id = datos_epliteados[1];
+            
+            string info_a_comparar = null;
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    info_a_comparar = datos_epliteados[2];
+                }
 
-            string info_a_comparar = datos_epliteados[2];
+            }
+            string columna_comparar = null;
+            if (datos_epliteados.Length >= 4)
+            {
+                if (datos_epliteados[3] != "")
+                {
+                    columna_comparar = datos_epliteados[3];
+                }
 
-            string columna_comparar = datos_epliteados[3];
+            }
             //fin parametros-----------------------------------------------------------------------------
 
             string[] direccion_espliteada = direccion_archivos.Split('.');
@@ -375,7 +405,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 string[] linea2_esp = linea2.Split(G_caracter_separacion[0][0]);
                 string id_fila = linea2_esp[0];
 
-                if (info_a_comparar != "" && columna_comparar != "")
+                if (info_a_comparar != null && columna_comparar != null)
                 {
 
                     try
@@ -396,6 +426,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     }
 
                 }
+
                 else if (id == id_fila)
                 {
                     info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + linea2;
@@ -841,6 +872,119 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         }
 
 
+        public string Leer_solo_prog(string datos)
+        {
+            string info_a_retornar = "";
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo = datos_epliteados[0];
+            string pos_string = null;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    pos_string = datos_epliteados[1];
+                }
+            }
+            string caracter_separacion = G_caracter_separacion[0];
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    caracter_separacion = datos_epliteados[2];
+                }
+            }
+
+
+
+            //FIN PARAMETROS-----------------------------------------------------------------------
+
+            ArrayList linea = new ArrayList();
+            ArrayList resultado = new ArrayList();
+            string[] pos_split;
+            int[] posiciones;
+            string palabra = "";
+
+
+            FileStream fs = null;
+            StreamReader sr = null;
+            while (fs == null)
+            {
+                try
+                {
+                    fs = new FileStream(direccion_archivo, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr = new StreamReader(fs);
+
+
+
+
+
+
+            if (pos_string == null)
+            {
+
+                while ((palabra = sr.ReadLine()) != null)
+                {
+                    if (palabra != "")
+                    {
+                        linea.Add(palabra);
+                    }
+                }
+            }
+
+            else
+            {
+                pos_split = pos_string.Split(caracter_separacion[0]);
+                posiciones = new int[pos_split.Length];
+                for (int i = 0; i < posiciones.Length; i++)
+                {
+                    posiciones[i] = Convert.ToInt32(pos_split[i]);
+                }
+
+
+                for (int i = 0; (palabra = sr.ReadLine()) != null; i++)
+                {
+                    string[] spl_linea = palabra.Split(caracter_separacion[0]);
+
+                    palabra = "";
+                    for (int j = 0; j < posiciones.Length; j++)
+                    {
+                        palabra = op_tex.concatenacion_caracter_separacion(palabra, spl_linea[posiciones[j]], G_caracter_separacion_funciones_espesificas[4]);
+
+                    }
+                    resultado.Add(palabra);
+                }
+                sr.Close();
+                fs.Close();
+
+                for (int mnm = 0; mnm < resultado.Count; mnm++)
+                {
+                    info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, "" + resultado[mnm], G_caracter_separacion_funciones_espesificas[4]);
+
+                }
+                return info_a_retornar;
+            }
+
+            sr.Close();
+            fs.Close();
+
+            for (int mnm = 0; mnm < linea.Count; mnm++)
+            {
+                info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, "" + linea[mnm], G_caracter_separacion_funciones_espesificas[3]);
+
+            }
+            return info_a_retornar;
+        }
+
+
         public string Incrementa_celda(string datos, FileStream fs = null)
         {
             string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
@@ -1037,120 +1181,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
 
-            return info_a_retornar;
-        }
-
-
-        
-        public string Leer_solo_prog(string datos)
-        {
-            string info_a_retornar = "";
-            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
-
-            //PARAMETROS---------------------------------------------------------------------------
-            string direccion_archivo = datos_epliteados[0];
-            string pos_string = null;
-            if (datos_epliteados.Length >= 2)
-            {
-                if (datos_epliteados[1] != "")
-                {
-                    pos_string = datos_epliteados[1];
-                }
-            }
-            string caracter_separacion = G_caracter_separacion[0];
-            if (datos_epliteados.Length >= 3)
-            {
-                if (datos_epliteados[2] != "")
-                {
-                    caracter_separacion = datos_epliteados[2];
-                }
-            }
-
-            
-
-            //FIN PARAMETROS-----------------------------------------------------------------------
-
-            ArrayList linea = new ArrayList();
-            ArrayList resultado = new ArrayList();
-            string[] pos_split;
-            int[] posiciones;
-            string palabra = "";
-
-
-            FileStream fs = null;
-            StreamReader sr = null;
-            while (fs == null)
-            {
-                try
-                {
-                    fs = new FileStream(direccion_archivo, FileMode.Open, FileAccess.ReadWrite);
-                }
-                catch
-                {
-
-
-                }
-            }
-            sr = new StreamReader(fs);
-
-
-
-
-            
-
-            if (pos_string == null)
-            {
-
-                while ((palabra = sr.ReadLine()) != null)
-                {
-                    if (palabra != "")
-                    {
-                        linea.Add(palabra);
-                    }
-                }
-            }
-
-            else
-            {
-                pos_split = pos_string.Split(caracter_separacion[0]);
-                posiciones = new int[pos_split.Length];
-                for (int i = 0; i < posiciones.Length; i++)
-                {
-                    posiciones[i] = Convert.ToInt32(pos_split[i]);
-                }
-
-
-                for (int i = 0; (palabra = sr.ReadLine()) != null; i++)
-                {
-                    string[] spl_linea = palabra.Split(caracter_separacion[0]);
-
-                    palabra = "";
-                    for (int j = 0; j < posiciones.Length; j++)
-                    {
-                        palabra = op_tex.concatenacion_caracter_separacion(palabra, spl_linea[posiciones[j]], G_caracter_separacion_funciones_espesificas[4]);
-
-                    }
-                    resultado.Add(palabra);
-                }
-                sr.Close();
-                fs.Close();
-                
-                for (int mnm = 0; mnm < resultado.Count; mnm++)
-                {
-                    info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, "" + resultado[mnm], G_caracter_separacion_funciones_espesificas[4]);
-                    
-                }
-                return info_a_retornar;
-            }
-
-            sr.Close();
-            fs.Close();
-            
-            for (int mnm = 0; mnm < linea.Count; mnm++)
-            {
-                info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, "" + linea[mnm], G_caracter_separacion_funciones_espesificas[3]);
-                
-            }
             return info_a_retornar;
         }
 

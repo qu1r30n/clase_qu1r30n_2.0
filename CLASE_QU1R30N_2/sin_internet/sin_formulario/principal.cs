@@ -15,12 +15,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios
     {
 
 
-        string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
+        
         string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
-        string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
+        
         string[] G_caracter_para_enter = var_fun_GG.GG_caracter_para_usar_como_enter_y_nuevo_mensaje;
 
-        var_fun_GG vf_GG = new var_fun_GG();
+        
 
         // Función para manejar compras
         
