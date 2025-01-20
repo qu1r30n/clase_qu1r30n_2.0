@@ -27,7 +27,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             string proceso = datos_spliteados[0];
             string datos = datos_spliteados[1];
 
-
+            _01_proc_tex_base bas = new _01_proc_tex_base();
 
             // Seleccionar el flujo de operación basado en el valor del parámetro `proceso`
             if (proceso == "FUNCION_PRUEBA")
@@ -40,19 +40,19 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             else if (proceso == "CREAR_ARCHIVO")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _01_proc_tex_base bas = new _01_proc_tex_base();
+                
                 info_a_retornar = EjecutarFuncionEnDatos(bas.Crear_archivo_y_directorio, datos);
             }
             else if (proceso == "AGREGAR_USO_SOLO_PROG")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _01_proc_tex_base bas = new _01_proc_tex_base();
+                
                 info_a_retornar = EjecutarFuncionEnDatos(bas.Agregar_solo_prog, datos);
             }
             else if (proceso == "AGREGAR_INFO_DIV")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _01_proc_tex_base bas = new _01_proc_tex_base();
+                
                 info_a_retornar = EjecutarFuncionEnDatos(bas.Agregar_info_dividida, datos);
             }
 
@@ -60,27 +60,53 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             else if (proceso == "LEER_SOLO_PROG")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _01_proc_tex_base bas = new _01_proc_tex_base();
-                info_a_retornar = EjecutarFuncionEnDatos(bas.Leer_solo_prog, datos);
+                
+                info_a_retornar = EjecutarFuncionEnDatos(bas.LEER_SOLO_PROG, datos);
 
             }
 
             else if (proceso == "LEER_INFO_DIVIDIDA")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _01_proc_tex_base bas = new _01_proc_tex_base();
-                info_a_retornar = EjecutarFuncionEnDatos(bas.leer_info_dividida, datos);
+                
+                info_a_retornar = EjecutarFuncionEnDatos(bas.LEER_INFO_DIVIDIDA, datos);
 
             }
 
             else if (proceso == "SELECCIONAR_ID")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _01_proc_tex_base bas = new _01_proc_tex_base();
+                
                 info_a_retornar = EjecutarFuncionEnDatos(bas.seleccionar_id, datos);
 
             }
 
+            else if (proceso == "ELIMINAR_FILA_PARA_MULTIPLES_PROGRAMAS_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                
+                info_a_retornar = EjecutarFuncionEnDatos(bas.ELIMINAR_FILA_PARA_MULTIPLES_PROGRAMAS_SOLO_PROG, datos);
+
+            }
+
+            else if (proceso == "EDITAR_FILA_ESPESIFICA_SIN_ARREGLO_GG_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                
+                info_a_retornar = EjecutarFuncionEnDatos(bas.EDITAR_FILA_ESPESIFICA_SIN_ARREGLO_GG_SOLO_PROG, datos);
+
+
+            }
+
+            else if (proceso == "EXTRAER_SEPARADO_CARPETAS_NOMBREARCHIVO_EXTENCION_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+
+                info_a_retornar = EjecutarFuncionEnDatos(bas.EXTRAER_SEPARADO_CARPETAS_NOMBREARCHIVO_EXTENCION_SOLO_PROG, datos);
+
+            }
+
+            
             else if (proceso == "MOSTRAR_PROCESOS")
             {
 
@@ -153,9 +179,23 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                     G_caracter_para_enter[1] + "SELECCIONAR_ID" + G_caracter_para_enter[0] +
                     "*id" + G_caracter_para_enter[0] +
                     "info_a_comparar" + G_caracter_para_enter[0] +
-                    "columna_comparar" 
+                    "columna_comparar" +
 
 
+                    G_caracter_para_enter[1] + "ELIMINAR_FILA_PARA_MULTIPLES_PROGRAMAS_SOLO_PROG" + G_caracter_para_enter[0] +
+                    "*direccion_archivo" + G_caracter_para_enter[0] +
+                    "*columna_a_comparar" + G_caracter_para_enter[0] +
+                    "*comparar" + G_caracter_para_enter[0] +
+                    "caracter_separacion_objeto" + G_caracter_para_enter[0] +
+                    "donde_inica" +
+
+                    G_caracter_para_enter[1] + "EDITAR_FILA_ESPESIFICA_SIN_ARREGLO_GG_SOLO_PROG" + G_caracter_para_enter[0] +
+                    "*direccion_archivo" + G_caracter_para_enter[0] +
+                    "num_fila" + G_caracter_para_enter[0] +
+                    "editar_info"+
+
+                    G_caracter_para_enter[1] + "EXTRAER_SEPARADO_CARPETAS_NOMBREARCHIVO_EXTENCION_SOLO_PROG" + G_caracter_para_enter[0] +
+                    "*direccion_archivo" 
             ;
 
 

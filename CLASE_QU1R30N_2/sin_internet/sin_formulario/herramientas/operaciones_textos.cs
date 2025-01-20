@@ -262,7 +262,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         public string concatenacion_filas_de_un_archivo(string direccion_archivo, bool poner_num_fila = false, object caracter_separacion_obj = null)
         {
-            Tex_base bas = new Tex_base();
+            //Tex_base bas = new Tex_base();
             
             string texto_a_agregar_concatenacion = "";
 

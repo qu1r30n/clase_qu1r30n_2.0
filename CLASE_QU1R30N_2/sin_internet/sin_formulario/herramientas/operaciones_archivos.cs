@@ -106,7 +106,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
             tipo = tipo.ToUpper();
 
-            Tex_base bas = new Tex_base();
+            //Tex_base bas = new Tex_base();
             //string[] lineas = bas.Leer(direccion_archivo);
             string[] lineas = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + direccion_archivo).Split(G_caracter_separacion_funciones_espesificas[4][0]);
 

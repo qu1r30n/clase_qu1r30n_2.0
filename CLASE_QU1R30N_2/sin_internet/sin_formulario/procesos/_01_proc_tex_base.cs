@@ -1,4 +1,5 @@
-﻿using CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas;
+﻿using CLASE_QU1R30N_2.sin_internet.sin_formularios;
+using CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 {
@@ -18,6 +20,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
         string[] G_solo_para_consultas_relacionadas_encontrar_el_id;
 
+        principal enl_princ = new principal();
 
         public string Crear_archivo_y_directorio(string datos)
         {
@@ -284,7 +287,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     sw.WriteLine((Convert.ToInt64(id_total) + 1) + G_caracter_separacion[0] + agregando);
                     
                     string datos_enviar = direccion_archivos + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "ID_TOT" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "";
-                    Incrementa_celda(datos_enviar,fs);
+                    INCREMENTA_CELDA(datos_enviar,fs);
 
                     sw.Close();
                     sr.Close();
@@ -765,7 +768,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
 
-        public string leer_info_dividida(string datos)
+        public string LEER_INFO_DIVIDIDA(string datos)
         {
             string info_retornar = "";
 
@@ -872,7 +875,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         }
 
 
-        public string Leer_solo_prog(string datos)
+        public string LEER_SOLO_PROG(string datos)
         {
             string info_a_retornar = "";
             string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
@@ -985,7 +988,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         }
 
 
-        public string Incrementa_celda(string datos, FileStream fs = null)
+        public string INCREMENTA_CELDA(string datos, FileStream fs = null)
         {
             string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
 
@@ -1102,8 +1105,281 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         }
 
 
+        public string ELIMINAR_FILA_PARA_MULTIPLES_PROGRAMAS_SOLO_PROG(string datos)
+        {
+            string info_a_retornar = "2" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_info_a_eliminar";
 
-        
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo = datos_epliteados[0];
+
+            Int64 columna_a_comparar = 0;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    columna_a_comparar = Convert.ToInt64(datos_epliteados[1]);
+                }
+            }
+            string comparar = null;
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    comparar = datos_epliteados[2];
+                }
+            }
+
+            object caracter_separacion_objeto = null;
+            if (datos_epliteados.Length >= 4)
+            {
+                if (datos_epliteados[3] != "")
+                {
+                    caracter_separacion_objeto = datos_epliteados[3];
+                }
+            }
+
+            Int64 donde_inica = 0;
+            if (datos_epliteados.Length >= 5)
+            {
+                if (datos_epliteados[4] != "")
+                {
+                    donde_inica = Convert.ToInt64(datos_epliteados[4]);
+                }
+            }
+
+
+            StreamReader sr = null;
+            while (sr == null)
+            {
+
+
+                try
+                {
+                    sr = new StreamReader(direccion_archivo);
+
+                }
+                catch (Exception e)
+                {
+                    //string[] checador = Leer(var_fun_GG.GG_direccion_control_errores_try);
+                    string[] checador = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG.GG_direccion_control_errores_try).Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    CHEQUEO_ERROR_TRY_SOLO_PROG(direccion_archivo, e, checador[1]);
+                }
+            }
+
+            string dir_tem = direccion_archivo.Replace(".TXT", "_TEM.TXT");
+            StreamWriter sw = new StreamWriter(dir_tem, true);
+
+
+            try
+            {
+                int cont = 0;
+                while (sr.Peek() >= 0)//verificamos si hay mas lineas a leer
+                {
+
+                    string linea = sr.ReadLine();//leemos linea y lo guardamos en linea
+
+                    if (linea != null)
+                    {
+                        if (cont >= donde_inica)
+                        {
+                            string[] linea_espliteada = linea.Split(G_caracter_separacion[0][0]);
+                            if (linea_espliteada[columna_a_comparar] != comparar)
+                            {
+                                sw.WriteLine(linea);
+                            }
+                            else
+                            {
+                                info_a_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + "eliminacion_exitosa";
+                            }
+                        }
+                        else
+                        {
+                            sw.WriteLine(linea);
+                        }
+                    }
+                    cont++;
+                }
+
+
+
+                sr.Close();
+                sw.Close();
+
+                File.Delete(direccion_archivo);//borramos el archivo original
+                File.Move(dir_tem, direccion_archivo);//renombramos el archivo temporal por el que tenia el original
+
+
+
+
+
+
+
+            }
+            catch (Exception error)
+            {
+                sr.Close();
+                sw.Close();
+                File.Delete(dir_tem);//borramos el archivo temporal
+
+
+            }
+
+            return info_a_retornar;
+        }
+
+        public string EDITAR_FILA_ESPESIFICA_SIN_ARREGLO_GG_SOLO_PROG(string datos)
+        {
+            string info_a_retornar;
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo = datos_epliteados[0];
+
+            Int64 num_fila = 0;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    num_fila = Convert.ToInt64(datos_epliteados[1]);
+                }
+            }
+
+            string editar_info = null;
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    editar_info = datos_epliteados[2];
+                }
+            }
+
+
+            StreamReader sr = null;
+            while (sr == null)
+            {
+
+
+                try
+                {
+                    sr = new StreamReader(direccion_archivo);
+
+                }
+                catch (Exception e)
+                {
+                    //string[] checador = Leer(var_fun_GG.GG_direccion_control_errores_try);
+                    string[] checador = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG.GG_direccion_control_errores_try).Split(G_caracter_separacion_funciones_espesificas[4][0]);
+
+                    CHEQUEO_ERROR_TRY_SOLO_PROG(direccion_archivo, e, checador[1]);
+                }
+            }
+            string dir_tem = direccion_archivo.Replace(".TXT", "_TEM.TXT");
+            StreamWriter sw = new StreamWriter(dir_tem, true);
+            
+
+            try
+            {
+                int id_linea = 0;
+
+                while (sr.Peek() >= 0)//verificamos si hay mas lineas a leer
+                {
+                    string linea = sr.ReadLine();//leemos linea y lo guardamos en palabra
+                    if (linea != null)
+                    {
+
+                        if (id_linea == num_fila)
+                        {
+                            sw.WriteLine(editar_info);
+
+                        }
+                        else
+                        {
+                            sw.WriteLine(linea);
+                        }
+
+                        id_linea++;
+                    }
+                }
+                info_a_retornar = "1)exito";
+                sr.Close();
+                sw.Close();
+                File.Delete(direccion_archivo);//borramos el archivo original
+                File.Move(dir_tem, direccion_archivo);//renombramos el archivo temporal por el que tenia el original
+
+
+            }
+            catch (Exception error)
+            {
+                sr.Close();
+                sw.Close();
+                info_a_retornar = "2)error:" + error;
+                File.Delete(dir_tem);//borramos el archivo original
+
+
+            }
+            return info_a_retornar;
+        }
+
+
+
+        public void CHEQUEO_ERROR_TRY_SOLO_PROG(string direccionArchivo, Exception e, string numero_chequeo)
+        {
+
+
+
+            DialogResult result = MessageBox.Show(e.Message, e.Message + "\nError quieres crear el archivo sie es el error \"No\" para volver a intentar \"cancelar\" para cerrar el programa", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error);
+
+            if (result == DialogResult.Yes)
+            {
+                //Crear_archivo_y_directorio(direccionArchivo, "sin informacion");
+
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + direccionArchivo + G_caracter_separacion_funciones_espesificas[4] + "SIN_INFORMACION");
+            }
+            else if (result == DialogResult.No)
+            {
+
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                Environment.Exit(0);
+            }
+        }
+
+
+        public string EXTRAER_SEPARADO_CARPETAS_NOMBREARCHIVO_EXTENCION_SOLO_PROG(string datos)
+        {
+            string info_a_retornar = "";
+            
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo = datos_epliteados[0];
+
+            //fin parametros-----------------------------------------------------------------------------
+            string[] direccion_esp = direccion_archivo.Split('\\');
+            string[] nom_ext_esp = direccion_esp[direccion_esp.Length - 1].Split('.');
+            if (nom_ext_esp.Length > 1)
+            {
+                string carpetas = op_tex.joineada_paraesida_SIN_NULOS_y_quitador_de_extremos_del_string(direccion_archivo, '\\', 1);
+                string nombre = nom_ext_esp[0];
+                string extencion = nom_ext_esp[1];
+                info_a_retornar = carpetas + G_caracter_separacion_funciones_espesificas[4] + nombre + G_caracter_separacion_funciones_espesificas[4] + extencion;
+            }
+            else
+            {
+
+            }
+
+
+            return info_a_retornar;
+        }
+
+
+
+
         public string generar_ruta_archivo(string id, string cantidad_ids_por_archivo_potenciade10 = "100")
         {
             string carpetas = "";

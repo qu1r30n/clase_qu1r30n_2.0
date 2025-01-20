@@ -18,7 +18,7 @@ namespace CLASE_QU1R30N_2
 
         int G_donde_inicia_la_tabla = var_fun_GG.GG_indice_donde_comensar;
 
-        Tex_base bas = new Tex_base();
+        //Tex_base bas = new Tex_base();
         public void iniciar()
         {
             

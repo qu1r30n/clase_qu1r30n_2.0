@@ -19,7 +19,7 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
         operaciones_arreglos op_arr = new operaciones_arreglos();
         operaciones_textos op_tex = new operaciones_textos();
 
-        Tex_base bas = new Tex_base();
+        //Tex_base bas = new Tex_base();
 
         string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
         string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;

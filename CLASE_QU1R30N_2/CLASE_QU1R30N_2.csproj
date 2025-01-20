@@ -66,7 +66,6 @@
     <Compile Include="sin_internet\sin_formulario\herramientas\operaciones_archivos.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\operaciones_arreglos.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\operaciones_textos.cs" />
-    <Compile Include="sin_internet\sin_formulario\herramientas\Tex_base.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\var_fun_GG.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\var_fun_GG_dir_arch_crear.cs" />
     <Compile Include="sin_internet\sin_formulario\modelos\_00_mod_inicial.cs" />

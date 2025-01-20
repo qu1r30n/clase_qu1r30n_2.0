@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using CLASE_QU1R30N_2.sin_internet.sin_formularios;
@@ -26,7 +27,7 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
         operaciones_arreglos op_arr = new operaciones_arreglos();
         operaciones_textos op_tex = new operaciones_textos();
 
-        Tex_base bas = new Tex_base();
+        //Tex_base bas = new Tex_base();
 
         string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
         string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
@@ -126,12 +127,16 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
                     }
 
                     // Eliminar filas relacionadas con múltiples programas del archivo
+                    /*
                     bas.eliminar_fila_PARA_MULTIPLES_PROGRAMAS(
                         G_dir_arch_transferencia[1],
                         0,
                         var_fun_GG.GG_id_programa,
                         G_caracter_para_transferencia_entre_archivos[0]
                     );
+                    */
+                    string resp_del_agregue = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "ELIMINAR_FILA_PARA_MULTIPLES_PROGRAMAS_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[1] + G_caracter_separacion_funciones_espesificas[4] + "0" + G_caracter_separacion_funciones_espesificas[4] + var_fun_GG.GG_id_programa + G_caracter_separacion_funciones_espesificas[4] + G_caracter_para_transferencia_entre_archivos[0]);
+
 
                     // Comentado: Reemplazo del archivo con un mensaje de "sin información"
                     // bas.cambiar_archivo_con_arreglo(G_dir_arch_transferencia[id_atras_actual_adelante_2[1]], new string[] { "sin_informacion" });
@@ -168,7 +173,8 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
                 }
                 if (usuarios.Length > 2)
                 {
-                    bas.Editar_fila_espesifica_SIN_ARREGLO_GG(G_dir_arch_transferencia[0], 0, usuarios[id_nuevo]);
+                    //bas.Editar_fila_espesifica_SIN_ARREGLO_GG(G_dir_arch_transferencia[0], 0, usuarios[id_nuevo]);
+                    string resp_del_agregue = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "EDITAR_FILA_ESPESIFICA_SIN_ARREGLO_GG_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia + G_caracter_separacion_funciones_espesificas[4] + "0" + G_caracter_separacion_funciones_espesificas[4] + usuarios[id_nuevo]);
                 }
 
 
@@ -179,7 +185,8 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
         public void quitar_id_prog_del_archivo()
         {
             string direccion_base_archivos_bandera = "BANDERAS_ARCH\\";
-            string[] dir_sep = bas.extraer_separado_carpetas_nombreArchivo_extencion(G_dir_arch_transferencia[0]);
+            //string[] dir_sep = bas.extraer_separado_carpetas_nombreArchivo_extencion(G_dir_arch_transferencia[0]);
+            string[] dir_sep = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "EXTRAER_SEPARADO_CARPETAS_NOMBREARCHIVO_EXTENCION_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0]).Split(G_caracter_separacion_funciones_espesificas[4][0]);
             dir_sep[0] = dir_sep[0] + "\\" + direccion_base_archivos_bandera;
             string dir_bandera = dir_sep[0] + "\\" + dir_sep[1] + "." + dir_sep[2];
             //este archivo bandera es para que no se agarre el archivo otro programa antes de sustituirlo
@@ -208,7 +215,8 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
             {
                 //string[] vieja_info_arch = bas.Leer(G_dir_arch_transferencia[0]);
                 string[] vieja_info_arch = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0]).Split(G_caracter_separacion_funciones_espesificas[4][0]);
-                bas.eliminar_fila_PARA_MULTIPLES_PROGRAMAS(G_dir_arch_transferencia[0], 0, var_fun_GG.GG_id_programa);
+                //bas.eliminar_fila_PARA_MULTIPLES_PROGRAMAS(G_dir_arch_transferencia[0], 0, var_fun_GG.GG_id_programa);
+                string resp_del_eliminacion = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "ELIMINAR_FILA_PARA_MULTIPLES_PROGRAMAS_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0] + G_caracter_separacion_funciones_espesificas[4] + "0" + G_caracter_separacion_funciones_espesificas[4] + var_fun_GG.GG_id_programa);
                 //string[] nueva_info_arch = bas.Leer(G_dir_arch_transferencia[0]);
                 string[] nueva_info_arch = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0]).Split(G_caracter_separacion_funciones_espesificas[4][0]);
 
