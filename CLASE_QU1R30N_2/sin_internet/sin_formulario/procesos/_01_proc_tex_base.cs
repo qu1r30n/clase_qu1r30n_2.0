@@ -18,6 +18,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
         operaciones_textos op_tex = new operaciones_textos();
 
+        int G_donde_inicia_la_tabla = var_fun_GG.GG_indice_donde_comensar;
+
         string[] G_solo_para_consultas_relacionadas_encontrar_el_id;
 
         principal enl_princ = new principal();
@@ -181,6 +183,107 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             }
 
         }
+
+        public string Agregar_sino_existe_solo_prog(string datos)
+        {
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo_a_checar = datos_epliteados[0];
+
+            Int64 num_column_comp = 0;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    num_column_comp = Convert.ToInt64(datos_epliteados[1]);
+                }
+            }
+
+            string comparar = null;
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    comparar = datos_epliteados[2];
+                }
+            }
+
+            string texto_a_agregar_si_no_esta = "";
+            if (datos_epliteados.Length >= 4)
+            {
+                if (datos_epliteados[3] != "")
+                {
+                    texto_a_agregar_si_no_esta = datos_epliteados[3];
+                }
+            }
+
+            object caracter_separacion_obj = null;
+            if (datos_epliteados.Length >= 5)
+            {
+                if (datos_epliteados[4] != "")
+                {
+                    caracter_separacion_obj = datos_epliteados[4];
+                }
+            }
+
+
+            operaciones_textos op_tex = new operaciones_textos();
+
+
+            string info_a_retornar = "";
+
+            try
+            {
+                string[] caracter_separacion = G_caracter_separacion;
+
+
+                string direccion_archivo = direccion_archivo_a_checar;
+
+
+                bool esta = false;
+
+                string[] info_archivo = LEER_SOLO_PROG(direccion_archivo).Split(G_caracter_separacion_funciones_espesificas[4][0]);
+
+                if (info_archivo == null)
+                {
+                    info_archivo = new string[] { "" };
+                }
+
+                for (int i = G_donde_inicia_la_tabla; i < info_archivo.Length; i++)
+                {
+                    string[] columnas = info_archivo[i].Split(caracter_separacion[0][0]);
+
+                    if (columnas[num_column_comp] == comparar)
+                    {
+
+
+                        //cambiar_archivo_con_arreglo(direccion_archivo, info_archivo);
+                        info_a_retornar = "2" + G_caracter_para_confirmacion_o_error[0] + "no se agrego porque ya existia";
+                        esta = true;
+                        break;
+                    }
+                }
+                if (esta == false)
+                {
+                    Agregar_solo_prog(direccion_archivo + G_caracter_separacion_funciones_espesificas[3] + texto_a_agregar_si_no_esta);
+                }
+
+            }
+
+
+            catch
+            {
+
+
+            }
+
+
+
+            return info_a_retornar;
+        }
+
 
         public string Agregar_info_dividida(string datos)
         {
@@ -1376,6 +1479,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             return info_a_retornar;
         }
+
 
 
 

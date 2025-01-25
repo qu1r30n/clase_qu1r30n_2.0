@@ -28,6 +28,15 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         static public string GG_direccion_control_errores_try = "config\\chatbot\\errores_try\\control_errore.txt";
 
+        static public string[] GG_dir_arch_transferencia =
+        {
+            
+            /*0*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\1.TXT",//leer respuestas
+            /*1*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\2.TXT",//enviar preguntas
+            /*2*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\BANDERAS.TXT",
+        };
+
+        
         
         //funciones---------------------------------------------------------------------------------------------------------
 

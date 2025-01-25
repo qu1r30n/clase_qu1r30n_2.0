@@ -49,6 +49,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 
                 info_a_retornar = EjecutarFuncionEnDatos(bas.Agregar_solo_prog, datos);
             }
+            else if (proceso == "AGREGAR_SINO_EXISTE_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+
+                info_a_retornar = EjecutarFuncionEnDatos(bas.Agregar_sino_existe_solo_prog, datos);
+            }
             else if (proceso == "AGREGAR_INFO_DIV")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"

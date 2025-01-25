@@ -19,8 +19,8 @@ namespace CLASE_QU1R30N_2
         public Form1()
         {
             InitializeComponent();
-            
-            iniciar_archivos inicio = new iniciar_archivos();
+
+            Poner_al_inicio inicio = new Poner_al_inicio();
 
         }
 

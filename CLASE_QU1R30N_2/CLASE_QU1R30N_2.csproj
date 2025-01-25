@@ -54,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Poner_al_inicio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sin_internet\con_formulario\tienda\punto_de_venta\_00_punto_de_venta.cs">
@@ -62,7 +63,6 @@
     <Compile Include="sin_internet\con_formulario\tienda\punto_de_venta\_00_punto_de_venta.Designer.cs">
       <DependentUpon>_00_punto_de_venta.cs</DependentUpon>
     </Compile>
-    <Compile Include="sin_internet\sin_formulario\herramientas\iniciar_archivos.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\operaciones_archivos.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\operaciones_arreglos.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\operaciones_textos.cs" />
