@@ -14,9 +14,11 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         static public int GG_indice_donde_comensar = 1;
 
-        static public string[] GG_caracter_separacion = { "|", "°", "¬", "╦" };
+        static public string GG_cantidado_por_archivo = "100";
 
-        static public string[] GG_caracter_separacion_funciones_espesificas = { "~", "§", "¶", "╬", "╝", "╔" };
+        static public string[] GG_caracter_separacion = { "|", "°", "¬", "╦", "╔" };
+
+        static public string[] GG_caracter_separacion_funciones_espesificas = { "~", "§", "¶", "╬", "╝" };
 
         static public string[] GG_caracter_para_confirmacion_o_error = { "╣", "╠" };
 
@@ -36,8 +38,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             /*2*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\BANDERAS.TXT",
         };
 
-        
-        
+
+
         //funciones---------------------------------------------------------------------------------------------------------
 
         public string[] GG_funcion_caracter_separacion_(object caracter_separacion_objeto = null)
@@ -124,11 +126,22 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
 
         //----------------------------------------------------------------------------------------------------------------------------------------------
+        //bases de datos
+        static public string[][] GG_base_arreglo_de_arreglos = null;
+
+        //direcciones_de_las_bases
+        static public string[,] GG_dir_bd_y_valor_inicial_bidimencional = null;
+
+
+        //autocompletar textbox
+
+        public static AutoCompleteStringCollection GG_autoCompleteCollection_codbar_venta = new AutoCompleteStringCollection();
+        public static AutoCompleteStringCollection GG_autoCompleteCollection_nom_produc_venta = new AutoCompleteStringCollection();
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        
+
 
     }
 }

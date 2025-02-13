@@ -61,12 +61,14 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         public string[,] agregar_registro_del_array_bidimensional(string[,] arreglo, string registro, object caracter_separacion_objeto = null, string al_inicio = null)
         {
 
+            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion_(caracter_separacion_objeto);
+
             if (arreglo == null)
             {
                 // Si el arreglo es null, crear un nuevo arreglo bidimensional con un solo elemento que es el registro proporcionado.
 
                 // Dividir el registro usando el carácter de separación
-                string[] partes = registro.Split(G_caracter_separacion[0][0]);
+                string[] partes = registro.Split(caracter_separacion[0][0]);
 
                 // Crear un nuevo arreglo bidimensional con una fila y la longitud de partes
                 string[,] temp = new string[1, partes.Length];
@@ -98,7 +100,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                     }
 
                     // Dividir el nuevo registro usando el carácter de separación
-                    string[] partes = registro.Split(G_caracter_separacion[0][0]);
+                    string[] partes = registro.Split(caracter_separacion[0][0]);
 
                     // Agregar el nuevo registro en la última fila
                     for (int j = 0; j < partes.Length; j++)

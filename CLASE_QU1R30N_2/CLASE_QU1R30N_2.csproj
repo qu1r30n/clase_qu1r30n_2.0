@@ -68,11 +68,18 @@
     <Compile Include="sin_internet\sin_formulario\herramientas\operaciones_textos.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\var_fun_GG.cs" />
     <Compile Include="sin_internet\sin_formulario\herramientas\var_fun_GG_dir_arch_crear.cs" />
+    <Compile Include="sin_internet\sin_formulario\modelos\sub_modelo\_03_sub_mod_negocio_restaurante.cs" />
+    <Compile Include="sin_internet\sin_formulario\modelos\sub_modelo\_03_sub_mod_negocio_tienda.cs" />
     <Compile Include="sin_internet\sin_formulario\modelos\_00_mod_inicial.cs" />
     <Compile Include="sin_internet\sin_formulario\modelos\_01_mod_tex_base.cs" />
+    <Compile Include="sin_internet\sin_formulario\modelos\_02_mod_productos_e_inventario.cs" />
+    <Compile Include="sin_internet\sin_formulario\modelos\_03_mod_negocios.cs" />
     <Compile Include="sin_internet\sin_formulario\principal.cs" />
     <Compile Include="sin_internet\sin_formulario\procesos\_00_proc_inicial.cs" />
     <Compile Include="sin_internet\sin_formulario\procesos\_01_proc_tex_base.cs" />
+    <Compile Include="sin_internet\sin_formulario\procesos\_02_proc_productos_e_inventario.cs" />
+    <Compile Include="sin_internet\sin_formulario\procesos\_03_proc_sub_mod_negocio\_03_proc_sub_mod_restaurante.cs" />
+    <Compile Include="sin_internet\sin_formulario\procesos\_03_proc_sub_mod_negocio\_03_proc_sub_mod_tienda.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -38,7 +38,7 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
             string info_a_procesar = res_espliteada[1].Replace(" ", "");
 
             // Dividir la información en líneas usando un delimitador para saltos de línea
-            string[] lineas_del_mensaje = info_a_procesar.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+            
 
 
 

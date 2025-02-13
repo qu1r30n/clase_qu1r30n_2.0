@@ -48,10 +48,21 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios
                 info_a_retornar = mod_tex_base.operacion_a_hacer(info);
             }
 
+            else if (modelo == "MODELO_PRODUCTOS_E_INVENTARIO")
+            {
+                _02_mod_productos_e_inventario mod_prod_inv = new _02_mod_productos_e_inventario();
+                info_a_retornar = mod_prod_inv.operacion_a_hacer(info);
+            }
+
+            else if (modelo == "MODELO_NEGOCIOS")
+            {
+                _03_mod_negocios mod_neg = new _03_mod_negocios();
+                info_a_retornar = mod_neg.operacion_a_hacer(info);
+            }
+
             else if (modelo == "MOSTRAR_MODELOS")
             {
-                _01_mod_tex_base mod_tex_base = new _01_mod_tex_base();
-                info_a_retornar = mod_tex_base.operacion_a_hacer(info);
+                info_a_retornar = mostrar_modelos();
             }
 
             return info_a_retornar;

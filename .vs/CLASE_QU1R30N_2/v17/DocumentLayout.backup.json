@@ -3,52 +3,88 @@
   "WorkspaceRootPath": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_tienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_tienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|c:\\users\\qu1r30n\\documents\\github\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\poner_al_inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\poner_al_inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_tienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_tienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_01_mod_tex_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_01_mod_tex_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_03_mod_negocios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_03_mod_negocios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_gg_dir_arch_crear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_gg_dir_arch_crear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\conexion\\herramientas_internet\\conexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\conexion\\herramientas_internet\\conexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_gg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_gg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|c:\\users\\qu1r30n\\documents\\github\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\conexion\\herramientas_internet\\conmutador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\conexion\\herramientas_internet\\conmutador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_00_proc_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_00_proc_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_02_proc_productos_e_inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_02_proc_productos_e_inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_textos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_textos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_restaurante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_restaurante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_00_proc_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_00_proc_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_gg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_gg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_restaurante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_restaurante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_02_mod_productos_e_inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_02_mod_productos_e_inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_archivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_archivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\conexion\\herramientas_internet\\conmutador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\conexion\\herramientas_internet\\conmutador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\con_formulario\\tienda\\punto_de_venta\\_00_punto_de_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,16 +95,8 @@
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\con_formulario\\tienda\\punto_de_venta\\_00_punto_de_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_gg_dir_arch_crear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_gg_dir_arch_crear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,123 +106,123 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Poner_al_inicio.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Poner_al_inicio.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\Poner_al_inicio.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Poner_al_inicio.cs*",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\Poner_al_inicio.cs*",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAuwCgAAACPAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "_03_sub_mod_negocio_tienda.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_tienda.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_tienda.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_tienda.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_tienda.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAowDYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T01:18:39.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "principal.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:11:22.308Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "var_fun_GG.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:12:39.475Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_01_proc_tex_base.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAcwMkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T19:56:16.376Z",
+              "WhenOpened": "2025-02-07T19:09:44.029Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "_03_proc_sub_mod_tienda.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_tienda.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_tienda.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_tienda.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_tienda.cs",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAwwNcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T19:43:25.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "_01_mod_tex_base.cs",
               "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_01_mod_tex_base.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_01_mod_tex_base.cs",
               "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_01_mod_tex_base.cs",
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_01_mod_tex_base.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAewDMAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAA4wJoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-31T19:55:44.806Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "conexiones.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conexiones.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conexiones.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conexiones.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conexiones.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAMwCsAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "_01_proc_tex_base.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
+              "ViewState": "AgIAAIMBAAAAAAAAAAAAAIMBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T00:28:11.869Z",
+              "WhenOpened": "2024-12-31T19:56:16.376Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Form1.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\Form1.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Form1.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\Form1.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAABYAAAA4AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Poner_al_inicio.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Poner_al_inicio.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\Poner_al_inicio.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Poner_al_inicio.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\Poner_al_inicio.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAowCAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T16:54:42.598Z",
+              "WhenOpened": "2025-01-25T01:18:39.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "principal.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAAC8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T17:11:22.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_03_mod_negocios.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_03_mod_negocios.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_03_mod_negocios.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_03_mod_negocios.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_03_mod_negocios.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAowDUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T18:57:50.458Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "_00_mod_inicial.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAmwBgAAABmAAAAAAAAAA==",
+              "Title": "var_fun_GG_dir_arch_crear.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG_dir_arch_crear.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG_dir_arch_crear.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG_dir_arch_crear.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG_dir_arch_crear.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAHcAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:16:56.199Z",
+              "WhenOpened": "2024-12-07T20:03:59.678Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "conmutador.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conmutador.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conmutador.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conmutador.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conmutador.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAmwCUAAAAAAAAAAAAAAA==",
+              "Title": "conexiones.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conexiones.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conexiones.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conexiones.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conexiones.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAMwF0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:05:36.077Z",
+              "WhenOpened": "2025-01-06T00:28:11.869Z",
               "EditorCaption": ""
             },
             {
@@ -205,38 +233,147 @@
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_textos.cs",
               "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_textos.cs",
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_textos.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYBAAAAAAAAAAA5wI8BAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-07T19:37:42.916Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "_02_proc_productos_e_inventario.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_02_proc_productos_e_inventario.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_02_proc_productos_e_inventario.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_02_proc_productos_e_inventario.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_02_proc_productos_e_inventario.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T17:05:01.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_03_proc_sub_mod_restaurante.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_restaurante.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_restaurante.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_restaurante.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_sub_mod_negocio\\_03_proc_sub_mod_restaurante.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T21:10:50.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "_00_proc_inicial.cs",
               "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_00_proc_inicial.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_00_proc_inicial.cs",
               "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_00_proc_inicial.cs",
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_00_proc_inicial.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAwwBUAAABnAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T17:17:27.478Z",
+              "WhenOpened": "2024-12-07T17:17:27.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "operaciones_arreglos.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAuwGYAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T20:05:09.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "var_fun_GG.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAgwIEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T17:12:39.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_03_sub_mod_negocio_restaurante.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_restaurante.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_restaurante.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_restaurante.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\sub_modelo\\_03_sub_mod_negocio_restaurante.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAmwB0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T19:38:06.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_00_mod_inicial.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_00_mod_inicial.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAmwBgAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T17:16:56.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_02_mod_productos_e_inventario.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_02_mod_productos_e_inventario.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_02_mod_productos_e_inventario.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_02_mod_productos_e_inventario.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_02_mod_productos_e_inventario.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T16:59:29.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Form1.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\Form1.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Form1.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\Form1.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAmwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T16:54:42.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 19,
               "Title": "operaciones_archivos.cs",
               "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_archivos.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_archivos.cs",
               "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_archivos.cs",
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_archivos.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAewGwAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAMwGcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-07T17:13:06.157Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
+              "Title": "conmutador.cs",
+              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conmutador.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conmutador.cs",
+              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conmutador.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conmutador.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T17:05:36.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "_00_punto_de_venta.cs",
               "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\con_formulario\\tienda\\punto_de_venta\\_00_punto_de_venta.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\con_formulario\\tienda\\punto_de_venta\\_00_punto_de_venta.cs",
@@ -248,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "_00_punto_de_venta.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\con_formulario\\tienda\\punto_de_venta\\_00_punto_de_venta.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\con_formulario\\tienda\\punto_de_venta\\_00_punto_de_venta.cs",
@@ -259,19 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "var_fun_GG_dir_arch_crear.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG_dir_arch_crear.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG_dir_arch_crear.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG_dir_arch_crear.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\var_fun_GG_dir_arch_crear.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T20:03:59.678Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 23,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Form1.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\Form1.cs",
@@ -280,18 +405,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-07T16:53:47.872Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "operaciones_arreglos.cs",
-              "DocumentMoniker": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs",
-              "ToolTip": "C:\\Users\\QU1R30N\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_arreglos.cs",
-              "ViewState": "AQIAABYEAAAAAAAAAAAkwCEEAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T20:05:09.032Z"
             }
           ]
         }

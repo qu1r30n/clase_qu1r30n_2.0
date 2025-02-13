@@ -397,6 +397,37 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             return "0" + G_caracter_separacion_funciones_espesificas[0] + "no se_encontro";
         }
 
+        public string busqueda_profunda_comparacion_final_string(string texto, string columnas_a_recorrer, string comparar___, string columnas_a_retornar = null, object caracter_separacion_objeto = null)
+        {
+
+            string[] arr_col_rec = null;
+            //caracter_separacion[0][0] el primer [0] es la celda y el segundo [0] es el caracter para no usar convert.tochar
+            arr_col_rec = columnas_a_recorrer.Split(G_caracter_separacion[0][0]);
+
+            string tem_linea = texto;
+            string[] espliteado = null;
+            int j = 0;
+            do
+            {
+
+                espliteado = tem_linea.Split(G_caracter_separacion[j][0]);
+                //caracter_separacion[j][0] el primer [j] es la celda y el segundo [0] es el caracter para no usar convert.tochar
+                tem_linea = espliteado[Convert.ToInt32(arr_col_rec[j])];
+
+                j++;
+            } while (j < arr_col_rec.Length);
+
+
+            //comparacion--------------------------------------------------------------------------
+            if (tem_linea == comparar___)
+            {
+                return "1" + G_caracter_separacion_funciones_espesificas[0] + texto;
+            }
+
+
+            return "0" + G_caracter_separacion_funciones_espesificas[0] + "no se_encontro";
+        }
+
         public string busqueda_con_YY_profunda_texto(string texto, string columnas_a_recorrer, string comparaciones, object caracter_separacion_objeto = null, object caracter_separacion_para_busqueda_multiple_profuda_obj = null)
         {
             operaciones_arreglos op_arr = new operaciones_arreglos();
@@ -570,13 +601,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         public string editar_inc_agregar_edicion_profunda_multiple_comparacion_final_string
             (
-    string texto,
-    string indices_a_editar,
-    string info_editar,
-    string comparacion_antes_para_saber_cual_editar,
-    string edit_0_o_increm_1 = null,
-    object caracter_separacion_objeto = null,
-    object caracter_separacion_para_busqueda_multiple_profuda_objeto = null
+                string texto,
+                string indices_a_editar,
+                string info_editar,
+                string comparacion_antes_para_saber_cual_editar,
+                string edit_0_o_increm_1 = null,
+                object caracter_separacion_objeto = null,
+                object caracter_separacion_para_busqueda_multiple_profuda_objeto = null
             )
         {
             operaciones_arreglos op_arr = new operaciones_arreglos();
@@ -693,12 +724,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         public string editar_inc_agregar_edicion_profunda_multiple_comparacion_final_MULTIPLE_A_CHECAR_string
             (
-    string texto,
-    string indices_a_editar,
-    string comparacion_con_edicion_antes_para_saber_cual_editar,
-    string edit_0_o_increm_1 = null,
-    object caracter_separacion_objeto = null,
-    string caracter_separacion_para_busqueda_multiple_profuda_objeto = null
+                string texto,
+                string indices_a_editar,
+                string comparacion_con_edicion_antes_para_saber_cual_editar,
+                string edit_0_o_increm_1 = null,
+                object caracter_separacion_objeto = null,
+                string caracter_separacion_para_busqueda_multiple_profuda_objeto = null
             )
         {
             operaciones_arreglos op_arr = new operaciones_arreglos();
@@ -1003,6 +1034,39 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             return texto;
 
         }
+
+        
+        public string recorrer_caracter_separacion(string contenidoFila,  string izquierda_o_derecha = "izquierda")
+        {
+            if (izquierda_o_derecha== "izquierda")
+            {
+
+
+                // Recorremos el arreglo de caracteres de separación
+                for (int i = 0; i < G_caracter_separacion.Length-1; i++)
+                {
+                    // Reemplazamos los caracteres en contenido_fila
+                    contenidoFila = contenidoFila.Replace(
+                        G_caracter_separacion[i+1],
+                        G_caracter_separacion[i]
+                    );
+                }
+            }
+            else
+            {
+                for (int i = G_caracter_separacion.Length - 1; i > 0 ; i--)
+                {
+                    // Reemplazamos los caracteres en contenido_fila
+                    contenidoFila = contenidoFila.Replace(
+                        G_caracter_separacion[i - 1],
+                        G_caracter_separacion[i]
+                    );
+                }
+            }
+            // Devolvemos el contenido procesado
+            return contenidoFila;
+        }
+
 
         public string[] extraer_separado_carpetas_nombreArchivo_extencion_de_una_direccion(string direccion_archivo)
         {
