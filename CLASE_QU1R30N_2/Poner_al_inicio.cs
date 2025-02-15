@@ -79,10 +79,10 @@ namespace CLASE_QU1R30N_2
                 */
 
                 string[] direccion_extencion_espliteada = var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[i, 0].Split('.');
-                string info_a_inicial = "ID_TOT" + G_caracter_separacion[0] + "1" + "\nCOLUMNAS" + G_caracter_separacion[0] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[i, 1] + "\nCANT_POR_ARCH" + G_caracter_separacion[0] + var_fun_GG.GG_cantidado_por_archivo;
+                string info_a_inicial = "ID_TOT" + G_caracter_separacion[0] + "0" + "\nCOLUMNAS" + G_caracter_separacion[0] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[i, 1] + "\nCANT_POR_ARCH" + G_caracter_separacion[0] + var_fun_GG.GG_cantidado_por_archivo;
                 enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[i, 0] + G_caracter_separacion_funciones_espesificas[3] + info_a_inicial + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[i, 2]);
 
-                string dir_info_bas = direccion_extencion_espliteada[0] + "_dat\\" + enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "GENERAR_RUTA_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + "0" + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_cantidado_por_archivo);
+                string dir_info_bas = direccion_extencion_espliteada[0] + "_DAT\\" + enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "GENERAR_RUTA_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + "0" + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_cantidado_por_archivo);
                 string contenido_fila = op_tex.recorrer_caracter_separacion(var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[i, 1]);
                 enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + dir_info_bas + G_caracter_separacion_funciones_espesificas[3] + contenido_fila + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[i, 2]);
 
@@ -110,7 +110,7 @@ namespace CLASE_QU1R30N_2
                     var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 2].Split(G_caracter_separacion_funciones_espesificas[1][0]), leer_y_agrega_al_arreglo: false);
                 */
                 string[] direccion_extencion_espliteada = var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 0].Split('.');
-                string dir_info_bas = direccion_extencion_espliteada[0] + "_dat\\" + enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "GENERAR_RUTA_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + "0" + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_cantidado_por_archivo);
+                string dir_info_bas = direccion_extencion_espliteada[0] + "_DAT\\" + enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "GENERAR_RUTA_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + "0" + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_cantidado_por_archivo);
 
                 enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 0] + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 1] + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 2]);
 
@@ -124,7 +124,8 @@ namespace CLASE_QU1R30N_2
         public void pruebas()
         {
             //enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "TIENDA" + G_caracter_separacion_funciones_espesificas[1] + "EXTRAER_INVENTARIO" + G_caracter_separacion_funciones_espesificas[2] + G_dir_arch_transferencia[i]);
-            enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "TIENDA" + G_caracter_separacion_funciones_espesificas[1] + "AGREGAR_PRODUCTO" + G_caracter_separacion_funciones_espesificas[2] + G_caracter_separacion_funciones_espesificas[3] + "" );
+            string resp = enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "TIENDA" + G_caracter_separacion_funciones_espesificas[1] + "AGREGAR_PRODUCTO" + G_caracter_separacion_funciones_espesificas[2] + G_caracter_separacion_funciones_espesificas[3] + "");
+            
         }
 
 

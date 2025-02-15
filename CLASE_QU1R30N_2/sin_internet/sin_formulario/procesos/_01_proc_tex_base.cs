@@ -58,6 +58,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             string[] direccion_espliteada = direccion_archivo.Split(parametro2);//spliteamos la direccion
             bool creo_algo = false;
 
+            //creando carpetas
             for (int i = 0; i < direccion_espliteada.Length; i++)//pasamos por todas las los directorios y archivo
             {
                 if (i < direccion_espliteada.Length - 1)//el path muestra 6 palabras que fueron espliteadas se le resta uno por que los arreglos empiesan desde 0 y solo se le pone el menor que por que la ultima palabra es el archivo
@@ -360,9 +361,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             List<string> lista_datos = new List<string>();
             string linea;
-            string id_total = null;
-            string columnas = null;
-            string cantidad_filas_por_archivo = "100";
+            
             while ((linea = sr.ReadLine()) != null)
             {
                 lista_datos.Add(linea);
@@ -371,7 +370,11 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             sr.Close();
             fs.Close();
 
-            string resul = ORDEN_INFORMACION_SOLO_PROG(lista_datos);
+            string[] resul = ORDEN_INFORMACION_SOLO_PROG(lista_datos).Split(G_caracter_separacion[0][0]);
+            string id_total = resul[0];
+            string columnas = resul[1];
+            string cantidad_filas_por_archivo = resul[2];
+
 
             string resultado_lect = LEER_INFO_DIVIDIDA(direccion_archivos);
             bool encontro_info = false;
@@ -385,6 +388,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     if (fila_esplit[num_column_comp] == comparar)
                     {
                         encontro_info = true;
+                        break;
                     }
                 }
 
@@ -393,7 +397,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             if (encontro_info == false)
             {
 
-                string dir_info_bas = direccion_extencion_espliteada[0] + "_dat\\" + GENERAR_RUTA_ARCHIVO(id_total + G_caracter_separacion_funciones_espesificas[3] + cantidad_filas_por_archivo);
+                string dir_info_bas = direccion_extencion_espliteada[0] + "_DAT\\" + GENERAR_RUTA_ARCHIVO(id_total + G_caracter_separacion_funciones_espesificas[3] + cantidad_filas_por_archivo);
 
                 string res_crear_archivo = Crear_archivo_y_directorio(dir_info_bas + G_caracter_separacion_funciones_espesificas[3] + columnas + G_caracter_separacion_funciones_espesificas[3] + texto_a_agregar_si_no_esta);
 
@@ -425,11 +429,21 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                         sw.WriteLine((Convert.ToInt64(id_total) + 1) + G_caracter_separacion[0] + texto_a_agregar_si_no_esta);
 
                         string datos_enviar = direccion_archivos + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "ID_TOT" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "";
-                        INCREMENTA_CELDA_SOLO_PROG(datos_enviar, fs);
-
                         sw.Close();
                         sr.Close();
                         fs.Close();
+
+                        string[] res = INCREMENTA_CELDA_SOLO_PROG(datos_enviar).Split(G_caracter_para_confirmacion_o_error[0][0]);
+
+                        if (res[0] == "1")
+                        {
+                            string[] cantidad_de_columnas_editadas = res[1].Split(G_caracter_separacion[0][0]);
+                            string[] id_spliteado = cantidad_de_columnas_editadas[0].Split(G_caracter_separacion[1][0]);
+                            return "1" + G_caracter_para_confirmacion_o_error[0] + id_spliteado[1] + G_caracter_separacion[0] + texto_a_agregar_si_no_esta;
+                        }
+
+                        
+                        
 
 
                         return "1" + G_caracter_para_confirmacion_o_error[0] + texto_a_agregar_si_no_esta;
@@ -448,7 +462,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             sr.Close();
             fs.Close();
-            return "0" + G_caracter_para_confirmacion_o_error[0] + "error no pudo guardar";
+            return "0" + G_caracter_para_confirmacion_o_error[0] + "ya existe no se guardo";
         }
 
         public string Agregar_info_dividida(string datos)
@@ -524,7 +538,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             string resul = ORDEN_INFORMACION_SOLO_PROG(lista_datos);
 
 
-            string dir_info_bas = direccion_extencion_espliteada + "_dat\\" + GENERAR_RUTA_ARCHIVO(id_total + G_caracter_separacion_funciones_espesificas[3] + cantidad_filas_por_archivo);
+            string dir_info_bas = direccion_extencion_espliteada + "_DAT\\" + GENERAR_RUTA_ARCHIVO(id_total + G_caracter_separacion_funciones_espesificas[3] + cantidad_filas_por_archivo);
 
             string res_crear_archivo = Crear_archivo_y_directorio(dir_info_bas + G_caracter_separacion_funciones_espesificas[3] + columnas + G_caracter_separacion_funciones_espesificas[3] + agregando);
             
@@ -556,11 +570,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     sw.WriteLine((Convert.ToInt64(id_total) + 1) + G_caracter_separacion[0] + agregando);
                     
                     string datos_enviar = direccion_archivos + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "ID_TOT" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "";
-                    INCREMENTA_CELDA_SOLO_PROG(datos_enviar,fs);
-
                     sw.Close();
                     sr.Close();
                     fs.Close();
+
+                    INCREMENTA_CELDA_SOLO_PROG(datos_enviar);
+
+                    
 
 
                     return "1" + G_caracter_para_confirmacion_o_error[0] + agregando;
@@ -1064,7 +1080,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
             string[] temp = direccion_archivos.Split('.');
-            string carpetas = temp[0];
+            string carpetas = temp[0] + "_DAT\\";
 
 
             string linea;
@@ -1092,7 +1108,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             
 
 
-            for (int i = 1; i < id_total; i++)
+            for (int i = 1; i <= id_total; i++)
             {
                 string ruta_archivo = GENERAR_RUTA_ARCHIVO("" + i + G_caracter_separacion_funciones_espesificas[3] + cantidad_filas_por_archivo + "");
                 FileStream fs2 = null;
@@ -1102,7 +1118,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 {
                     try
                     {
-                        fs2 = new FileStream(ruta_archivo, FileMode.Open, FileAccess.ReadWrite);
+                        fs2 = new FileStream(carpetas + ruta_archivo, FileMode.Open, FileAccess.ReadWrite);
                     }
                     catch
                     {
@@ -1302,7 +1318,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
             string concatenador_temporal = "";
-
+            string info_columnas_incrementadas = "";
             try
             {
 
@@ -1312,7 +1328,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     if (linea != null)
                     {
                         string[] palabra = linea.Split(caracter_separacion[0]);
-
+                        
                         if (palabra[num_column_comp] == comparar)
                         {
                             string linea_editada = "";
@@ -1322,13 +1338,14 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                             for (int i = 0; i < columnas_editar.Length; i++)
                             {
                                 palabra[Convert.ToInt64(columnas_editar[i])] = "" + (Convert.ToDouble(palabra[Convert.ToInt64(columnas_editar[i])]) + Convert.ToDouble(cantidades_sumara[i]));//esta largo lo se. pero significa que a la columna a editar le va a sumar la cantidad señalada
+                                info_columnas_incrementadas = op_tex.concatenacion_caracter_separacion(info_columnas_incrementadas, columnas_editar[i] + G_caracter_separacion[1] + palabra[Convert.ToInt64(columnas_editar[i])]);
                             }
                             for (int i = 0; i < palabra.Length; i++)
                             {
-                                linea_editada = linea_editada + palabra[i] + caracter_separacion;
+                                linea_editada = op_tex.concatenacion_caracter_separacion(linea_editada, palabra[i] , caracter_separacion);
                             }
-                            linea_editada = linea_editada.TrimEnd(caracter_separacion[0]);
-                            concatenador_temporal = op_tex.concatenacion_caracter_separacion(concatenador_temporal, linea_editada, G_caracter_separacion_funciones_espesificas[4]);
+                            
+                            concatenador_temporal = op_tex.concatenacion_caracter_separacion(concatenador_temporal, linea_editada, G_caracter_separacion_funciones_espesificas[3]);
                             
 
                         }
@@ -1344,13 +1361,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 fs.SetLength(0);//esto borra todo el contenido del archivo
                 for (int i = 0; i < todo_el_archivo.Length; i++)
                 {
-                    sw.WriteLine(todo_el_archivo);
+                    sw.WriteLine(todo_el_archivo[i]);
                 }
-
-                sr.Close();
                 sw.Close();
+                sr.Close();
                 fs.Close();
-                exito_o_fallo = "1" + G_caracter_para_confirmacion_o_error[0] + "exito";
+                exito_o_fallo = "1" + G_caracter_para_confirmacion_o_error[0] + info_columnas_incrementadas;
                 
                 
             }

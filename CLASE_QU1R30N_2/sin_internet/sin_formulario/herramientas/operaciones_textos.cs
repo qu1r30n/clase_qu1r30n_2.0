@@ -336,15 +336,17 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         public string concatenacion_caracter_separacion(string tex_a_cambiar, string tex_a_agregar, object caracter_separacion_objeto = null, string tipo_concatenacion = "CONCATENACION_NORMAL")
         {
 
+            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion_(caracter_separacion_objeto);
+
             if (tex_a_cambiar != "" && tex_a_cambiar != null)
             {
                 if (tipo_concatenacion== "CONCATENACION_NORMAL")
                 {
-                    tex_a_cambiar = tex_a_cambiar + G_caracter_separacion[0] + tex_a_agregar;
+                    tex_a_cambiar = tex_a_cambiar + caracter_separacion[0] + tex_a_agregar;
                 }
                 else if(tipo_concatenacion == "CONCATENACION_INVERSA")
                 {
-                    tex_a_cambiar = tex_a_agregar + G_caracter_separacion[0] + tex_a_cambiar;
+                    tex_a_cambiar = tex_a_agregar + caracter_separacion[0] + tex_a_cambiar;
                 }
                 
             }
