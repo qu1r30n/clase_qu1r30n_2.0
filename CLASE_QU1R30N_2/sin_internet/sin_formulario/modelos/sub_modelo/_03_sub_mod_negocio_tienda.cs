@@ -40,6 +40,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos.sub_modelo
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
 
                 info_a_retornar = EjecutarFuncionEnDatos(proc_tienda.agregar_producto, datos);
+
             }
 
             return info_a_retornar;
@@ -48,7 +49,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos.sub_modelo
         private string EjecutarFuncionEnDatos(Func<string, string> funcion, string datos)
         {
             string info_a_retornar = null;
-            string[] cant_datos = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+            string[] cant_datos = datos.Split(G_caracter_separacion_funciones_espesificas[2][0]);
             for (int i = 0; i < cant_datos.Length; i++)
             {
                 // Llamar a un método `funcion_prueba` de la clase `_00_proc_inicial`

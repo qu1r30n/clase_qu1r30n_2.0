@@ -124,7 +124,9 @@ namespace CLASE_QU1R30N_2
         public void pruebas()
         {
             //enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "TIENDA" + G_caracter_separacion_funciones_espesificas[1] + "EXTRAER_INVENTARIO" + G_caracter_separacion_funciones_espesificas[2] + G_dir_arch_transferencia[i]);
-            string resp = enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "TIENDA" + G_caracter_separacion_funciones_espesificas[1] + "AGREGAR_PRODUCTO" + G_caracter_separacion_funciones_espesificas[2] + G_caracter_separacion_funciones_espesificas[3] + "");
+            string resp = enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "TIENDA" + G_caracter_separacion_funciones_espesificas[1] + "AGREGAR_PRODUCTO" + G_caracter_separacion_funciones_espesificas[2] + G_caracter_separacion_funciones_espesificas[3] + "╬╬╬╬╬╬N╬╬╬╬╬╬╬╬╬╬╬N╬╬╬╬╬╬╬");
+
+
             
         }
 

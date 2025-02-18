@@ -213,9 +213,40 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos._03_proc_sub_mod_
 
             string info_agregar = _01_PRODUCTO + G_caracter_separacion[0] + _02_CONTENIDO + G_caracter_separacion[0] + _03_TIPO_MEDIDA + G_caracter_separacion[0] + _04_PRECIO_VENTA + G_caracter_separacion[0] + _05_COD_BARRAS + G_caracter_separacion[0] + _06_CANTIDAD + G_caracter_separacion[0] + _07_COSTO_COMP + G_caracter_separacion[0] + _08_PROVEDOR + G_caracter_separacion[0] + _09_GRUPO + G_caracter_separacion[0] + _10_CANT_X_PAQUET + G_caracter_separacion[0] + _11_ES_PAQUETE + G_caracter_separacion[0] + _12_CODBAR_PAQUETE + G_caracter_separacion[0] + _13_COD_BAR_INDIVIDUAL_ES_PAQ + G_caracter_separacion[0] + _14_LIGAR_PROD_SAB + G_caracter_separacion[0] + _15_IMPUESTOS + G_caracter_separacion[0] + _16_INGREDIENTES + G_caracter_separacion[0] + _17_CADUCIDAD + G_caracter_separacion[0] + _18_ULTIMO_MOV + G_caracter_separacion[0] + _19_SUCUR_VENT + G_caracter_separacion[0] + _20_CLAF_PROD + G_caracter_separacion[0] + _21_DIR_IMG_INTER + G_caracter_separacion[0] + _22_DIR_IMG_COMP + G_caracter_separacion[0] + _23_INFO_EXTRA + G_caracter_separacion[0] + _24_PROCESO_CREAR + G_caracter_separacion[0] + _25_DIR_VID_PROC_CREAR + G_caracter_separacion[0] + _26_TIEMPO_FABRICACION + G_caracter_separacion[0] + _27_NO_PONER_NADA;
 
-            info_a_retornar = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_SINO_EXISTE_INFO_DIV" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + "5" + G_caracter_separacion_funciones_espesificas[3] + _05_COD_BARRAS+ G_caracter_separacion_funciones_espesificas[3] + info_agregar);
+            string[] res = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_SINO_EXISTE_INFO_DIV" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + "5" + G_caracter_separacion_funciones_espesificas[3] + _05_COD_BARRAS+ G_caracter_separacion_funciones_espesificas[3] + info_agregar).Split(G_caracter_para_confirmacion_o_error[0][0]);
 
 
+            if (Convert.ToInt32(res[0]) <= 0) 
+            {
+                if (res[0] == "0") 
+                {
+
+                    string info_editada = op_tex.editar_inc_agregar_edicion_profunda_multiple_comparacion_final_string
+                                (
+                                    res[3],
+                                    "19",
+                                    _04_PRECIO_VENTA + "",
+                                    _19_SUCUR_VENT,
+                                    "0"
+                                    );
+                    info_editada = op_tex.editar_inc_agregar_edicion_profunda_multiple_comparacion_final_string
+                                (
+                                    info_editada,
+                                    "8",
+                                    _07_COSTO_COMP + "",
+                                    _08_PROVEDOR,
+                                    "0"
+                                    );
+
+                    string[] temp = info_editada.Split(G_caracter_separacion[0][0]);
+                    temp[4] = _04_PRECIO_VENTA + "";
+                    info_editada = string.Join(G_caracter_separacion[0], temp);
+
+                    string res_dir_arch = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "GENERAR_RUTA_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + res[1]);
+
+
+                }
+            }
 
             return info_a_retornar;
         }

@@ -377,7 +377,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
             string resultado_lect = LEER_INFO_DIVIDIDA(direccion_archivos);
-            bool encontro_info = false;
+            int id_del_producto_si_encontro = -1;
+            string info_del_id = "";
             if (resultado_lect != "")
             {
                 string[] res_lect = resultado_lect.Split(G_caracter_separacion_funciones_espesificas[3][0]);
@@ -387,14 +388,16 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     string[] fila_esplit = res_lect[i].Split(G_caracter_separacion[0][0]);
                     if (fila_esplit[num_column_comp] == comparar)
                     {
-                        encontro_info = true;
+                        id_del_producto_si_encontro = i+1;
+                        info_del_id = res_lect[i];
                         break;
                     }
                 }
 
             }
 
-            if (encontro_info == false)
+            //si no se encontro el producto se agrega
+            if (id_del_producto_si_encontro == -1)
             {
 
                 string dir_info_bas = direccion_extencion_espliteada[0] + "_DAT\\" + GENERAR_RUTA_ARCHIVO(id_total + G_caracter_separacion_funciones_espesificas[3] + cantidad_filas_por_archivo);
@@ -462,7 +465,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             sr.Close();
             fs.Close();
-            return "0" + G_caracter_para_confirmacion_o_error[0] + "ya existe no se guardo";
+            return "0" + G_caracter_para_confirmacion_o_error[0] + id_del_producto_si_encontro + G_caracter_para_confirmacion_o_error[0] + "ya existe no se guardo" + G_caracter_para_confirmacion_o_error[0] + info_del_id;
         }
 
         public string Agregar_info_dividida(string datos)
