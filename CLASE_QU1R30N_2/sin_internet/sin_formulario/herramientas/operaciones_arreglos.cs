@@ -61,7 +61,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         public string[,] agregar_registro_del_array_bidimensional(string[,] arreglo, string registro, object caracter_separacion_objeto = null, string al_inicio = null)
         {
 
-            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion_(caracter_separacion_objeto);
+            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
 
             if (arreglo == null)
             {

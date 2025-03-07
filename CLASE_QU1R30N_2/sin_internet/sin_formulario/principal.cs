@@ -65,6 +65,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios
                 info_a_retornar = mostrar_modelos();
             }
 
+            else if (modelo == "MODELO_REGISTROS")
+            {
+                _04_mod_registros mod_reg = new _04_mod_registros();
+                info_a_retornar = mod_reg.operacion_a_hacer(info);
+            }
+
             return info_a_retornar;
         }
 

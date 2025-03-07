@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas;
 
 using CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos.sub_modelo;
+using CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos;
 
 namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
 {
@@ -34,15 +35,32 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
                 _03_sub_mod_negocio_tienda sub_mod_tienda = new _03_sub_mod_negocio_tienda();
-                info_a_retornar = EjecutarFuncionEnDatos(sub_mod_tienda.operacion_a_hacer, datos);
+                info_a_retornar = EjecutarFuncionEnDatos_SUB_MODELO(sub_mod_tienda.operacion_a_hacer, datos);
             }
             else if (proceso == "RESTAURANTE")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
                 _03_sub_mod_negocio_restaurante sub_mod_restaurante = new _03_sub_mod_negocio_restaurante();
-                info_a_retornar = EjecutarFuncionEnDatos(sub_mod_restaurante.operacion_a_hacer, datos);
+                info_a_retornar = EjecutarFuncionEnDatos_SUB_MODELO(sub_mod_restaurante.operacion_a_hacer, datos);
             }
 
+            else if (proceso == "VENTAS")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _03_proc_negocios proc_neg= new _03_proc_negocios();
+                info_a_retornar = EjecutarFuncionEnDatos(proc_neg.ventas, datos);
+            }
+
+
+            return info_a_retornar;
+        }
+
+        private string EjecutarFuncionEnDatos_SUB_MODELO(Func<string, string> funcion, string datos)
+        {
+            string info_a_retornar = null;
+
+            info_a_retornar = funcion(datos);
+            
 
             return info_a_retornar;
         }
@@ -50,9 +68,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
         private string EjecutarFuncionEnDatos(Func<string, string> funcion, string datos)
         {
             string info_a_retornar = null;
-
-            info_a_retornar = funcion(datos);
-            
+            string[] cant_datos = datos.Split(G_caracter_separacion_funciones_espesificas[2][0]);
+            for (int i = 0; i < cant_datos.Length; i++)
+            {
+                // Llamar a un método `funcion_prueba` de la clase `_00_proc_inicial`
+                info_a_retornar = funcion(cant_datos[i]);
+            }
 
             return info_a_retornar;
         }

@@ -20,7 +20,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
         int G_donde_inicia_la_tabla = var_fun_GG.GG_indice_donde_comensar;
 
-        
+        var_fun_GG vf_GG = new var_fun_GG();
 
         principal enl_princ = new principal();
 
@@ -541,7 +541,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             string resul = ORDEN_INFORMACION_SOLO_PROG(lista_datos);
 
 
-            string dir_info_bas = direccion_extencion_espliteada + "_DAT\\" + GENERAR_RUTA_ARCHIVO(id_total + G_caracter_separacion_funciones_espesificas[3] + cantidad_filas_por_archivo);
+            string dir_info_bas = direccion_extencion_espliteada[0] + "_DAT\\" + GENERAR_RUTA_ARCHIVO(id_total + G_caracter_separacion_funciones_espesificas[3] + cantidad_filas_por_archivo);
 
             string res_crear_archivo = Crear_archivo_y_directorio(dir_info_bas + G_caracter_separacion_funciones_espesificas[3] + columnas + G_caracter_separacion_funciones_espesificas[3] + agregando);
             
@@ -600,7 +600,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return "0" + G_caracter_para_confirmacion_o_error[0] + "error no pudo guardar";
         }
         
-        public string seleccionar_id(string datos)
+        public string seleccionar_id_info_dividida(string datos)
         {
             string info_retornar = "";
 
@@ -610,28 +610,10 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             string direccion_archivos = datos_epliteados[0];
             string id = datos_epliteados[1];
             
-            string info_a_comparar = null;
-            if (datos_epliteados.Length >= 3)
-            {
-                if (datos_epliteados[2] != "")
-                {
-                    info_a_comparar = datos_epliteados[2];
-                }
-
-            }
-            string columna_comparar = null;
-            if (datos_epliteados.Length >= 4)
-            {
-                if (datos_epliteados[3] != "")
-                {
-                    columna_comparar = datos_epliteados[3];
-                }
-
-            }
             //fin parametros-----------------------------------------------------------------------------
 
             string[] direccion_espliteada = direccion_archivos.Split('.');
-            string carpetas = direccion_espliteada[0];
+            string carpetas = direccion_espliteada[0]+"_DAT";
 
             FileStream fs = null;
             StreamReader sr = null;
@@ -691,44 +673,39 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             string linea2;
             bool encontro_informacion = false;
+            Int64 posicion_id_archivo = 0;
+            if (id.Length>=2)
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "" + id[1]);
+            }
+            else
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "");
+            }
+
+            Int64 cont = 0;
             while ((linea2 = sr2.ReadLine()) != null)
             {
-                string[] linea2_esp = linea2.Split(G_caracter_separacion[0][0]);
-                string id_fila = linea2_esp[0];
 
-                if (info_a_comparar != null && columna_comparar != null)
+                if (posicion_id_archivo == cont)
                 {
 
-                    try
-                    {
-                        int col = Convert.ToInt32(columna_comparar);
-
-                        if (linea2_esp[col]==info_a_comparar)
-                        {
-                            info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + linea2;
-                            encontro_informacion = true;
-                        }
-
-                    }
-                    catch 
-                    { 
-                        info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "error";
-                        break;
-                    }
-
-                }
-
-                else if (id == id_fila)
-                {
                     info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + linea2;
                     encontro_informacion = true;
+                    break;
                 }
+
+                cont++;
 
             }
             if (encontro_informacion == false)
             {
                 info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
             }
+
+
+            fs2.Close();
+            sr2.Close();
             return info_retornar;
         }
 
@@ -1267,6 +1244,177 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return info_a_retornar;
         }
 
+        public string INCREMENTA_CELDA_ID_INFO_DIVIDIDA(string datos)
+        {
+            string info_retornar = "";
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //parametros------------------------------------------------------------------------------------
+            string direccion_archivos = datos_epliteados[0];
+
+
+            string id = null;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    id = datos_epliteados[1];
+                }
+            }
+
+            string columnas_a_incrementar = "";
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    columnas_a_incrementar = datos_epliteados[2];
+                }
+            }
+
+            string cantidades_a_incrementar = "";
+            if (datos_epliteados.Length >= 4)
+            {
+                if (datos_epliteados[3] != "")
+                {
+                    cantidades_a_incrementar = datos_epliteados[3];
+                }
+            }
+
+            
+            
+
+            //fin parametros-----------------------------------------------------------------------------
+
+            string[] direccion_espliteada = direccion_archivos.Split('.');
+            string carpetas = direccion_espliteada[0] + "_DAT";
+
+            FileStream fs = null;
+            StreamReader sr = null;
+            while (fs == null)
+            {
+                try
+                {
+                    fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr = new StreamReader(fs);
+
+            string linea;
+            List<string> filas_configuaracion = new List<string>();
+            // Lee cada línea del archivo hasta el final
+            while ((linea = sr.ReadLine()) != null)
+            {
+                // Aquí puedes procesar cada línea
+                filas_configuaracion.Add(linea);
+            }
+
+            sr.Close();
+            fs.Close();
+
+            string datos_ordenados_configuracion = ORDEN_INFORMACION_SOLO_PROG(filas_configuaracion, "CANT_POR_ARCH");
+            string[] datos_config_esp = datos_ordenados_configuracion.Split(G_caracter_separacion[0][0]);
+
+            string cantidad_por_archivo = datos_config_esp[0];
+            string direccion = carpetas + "\\" + GENERAR_RUTA_ARCHIVO(id + G_caracter_separacion_funciones_espesificas[3] + cantidad_por_archivo);
+
+
+
+
+
+
+            FileStream fs2 = null;
+            StreamReader sr2 = null;
+            StreamWriter sw2 = null;
+            while (fs2 == null)
+            {
+                try
+                {
+                    fs2 = new FileStream(direccion, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr2 = new StreamReader(fs2);
+            sw2 = new StreamWriter(fs2);
+
+
+            
+            Int64 posicion_id_archivo = 0;
+            if (id.Length >= 2)
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "" + id[1]);
+            }
+            else
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "");
+            }
+
+
+
+
+
+            List<string> lineas= new List<string>();
+            bool encontro_informacion = false;
+            
+            string fila = "";
+            while ((fila = sr2.ReadLine()) != null)
+            {
+                lineas.Add(fila);
+            }
+
+            fs2.Seek(0, SeekOrigin.Begin);
+
+            for (int j = 0; j < lineas.Count; j++)
+            {
+                string linea2 = lineas[j];
+                if (posicion_id_archivo == j)
+                {
+                    string[] producto_espliteado = linea2.Split(G_caracter_separacion[0][0]);
+                    string[] colum_a_editar = columnas_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    string[] cantidades_a_editar = cantidades_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    for (int i = 0; i < colum_a_editar.Length; i++)
+                    {
+                        Int32 columna_int = Convert.ToInt32(colum_a_editar[i]);
+                        producto_espliteado[columna_int] = "" + (Convert.ToDouble(producto_espliteado[columna_int]) + Convert.ToDouble(cantidades_a_editar[i]));
+                    }
+                    string producto_editado = string.Join(G_caracter_separacion[0], producto_espliteado);
+                    sw2.WriteLine(producto_editado);
+                    sw2.Flush();
+                    encontro_informacion = true;
+                    info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + producto_editado;
+                    
+                }
+
+                else
+                {
+                    sw2.WriteLine(linea2);
+                    sw2.Flush();
+                }
+
+            }
+            
+            if (encontro_informacion == false)
+            {
+                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
+            }
+            
+            sw2.Close();
+            sr2.Close();
+            fs2.Close();
+
+            
+
+            return info_retornar;
+        }
 
         public string INCREMENTA_CELDA_SOLO_PROG(string datos, FileStream fs = null)
         {
@@ -1602,8 +1750,223 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return info_a_retornar;
         }
 
+        public string BUSCAR_INFO_DIVIDIDA(string datos)
+        {
+            string inf_retornar = "";
 
 
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            // PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo = "";
+            if (datos_epliteados.Length >= 1 && datos_epliteados[0] != "")
+            {
+                direccion_archivo = datos_epliteados[0];
+            }
+
+            string dato_a_buscar = "";
+            if (datos_epliteados.Length >= 2 && datos_epliteados[1] != "")
+            {
+                dato_a_buscar = datos_epliteados[1];
+            }
+
+            int columna = 0;
+            if (datos_epliteados.Length >= 3 && datos_epliteados[2] != "")
+            {
+                int.TryParse(datos_epliteados[2], out columna);
+            }
+
+            string id_posicion_informacion = "";
+            if (datos_epliteados.Length >= 4 && datos_epliteados[3] != "")
+            {
+                id_posicion_informacion = datos_epliteados[3];
+            }
+            //------------------------------------------------------------
+
+            string[] todo_el_archivo = LEER_INFO_DIVIDIDA(direccion_archivo).Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+
+
+            if (id_posicion_informacion != "")
+            {
+                int id_producto = Convert.ToInt32(id_posicion_informacion);
+                string[] info_produc_esp = todo_el_archivo[id_producto].Split(G_caracter_separacion[0][0]);
+                if (dato_a_buscar == info_produc_esp[columna])
+                {
+                    inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + todo_el_archivo[id_producto] + G_caracter_para_confirmacion_o_error[0] + id_producto;
+                }
+                else
+                {
+                    bool encontro_producto = false;
+                    int indice_iniciar_busqueda = id_producto;
+                    if (id_producto > 9) { indice_iniciar_busqueda = indice_iniciar_busqueda - 10; }
+                    else { indice_iniciar_busqueda = G_donde_inicia_la_tabla; }
+
+                    for (int i = indice_iniciar_busqueda; i < id_producto; i++)
+                    {
+                        string[] info_prod_bas = todo_el_archivo[i].Split(G_caracter_separacion[0][0]);
+                        if (dato_a_buscar == info_prod_bas[columna])
+                        {
+                            inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + todo_el_archivo[i] + G_caracter_para_confirmacion_o_error[0] + i;
+                            encontro_producto = true;
+                            break;
+                        }
+                    }
+                    if (encontro_producto == false)
+                    {
+
+                        for (int i = G_donde_inicia_la_tabla; i < todo_el_archivo.Length; i++)
+                        {
+                            string[] info_prod_bas = todo_el_archivo[i].Split(G_caracter_separacion[0][0]);
+
+                            if (dato_a_buscar == info_prod_bas[columna])
+                            {
+                                inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + todo_el_archivo[i] + G_caracter_para_confirmacion_o_error[0] + i;
+                                encontro_producto = true;
+                                break;
+                            }
+                        }
+
+
+                    }
+                    if (encontro_producto == false)
+                    {
+                        inf_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no encontro el producto";
+                    }
+                }
+            }
+            else
+            {
+                bool encontro_producto = false;
+                for (int i = 0; i < todo_el_archivo.Length; i++)
+                {
+                    string[] info_produc_esp = todo_el_archivo[i].Split(G_caracter_separacion[0][0]);
+                    if (dato_a_buscar == info_produc_esp[columna])
+                    {
+                        inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + todo_el_archivo[i] + G_caracter_para_confirmacion_o_error[0] + i;
+                        encontro_producto = true;
+                        break;
+                    }
+                }
+                if (encontro_producto == false)
+                {
+                    inf_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no encontro el producto";
+                }
+            }
+
+            return inf_retornar;
+        }
+
+        public string BUSCAR_SOLO_PROG(string datos)
+        {
+            string inf_retornar = "";
+
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            // PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo = "";
+            if (datos_epliteados.Length >= 1 && datos_epliteados[0] != "")
+            {
+                direccion_archivo = datos_epliteados[0];
+            }
+
+            string dato_a_buscar = "";
+            if (datos_epliteados.Length >= 2 && datos_epliteados[1] != "")
+            {
+                dato_a_buscar = datos_epliteados[1];
+            }
+
+            int columna = 0;
+            if (datos_epliteados.Length >= 3 && datos_epliteados[2] != "")
+            {
+                int.TryParse(datos_epliteados[2], out columna);
+            }
+
+            string id_posicion_informacion = "";
+            if (datos_epliteados.Length >= 4 && datos_epliteados[3] != "")
+            {
+                id_posicion_informacion = datos_epliteados[3];
+            }
+
+
+
+            string[] res_busq = SACAR_INDICE_DEL_ARREGLO_DE_DIRECCION_SOLO_PROG(direccion_archivo).Split(G_caracter_para_confirmacion_o_error[0][0]);
+            int indice = Convert.ToInt32(res_busq[1]);
+
+            if (id_posicion_informacion != "")
+            {
+                int id_producto = Convert.ToInt32(id_posicion_informacion);
+                string[] info_produc_esp =  var_fun_GG.GG_base_arreglo_de_arreglos[indice][id_producto].Split(G_caracter_separacion[0][0]);
+                if (dato_a_buscar == info_produc_esp[columna])
+                {
+                    inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + var_fun_GG.GG_base_arreglo_de_arreglos[indice][id_producto] + G_caracter_para_confirmacion_o_error[0] + id_producto;
+                }
+                else
+                {
+                    bool encontro_producto = false;
+                    int indice_iniciar_busqueda = id_producto;
+                    if (id_producto > 9) { indice_iniciar_busqueda = indice_iniciar_busqueda - 10; }
+                    else { indice_iniciar_busqueda = G_donde_inicia_la_tabla; }
+
+                    for (int i = indice_iniciar_busqueda; i < id_producto; i++)
+                    {
+                        string[] info_prod_bas = var_fun_GG.GG_base_arreglo_de_arreglos[indice][i].Split(G_caracter_separacion[0][0]);
+                        if (dato_a_buscar == info_prod_bas[columna])
+                        {
+                            inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + var_fun_GG.GG_base_arreglo_de_arreglos[indice][i] + G_caracter_para_confirmacion_o_error[0] + i;
+                            encontro_producto = true;
+                            break;
+                        }
+                    }
+                    if (encontro_producto == false)
+                    {
+
+                        for (int i = G_donde_inicia_la_tabla; i < var_fun_GG.GG_base_arreglo_de_arreglos[indice].Length; i++)
+                        {
+                            string[] info_prod_bas = var_fun_GG.GG_base_arreglo_de_arreglos[indice][i].Split(G_caracter_separacion[0][0]);
+
+                            if (dato_a_buscar == info_prod_bas[columna])
+                            {
+                                inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + var_fun_GG.GG_base_arreglo_de_arreglos[indice][i] + G_caracter_para_confirmacion_o_error[0] + i;
+                                encontro_producto = true;
+                                break;
+                            }
+                        }
+
+
+                    }
+                    if (encontro_producto == false)
+                    {
+                        inf_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no encontro el producto";
+                    }
+                }
+            }
+            else
+            {
+                bool encontro_producto = false;
+                for (int i = 0; i < var_fun_GG.GG_base_arreglo_de_arreglos[indice].Length; i++)
+                {
+                    string[] info_produc_esp = var_fun_GG.GG_base_arreglo_de_arreglos[indice][i].Split(G_caracter_separacion[0][0]);
+                    if (dato_a_buscar == info_produc_esp[columna])
+                    {
+                        inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + var_fun_GG.GG_base_arreglo_de_arreglos[indice][i] + G_caracter_para_confirmacion_o_error[0] + i;
+                        encontro_producto = true;
+                        break;
+                    }
+                }
+                if (encontro_producto == false)
+                {
+                    inf_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no encontro el producto";
+                }
+            }
+
+
+
+            return inf_retornar;
+        }
+
+        
         public void CHEQUEO_ERROR_TRY_SOLO_PROG(string direccionArchivo, Exception e, string numero_chequeo)
         {
 
@@ -1782,6 +2145,865 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
             return info_a_retornar;
+        }
+
+
+
+        public string Editar_incr_o_agrega_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_es_multiple_con_comparacion_final_BUSQUEDA_ID
+          (string datos)
+        {
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            // PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo_a_checar = "";
+            if (datos_epliteados.Length >= 1 && datos_epliteados[0] != "")
+            {
+                direccion_archivo_a_checar = datos_epliteados[0];
+            }
+
+            int num_column_comp = 0;
+            if (datos_epliteados.Length >= 2 && int.TryParse(datos_epliteados[1], out int valor1))
+            {
+                num_column_comp = valor1;
+            }
+
+            string comparar = "";
+            if (datos_epliteados.Length >= 3 && datos_epliteados[2] != "")
+            {
+                comparar = datos_epliteados[2];
+            }
+
+            string numero_columnas_editar = "";
+            if (datos_epliteados.Length >= 4 && datos_epliteados[3] != "")
+            {
+                numero_columnas_editar = datos_epliteados[3];
+            }
+
+            string editar_columna = "";
+            if (datos_epliteados.Length >= 5 && datos_epliteados[4] != "")
+            {
+                editar_columna = datos_epliteados[4];
+            }
+
+            string comparar_columna_a_editar = "";
+            if (datos_epliteados.Length >= 6 && datos_epliteados[5] != "")
+            {
+                comparar_columna_a_editar = datos_epliteados[5];
+            }
+
+            string edit_0_increm_1_o_agregar_si_no_esta_2 = "";
+            if (datos_epliteados.Length >= 7 && datos_epliteados[6] != "")
+            {
+                edit_0_increm_1_o_agregar_si_no_esta_2 = datos_epliteados[6];
+            }
+
+            string texto_a_agregar_si_no_esta = "";
+            if (datos_epliteados.Length >= 8 && datos_epliteados[7] != "")
+            {
+                texto_a_agregar_si_no_esta = datos_epliteados[7];
+            }
+
+            object caracter_separacion_obj = null;
+            if (datos_epliteados.Length >= 9 && datos_epliteados[8] != "")
+            {
+                caracter_separacion_obj = datos_epliteados[8];
+            }
+
+            string posicion_fila = "";
+            if (datos_epliteados.Length >= 10 && datos_epliteados[9] != "")
+            {
+                posicion_fila = datos_epliteados[9];
+            }
+
+
+
+            /*
+            //------------------------------------------------------------------------------------------------
+            string[] dir_sep = extraer_separado_carpetas_nombreArchivo_extencion(direccion_archivo_a_checar);
+            dir_sep[0] = dir_sep[0] + "\\" + G_direccion_base_archivos_bandera;
+            string dir_bandera = dir_sep[0] + dir_sep[1] + "." + dir_sep[2];
+            //este archivo bandera es para que no se agarre el archivo otro programa antes de sustituirlo
+            dir_bandera = dir_bandera.Replace(".TXT", "_BANDERA.TXT");
+            Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(dir_bandera, leer_y_agrega_al_arreglo: false);
+
+
+            StreamWriter sw_bandera = null;
+            bool esta_libre = false;
+            while (esta_libre == false)
+            {
+                try
+                {
+                    sw_bandera = new StreamWriter(dir_bandera);
+                    esta_libre = true;
+                }
+                catch { }
+            }
+            //------------------------------------------------------------------------------------------
+            */
+            string info_a_retornar = "";
+
+            try
+            {
+
+
+                string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_obj);
+
+
+                string direccion_archivo = direccion_archivo_a_checar;
+                string resultado_archivo = SACAR_INDICE_DEL_ARREGLO_DE_DIRECCION_SOLO_PROG(direccion_archivo);
+                string[] res_esp_archivo = resultado_archivo.Split(G_caracter_para_confirmacion_o_error[0][0]);
+
+                //encontro o no archivo
+                if (Convert.ToInt32(res_esp_archivo[0]) > 0)//si res es mayor a 0 la operacioon fue exitosa si no hubo un error
+                {
+                    //encontro archivo y direccion en la lista
+                    if (res_esp_archivo[0] == "1")
+                    {
+
+                        int num_indice_de_direccion_int = Convert.ToInt32(res_esp_archivo[1]);
+                        bool encotro_info = false;
+                        string info_a_procesar = "";
+                        string resul_busqueda = null;
+                        string[] res_esp = null;
+                        int posicion_confirmada_del_producto = -1;
+
+                        //hay posicion de la fila del producto?
+                        if (posicion_fila != "")
+                        {
+                            int posicion_posible = Convert.ToInt32(posicion_fila);
+                            if (var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int].Length > posicion_posible)
+                            {
+                                resul_busqueda = op_tex.busqueda_profunda_string(var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][posicion_posible], "" + num_column_comp, comparar);
+                                res_esp = resul_busqueda.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                            }
+                            else
+                            {
+                                string temp = "-2" + G_caracter_para_confirmacion_o_error[0] + "no esta el producto";
+                                res_esp = temp.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                            }
+                            //encontro el producto en la posicion o  lo buscara en toda la base?
+                            if (Convert.ToInt32(res_esp[0]) > 0)
+                            {
+                                if (res_esp[0] == "1")
+                                {
+                                    encotro_info = true;
+                                    info_a_procesar = res_esp[1];
+                                    posicion_confirmada_del_producto = posicion_posible;
+                                }
+                            }
+                            else
+                            {
+                                for (int i = G_donde_inicia_la_tabla; i < var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int].Length; i++)
+                                {
+
+                                    resul_busqueda = op_tex.busqueda_profunda_string(var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][i], "" + num_column_comp, comparar);
+                                    res_esp = resul_busqueda.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                                    //encontro la informacion?
+                                    if (Convert.ToInt32(res_esp[0]) > 0)
+                                    {
+                                        if (res_esp[0] == "1")
+                                        {
+                                            encotro_info = true;
+                                            info_a_procesar = res_esp[1];
+                                            posicion_confirmada_del_producto = i;
+                                            break;
+                                        }
+                                    }
+
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            for (int i = G_donde_inicia_la_tabla; i < var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int].Length; i++)
+                            {
+
+                                resul_busqueda = op_tex.busqueda_profunda_string(var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][i], "" + num_column_comp, comparar);
+                                res_esp = resul_busqueda.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                                //encontro la informacion?
+                                if (Convert.ToInt32(res_esp[0]) > 0)
+                                {
+                                    if (res_esp[0] == "1")
+                                    {
+                                        encotro_info = true;
+                                        info_a_procesar = res_esp[1];
+                                        posicion_confirmada_del_producto = i;
+                                        break;
+                                    }
+                                }
+
+
+                            }
+                        }
+
+                        //encontro el producto?
+                        if (encotro_info == true)
+                        {
+
+                            var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][posicion_confirmada_del_producto] =
+                                op_tex.editar_inc_agregar_edicion_profunda_multiple_comparacion_final_string
+                                (
+                                    info_a_procesar,
+                                    numero_columnas_editar,
+                                    editar_columna,
+                                    comparar_columna_a_editar,
+                                    edit_0_increm_1_o_agregar_si_no_esta_2
+                                    );
+
+
+                            cambiar_archivo_con_arreglo(direccion_archivo, var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int]);
+                            info_a_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][posicion_confirmada_del_producto];
+                            encotro_info = true;
+
+
+                        }
+                        //no encontro la info
+                        else
+                        {
+                            if (texto_a_agregar_si_no_esta != "")
+                            {
+                                Agregar_solo_prog(direccion_archivo + G_caracter_separacion_funciones_espesificas[3] + texto_a_agregar_si_no_esta);
+                                info_a_retornar = "2" + G_caracter_para_confirmacion_o_error[0] + "agrego_la_informacion";
+                            }
+                            else
+                            {
+                                info_a_retornar = "-1" + G_caracter_para_confirmacion_o_error[0] + "no encontro el dato y no se puede agregar por que la variable texto_a_agregar_si_no_esta esta vacia";
+                            }
+
+                        }
+
+                    }
+
+                    else
+                    {
+
+                    }
+
+                }
+
+                else
+                {
+                    //no encontro archivo
+                    if (res_esp_archivo[0] == "0")
+                    {
+                        info_a_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no se encontro el archivo";
+                    }
+                    //solo encontro archivo y no esta en la lista
+                    if (res_esp_archivo[0] == "-1")
+                    {
+                        string[] inventario = LEER_SOLO_PROG(direccion_archivo).Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                        for (int i = G_donde_inicia_la_tabla; i < inventario.Length; i++)
+                        {
+                            string[] columnas = inventario[i].Split(caracter_separacion[0][0]);
+
+                            if (columnas[num_column_comp] == comparar)
+                            {
+
+                                inventario[i] = op_tex.editar_inc_edicion_profunda_multiple_string(inventario[i], numero_columnas_editar, editar_columna, edit_0_increm_1_o_agregar_si_no_esta_2);
+
+                                cambiar_archivo_con_arreglo(direccion_archivo, inventario);
+                                info_a_retornar = "2" + G_caracter_para_confirmacion_o_error[0] + inventario[i];
+                                break;
+                            }
+                        }
+
+                    }
+
+                }
+
+
+
+                //sw_bandera.Close();
+            }
+            catch
+            {
+                //sw_bandera.Close();
+            }
+
+
+
+
+            return info_a_retornar;
+        }
+
+        public string Editar_incr_o_agrega_MULTIPLESCOMPARACIONES_AL_FINAL_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_BUSQUEDA_ID
+            (string datos)
+        {
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            // PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo = "";
+            if (datos_epliteados.Length >= 1 && datos_epliteados[0] != "")
+            {
+                direccion_archivo = datos_epliteados[0];
+            }
+
+            int num_column_comp = 0;
+            if (datos_epliteados.Length >= 2 && int.TryParse(datos_epliteados[1], out int valor1))
+            {
+                num_column_comp = valor1;
+            }
+
+            string comparar = "";
+            if (datos_epliteados.Length >= 3 && datos_epliteados[2] != "")
+            {
+                comparar = datos_epliteados[2];
+            }
+
+            string numero_columnas_editar = "";
+            if (datos_epliteados.Length >= 4 && datos_epliteados[3] != "")
+            {
+                numero_columnas_editar = datos_epliteados[3];
+            }
+
+            string comparar_y_edicion_COMPARACION_FINAL = "";
+            if (datos_epliteados.Length >= 5 && datos_epliteados[4] != "")
+            {
+                comparar_y_edicion_COMPARACION_FINAL = datos_epliteados[4];
+            }
+
+            string edit_0_increm_1_o_agregar_si_no_esta_2 = "";
+            if (datos_epliteados.Length >= 6 && datos_epliteados[5] != "")
+            {
+                edit_0_increm_1_o_agregar_si_no_esta_2 = datos_epliteados[5];
+            }
+
+            string texto_a_agregar_si_no_esta = "";
+            if (datos_epliteados.Length >= 7 && datos_epliteados[6] != "")
+            {
+                texto_a_agregar_si_no_esta = datos_epliteados[6];
+            }
+
+            object caracter_separacion_obj = null;
+            if (datos_epliteados.Length >= 8 && datos_epliteados[7] != "")
+            {
+                caracter_separacion_obj = datos_epliteados[7];
+            }
+
+            string posicion_fila = "";
+            if (datos_epliteados.Length >= 9 && datos_epliteados[8] != "")
+            {
+                posicion_fila = datos_epliteados[8];
+            }
+
+
+            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_obj);
+            string info_a_retornar = "";
+
+            /*
+            //-------------------------------------------------------------------------------------------------------
+            string[] dir_sep = extraer_separado_carpetas_nombreArchivo_extencion(direccion_archivo);
+            dir_sep[0] = dir_sep[0] + "\\" + G_direccion_base_archivos_bandera;
+            string dir_bandera = dir_sep[0] + dir_sep[1] + "." + dir_sep[2];
+            //este archivo bandera es para que no se agarre el archivo otro programa antes de sustituirlo
+            dir_bandera = dir_bandera.Replace(".TXT", "_BANDERA.TXT");
+            Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(dir_bandera, leer_y_agrega_al_arreglo: false);
+
+
+            StreamWriter sw_bandera = null;
+            bool esta_libre = false;
+            while (esta_libre == false)
+            {
+                try
+                {
+                    sw_bandera = new StreamWriter(dir_bandera);
+                    esta_libre = true;
+                }
+                catch { }
+            }
+            //------------------------------------------------------------------------------------------
+            */
+            try
+            {
+
+
+                string resultado_archivo = SACAR_INDICE_DEL_ARREGLO_DE_DIRECCION_SOLO_PROG(direccion_archivo);
+
+                string[] res_esp_archivo = resultado_archivo.Split(G_caracter_para_confirmacion_o_error[0][0]);
+
+                //encontro o no archivo
+                if (Convert.ToInt32(res_esp_archivo[0]) > 0)//si res es mayor a 0 la operacioon fue exitosa si no hubo un error
+                {
+                    //encontro archivo y direccion en la lista
+                    if (res_esp_archivo[0] == "1")
+                    {
+
+                        int num_indice_de_direccion_int = Convert.ToInt32(res_esp_archivo[1]);
+                        bool encotro_info = false;
+
+                        string info_a_procesar = "";
+                        string resul_busqueda = null;
+                        string[] res_esp = null;
+                        int posicion_confirmada_del_producto = -1;
+
+                        //hay posicion de la fila del producto?
+                        if (posicion_fila != "")
+                        {
+                            int posicion_posible = Convert.ToInt32(posicion_fila);
+                            resul_busqueda = op_tex.busqueda_profunda_string(var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][posicion_posible], "" + num_column_comp, comparar);
+                            res_esp = resul_busqueda.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                            //encontro el producto en la posicion o  lo buscara en toda la base?
+                            if (Convert.ToInt32(res_esp[0]) > 0)
+                            {
+                                if (res_esp[0] == "1")
+                                {
+                                    encotro_info = true;
+                                    info_a_procesar = res_esp[1];
+                                    posicion_confirmada_del_producto = posicion_posible;
+                                }
+                            }
+                            else
+                            {
+                                for (int i = G_donde_inicia_la_tabla; i < var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int].Length; i++)
+                                {
+
+                                    resul_busqueda = op_tex.busqueda_profunda_string(var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][i], "" + num_column_comp, comparar);
+                                    res_esp = resul_busqueda.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                                    //encontro el dato?
+                                    if (Convert.ToInt32(res_esp[0]) > 0)
+                                    {
+                                        if (res_esp[0] == "1")
+                                        {
+
+                                            encotro_info = true;
+                                            info_a_procesar = res_esp[1];
+                                            posicion_confirmada_del_producto = i;
+
+                                            break;
+                                        }
+                                    }
+
+
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            for (int i = G_donde_inicia_la_tabla; i < var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int].Length; i++)
+                            {
+
+                                resul_busqueda = op_tex.busqueda_profunda_string(var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][i], "" + num_column_comp, comparar);
+                                res_esp = resul_busqueda.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                                //encontro el dato?
+                                if (Convert.ToInt32(res_esp[0]) > 0)
+                                {
+                                    if (res_esp[0] == "1")
+                                    {
+
+                                        encotro_info = true;
+                                        info_a_procesar = res_esp[1];
+                                        posicion_confirmada_del_producto = i;
+
+                                        break;
+                                    }
+                                }
+
+
+                            }
+                        }
+
+                        if (encotro_info == true)
+                        {
+
+
+                            var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][posicion_confirmada_del_producto] =
+                                op_tex.editar_inc_agregar_edicion_profunda_multiple_comparacion_final_MULTIPLE_A_CHECAR_string
+                                (res_esp[1], numero_columnas_editar, comparar_y_edicion_COMPARACION_FINAL, edit_0_increm_1_o_agregar_si_no_esta_2);
+
+
+                            cambiar_archivo_con_arreglo(direccion_archivo, var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int]);
+                            info_a_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][posicion_confirmada_del_producto];
+                        }
+
+                        //no encontro la info
+                        else
+                        {
+                            if (texto_a_agregar_si_no_esta != "")
+                            {
+                                Agregar_solo_prog(direccion_archivo + G_caracter_separacion_funciones_espesificas[3] + texto_a_agregar_si_no_esta);
+                                info_a_retornar = "2" + G_caracter_para_confirmacion_o_error[0] + "agrego_la_informacion";
+                            }
+                            else
+                            {
+                                info_a_retornar = "-1" + G_caracter_para_confirmacion_o_error[0] + "no encontro el dato y no se puede agregar por que la variable texto_a_agregar_si_no_esta esta vacia";
+                            }
+
+                        }
+                    }
+
+                }
+
+                else
+                {
+                    //no encontro archivo
+                    if (res_esp_archivo[0] == "0")
+                    {
+                        info_a_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no se encontro el archivo";
+                    }
+                    //solo encontro archivo y no esta en la lista
+                    if (res_esp_archivo[0] == "-1")
+                    {
+                        string[] inventario = LEER_SOLO_PROG(direccion_archivo).Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                        for (int i = G_donde_inicia_la_tabla; i < inventario.Length; i++)
+                        {
+                            string[] columnas = inventario[i].Split(caracter_separacion[0][0]);
+
+                            if (columnas[num_column_comp] == comparar)
+                            {
+
+                                inventario[i] = op_tex.editar_inc_edicion_profunda_multiple_string(inventario[i], numero_columnas_editar, comparar_y_edicion_COMPARACION_FINAL, edit_0_increm_1_o_agregar_si_no_esta_2);
+
+                                cambiar_archivo_con_arreglo(direccion_archivo, inventario);
+                                info_a_retornar = "2" + G_caracter_para_confirmacion_o_error[0] + inventario[i];
+                                break;
+                            }
+                        }
+
+                    }
+
+                }
+
+
+                //sw_bandera.Close();
+            }
+            catch
+            {
+                //sw_bandera.Close();
+            }
+
+
+
+            return info_a_retornar;
+        }
+
+        int cont_temp = 0;
+        public string Editar_incr_o_agrega_COMPARACION_YY_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_es_multiple_con_comparacion_final_BUSQUEDA_ID
+            (string datos)
+        {
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            // PARAMETROS---------------------------------------------------------------------------
+            string direccion_archivo_a_checar = "";
+            if (datos_epliteados.Length >= 1 && datos_epliteados[0] != "")
+            {
+                direccion_archivo_a_checar = datos_epliteados[0];
+            }
+
+            string num_column_comp = "";
+            if (datos_epliteados.Length >= 2 && datos_epliteados[1] != "")
+            {
+                num_column_comp = datos_epliteados[1];
+            }
+
+            string comparar__ = "";
+            if (datos_epliteados.Length >= 3 && datos_epliteados[2] != "")
+            {
+                comparar__ = datos_epliteados[2];
+            }
+
+            string numero_columnas_editar = "";
+            if (datos_epliteados.Length >= 4 && datos_epliteados[3] != "")
+            {
+                numero_columnas_editar = datos_epliteados[3];
+            }
+
+            string comparar_con_editar_columna = "";
+            if (datos_epliteados.Length >= 5 && datos_epliteados[4] != "")
+            {
+                comparar_con_editar_columna = datos_epliteados[4];
+            }
+
+            string edit_0_increm_1_o_agregar_si_no_esta_2 = "";
+            if (datos_epliteados.Length >= 6 && datos_epliteados[5] != "")
+            {
+                edit_0_increm_1_o_agregar_si_no_esta_2 = datos_epliteados[5];
+            }
+
+            string texto_a_agregar_si_no_esta = "";
+            if (datos_epliteados.Length >= 7 && datos_epliteados[6] != "")
+            {
+                texto_a_agregar_si_no_esta = datos_epliteados[6];
+            }
+
+            object caracter_separacion_obj = null;
+            if (datos_epliteados.Length >= 8 && datos_epliteados[7] != "")
+            {
+                caracter_separacion_obj = datos_epliteados[7];
+            }
+
+            string posicion_fila = "";
+            if (datos_epliteados.Length >= 9 && datos_epliteados[8] != "")
+            {
+                posicion_fila = datos_epliteados[8];
+            }
+
+
+            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_obj);
+            string info_a_retornar = "";
+
+            /*
+            //-------------------------------------------------------------------------------------------
+            string[] dir_sep = extraer_separado_carpetas_nombreArchivo_extencion(direccion_archivo_a_checar);
+            dir_sep[0] = dir_sep[0] + "\\" + G_direccion_base_archivos_bandera;
+            string dir_bandera = dir_sep[0] + dir_sep[1] + "." + dir_sep[2];
+            //este archivo bandera es para que no se agarre el archivo otro programa antes de sustituirlo
+            dir_bandera = dir_bandera.Replace(".TXT", "_BANDERA.TXT");
+            Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(dir_bandera, leer_y_agrega_al_arreglo: false);
+
+
+            StreamWriter sw_bandera = null;
+            bool esta_libre = false;
+            while (esta_libre == false)
+            {
+                try
+                {
+                    sw_bandera = new StreamWriter(dir_bandera);
+                    esta_libre = true;
+                }
+                catch { }
+            }
+            //------------------------------------------------------------------------------------------
+            */
+            try
+            {
+
+
+                string direccion_archivo = direccion_archivo_a_checar;
+                string resultado_archivo = SACAR_INDICE_DEL_ARREGLO_DE_DIRECCION_SOLO_PROG(direccion_archivo);
+                string[] res_esp_archivo = resultado_archivo.Split(G_caracter_para_confirmacion_o_error[0][0]);
+
+                //encontro o no archivo
+                if (Convert.ToInt32(res_esp_archivo[0]) > 0)//si res es mayor a 0 la operacioon fue exitosa si no hubo un error
+                {
+                    //encontro archivo y direccion en la lista
+                    if (res_esp_archivo[0] == "1")
+                    {
+
+                        int num_indice_de_direccion_int = Convert.ToInt32(res_esp_archivo[1]);
+                        bool encotro_info = false;
+                        string info_a_procesar = "";
+                        string resul_busqueda = null;
+                        string[] res_esp = null;
+                        int posicion_confirmada_del_producto = -1;
+
+                        if (posicion_fila != "")
+                        {
+                            int posicion_posible = Convert.ToInt32(posicion_fila);
+                            resul_busqueda = op_tex.busqueda_profunda_string(var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][posicion_posible], "" + num_column_comp, comparar__);
+                            res_esp = resul_busqueda.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                            //encontro el producto en la posicion o  lo buscara en toda la base?
+                            if (Convert.ToInt32(res_esp[0]) > 0)
+                            {
+                                if (res_esp[0] == "1")
+                                {
+                                    encotro_info = true;
+                                    info_a_procesar = res_esp[1];
+                                    posicion_confirmada_del_producto = posicion_posible;
+                                }
+                            }
+                            else
+                            {
+                                for (int i = G_donde_inicia_la_tabla; i < var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int].Length; i++)
+                                {
+
+                                    resul_busqueda = op_tex.busqueda_con_YY_profunda_texto(var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][i], "" + num_column_comp, comparar__);
+                                    res_esp = resul_busqueda.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                                    //encontor informacion?
+                                    if (Convert.ToInt32(res_esp[0]) > 0)
+                                    {
+                                        if (res_esp[0] == "1")
+                                        {
+
+                                            encotro_info = true;
+                                            info_a_procesar = res_esp[1];
+                                            posicion_confirmada_del_producto = i;
+                                            break;
+                                        }
+                                    }
+
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            for (int i = G_donde_inicia_la_tabla; i < var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int].Length; i++)
+                            {
+
+                                resul_busqueda = op_tex.busqueda_con_YY_profunda_texto(var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][i], "" + num_column_comp, comparar__);
+                                res_esp = resul_busqueda.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                                //encontor informacion?
+                                if (Convert.ToInt32(res_esp[0]) > 0)
+                                {
+                                    if (res_esp[0] == "1")
+                                    {
+
+                                        encotro_info = true;
+                                        info_a_procesar = res_esp[1];
+                                        posicion_confirmada_del_producto = i;
+                                        break;
+                                    }
+                                }
+
+
+                            }
+                        }
+                        //no encontro la se encontro la info?
+                        if (encotro_info == true)
+                        {
+                            cont_temp++;
+                            if (cont_temp == 6 || cont_temp == 3)
+                            {
+
+                            }
+
+
+                            string checador = var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][posicion_confirmada_del_producto]
+                                            =
+                                            op_tex.editar_inc_agregar_edicion_profunda_multiple_comparacion_final_MULTIPLE_A_CHECAR_string
+
+                                            (res_esp[1],
+                                            numero_columnas_editar,
+                                            comparar_con_editar_columna,
+                                            edit_0_increm_1_o_agregar_si_no_esta_2);
+
+
+                            cambiar_archivo_con_arreglo(direccion_archivo, var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int]);
+                            info_a_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + var_fun_GG.GG_base_arreglo_de_arreglos[num_indice_de_direccion_int][posicion_confirmada_del_producto];
+                        }
+
+
+                        else
+                        {
+                            if (texto_a_agregar_si_no_esta != "")
+                            {
+                                Agregar_solo_prog(direccion_archivo + G_caracter_separacion_funciones_espesificas[3] + texto_a_agregar_si_no_esta);
+                                info_a_retornar = "2" + G_caracter_para_confirmacion_o_error[0] + "agrego_la_informacion";
+                            }
+                            else
+                            {
+                                info_a_retornar = "-1" + G_caracter_para_confirmacion_o_error[0] + "no encontro el dato y no se puede agregar por que la variable texto_a_agregar_si_no_esta esta vacia";
+                            }
+
+                        }
+                    }
+
+                }
+
+                else
+                {
+                    //no encontro archivo
+                    if (res_esp_archivo[0] == "0")
+                    {
+                        info_a_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no se encontro el archivo";
+                    }
+
+
+                }
+
+                //sw_bandera.Close();
+            }
+            catch
+            {
+                //sw_bandera.Close();
+            }
+
+
+
+
+            return info_a_retornar;
+        }
+
+        string G_direccion_base_archivos_bandera = "BANDERAS_ARCH\\";
+        public string cambiar_archivo_con_arreglo(string direccion_archivo, string[] arreglo, object caracter_separacion_objeto = null, object stream_reader_o_write = null)
+        {
+            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
+
+
+            string[] dir_sep = extraer_separado_carpetas_nombreArchivo_extencion(direccion_archivo);
+            dir_sep[0] = dir_sep[0] + "\\" + G_direccion_base_archivos_bandera;
+            string dir_bandera = dir_sep[0] + "\\" + dir_sep[1] + "." + dir_sep[2];
+            //este archivo bandera es para que no se agarre el archivo otro programa antes de sustituirlo
+            dir_bandera = dir_bandera + direccion_archivo.Replace(".TXT", "_BANDERA_CAA.TXT");
+            Crear_archivo_y_directorio(dir_bandera);
+
+
+            StreamWriter sw_bandera = null;
+            bool esta_libre = false;
+            while (esta_libre == false)
+            {
+                try
+                {
+                    sw_bandera = new StreamWriter(dir_bandera);
+                    esta_libre = true;
+                }
+                catch { }
+            }
+            //------------------------------------------------------------------------------------------
+
+
+
+
+            string exito_o_fallo = "";
+            string dir_tem = "tem.txt";
+            StreamWriter sw = new StreamWriter(dir_tem, true);
+            try
+            {
+
+                for (int i = 0; i < arreglo.Length; i++)
+                {
+                    sw.WriteLine(arreglo[i]);
+                }
+                exito_o_fallo = "1" + caracter_separacion[0] + "exito";
+                sw.Close();
+
+
+                //registro_cambio_datos_archivo_para_actualisacion_en_multiples_programas(direccion_archivo, "EDITAR_MULTIPLE_FILAS", "");
+                sw_bandera.Close();
+            }
+            catch (Exception e)
+            {
+
+                exito_o_fallo = "2" + caracter_separacion[0] + "fallo" + caracter_separacion[0] + e;
+                sw.Close();
+
+                sw_bandera.Close();
+            }
+
+
+            File.Delete(direccion_archivo);//borramos el archivo original
+            File.Move(dir_tem, direccion_archivo);//renombramos el archivo temporal por el que tenia el original
+
+            return exito_o_fallo;
+        }
+
+
+        public string[] extraer_separado_carpetas_nombreArchivo_extencion(string direccion_archivo)
+        {
+            string[] arreglo_retornar = new string[3];
+
+
+            string[] direccion_esp = direccion_archivo.Split('\\');
+            string[] nom_ext_esp = direccion_esp[direccion_esp.Length - 1].Split('.');
+            if (nom_ext_esp.Length > 1)
+            {
+                string carpetas = op_tex.joineada_paraesida_SIN_NULOS_y_quitador_de_extremos_del_string(direccion_archivo, '\\', 1);
+                string nombre = nom_ext_esp[0];
+                string extencion = nom_ext_esp[1];
+                arreglo_retornar[0] = carpetas;
+                arreglo_retornar[1] = nombre;
+                arreglo_retornar[2] = extencion;
+            }
+            else
+            {
+
+            }
+
+
+            return arreglo_retornar;
         }
 
 

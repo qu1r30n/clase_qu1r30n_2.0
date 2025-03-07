@@ -18,10 +18,10 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         static public string[] GG_caracter_separacion = { "|", "°", "¬", "╦", "╔" };
 
-        static public string[] GG_caracter_separacion_funciones_espesificas = { "~", "§", "¶", "╬", "╝" };
+        static public string[] GG_caracter_separacion_funciones_espesificas = { "~", "§", "¶", "╬", "╝", "╩", "║", "╗", "┐", "└", "┬", "├", "┼" };
 
         static public string[] GG_caracter_para_confirmacion_o_error = { "╣", "╠" };
-
+        
         static public string[] GG_caracter_para_transferencia_entre_archivos = { "┴", "■" };
 
         static public string[] GG_caracter_para_usar_como_enter_y_nuevo_mensaje = { "•", "∆" };
@@ -42,7 +42,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         //funciones---------------------------------------------------------------------------------------------------------
 
-        public string[] GG_funcion_caracter_separacion_(object caracter_separacion_objeto = null)
+        public string[] GG_funcion_caracter_separacion(object caracter_separacion_objeto = null)
         {
             string[] caracter_separacion = null;
             if (caracter_separacion_objeto == null)
@@ -77,7 +77,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         }
 
-        public string[] GG_funcion_caracter_separacion_funciones_especificas_(object caracter_separacion_objeto = null)
+        public string[] GG_funcion_caracter_separacion_funciones_especificas(object caracter_separacion_objeto = null)
         {
             string[] caracter_separacion = null;
             if (caracter_separacion_objeto == null)
