@@ -95,6 +95,15 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.INCREMENTA_CELDA_ID_INFO_DIVIDIDA, datos);
 
             }
+
+            else if (proceso == "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA")
+            {
+                
+
+                info_a_retornar = EjecutarFuncionEnDatos(bas.INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA, datos);
+
+            }
+
             else if (proceso == "ELIMINAR_FILA_PARA_MULTIPLES_PROGRAMAS_SOLO_PROG")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"

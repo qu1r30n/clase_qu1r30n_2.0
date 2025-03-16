@@ -30,6 +30,7 @@ namespace CLASE_QU1R30N_2
             crear_archivos_transferencia();
             crear_archivos_para_punto_de_venta();
 
+            
             pruebas();
             
             
@@ -124,7 +125,7 @@ namespace CLASE_QU1R30N_2
         public void pruebas()
         {
             //enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "TIENDA" + G_caracter_separacion_funciones_espesificas[1] + "EXTRAER_INVENTARIO" + G_caracter_separacion_funciones_espesificas[2] + G_dir_arch_transferencia[i]);
-            string resp = enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "VENTAS" + G_caracter_separacion_funciones_espesificas[1] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "1");
+            string resp = enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "VENTAS" + G_caracter_separacion_funciones_espesificas[1] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "1");
 
 
 

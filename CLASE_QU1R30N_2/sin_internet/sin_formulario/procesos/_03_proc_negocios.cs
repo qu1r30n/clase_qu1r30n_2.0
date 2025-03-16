@@ -316,7 +316,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                         //_00_ID|_01_PRODUCTO|_02_CONTENIDO|_03_TIPO_MEDIDA|_04_PRECIO_VENTA|_05_COD_BARRAS|_06_CANTIDAD|_07_COSTO_COMP|_08_PROVEDOR|_09_GRUPO|_10_CANT_X_PAQUET|_11_ES_PAQUETE|_12_CODBAR_PAQUETE|_13_COD_BAR_INDIVIDUAL_ES_PAQ|_14_LIGAR_PROD_SAB|_15_IMPUESTOS|_16_INGREDIENTES|_17_CADUCIDAD|_18_ULTIMO_MOV|_19_SUCUR_VENT|_20_CLAF_PROD|_21_DIR_IMG_INTER|_22_DIR_IMG_COMP|_23_INFO_EXTRA|_24_PROCESO_CREAR|_25_DIR_VID_PROC_CREAR|_26_TIEMPO_FABRICACION|_27_NO_PONER_NADA
 
                         string dat_para_el_registro = codigos_espliteados[i] + G_caracter_separacion_funciones_espesificas[5] + cantidades[i] + G_caracter_separacion_funciones_espesificas[5] + fila[4] + G_caracter_separacion_funciones_espesificas[5] + fila[4] + G_caracter_separacion_funciones_espesificas[5] + fila[0];
-                        enl_princ.enlasador("MODELO_REGISTROS" + G_caracter_separacion_funciones_espesificas[0] + "REGISTRO_VENTAS" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[10, 0] + G_caracter_separacion_funciones_espesificas[3] + dat_para_el_registro + G_caracter_separacion_funciones_espesificas[3] + año_mes_dia_hora);
+                        enl_princ.enlasador("MODELO_REGISTROS" + G_caracter_separacion_funciones_espesificas[0] + "REGISTRO_VENTAS" + G_caracter_separacion_funciones_espesificas[1] + dat_para_el_registro + G_caracter_separacion_funciones_espesificas[3] + año_mes_dia_hora);
 
                     }
                 }
