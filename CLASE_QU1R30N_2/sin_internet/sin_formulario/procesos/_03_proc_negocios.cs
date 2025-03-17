@@ -295,8 +295,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             //-----------------------------------------------------------------------------------------
 
             DateTime fecha_hora = DateTime.Now;
-            string año_mes_dia_hora = fecha_hora.ToString("yyyyMMddHH");
-            string año = fecha_hora.ToString("yyyy");
+            string año_mes_dia_hora = fecha_hora.ToString("yyyyMMddHHmm");
+            
 
             string[] codigos_espliteados = codigos.Split(G_caracter_separacion[1][0]);
             string[] cantidades_espliteados = cantidades.Split(G_caracter_separacion[1][0]);

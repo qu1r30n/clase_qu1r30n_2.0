@@ -360,7 +360,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     + caracter_separacion_string[0]
                     + total_compra//total_costo_compra
                     + caracter_separacion_string[0]
-                    + total_pagar_imp 
+                    + total_pagar_imp
                     + caracter_separacion_string[0]
                     + "0" //total_dedusibles
                     + caracter_separacion_string[0]
@@ -371,15 +371,15 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 //info_a_retornar = bas.Agregar(direccion_archivo, info_agregar);
                 info_a_retornar = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_INFO_DIV" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[2] + G_caracter_separacion_funciones_espesificas[3][0] + info_agregar);
 
-                string año = "";
-                string año_mes = "";
+                
+                string año_mes_dia = "";
                 for (int j = 0; j < fecha_o_hora.Length - 4; j++)
                 {
-                    año_mes = año_mes + fecha_o_hora[j];
+                    año_mes_dia = año_mes_dia + fecha_o_hora[j];
                 }
 
                 info_agregar =
-                    año_mes
+                    año_mes_dia
                     + caracter_separacion_string[0]
                     + tipo_de_operacion
                     + caracter_separacion_string[0]
@@ -399,15 +399,34 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     + caracter_separacion_string[0]
                     + sucursal;
 
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[3] + G_caracter_separacion_funciones_espesificas[3] + (año_mes_dia + G_caracter_separacion[0] + tipo_de_operacion) + G_caracter_separacion_funciones_espesificas[3] + ("1" + G_caracter_separacion[0] + "2") + G_caracter_separacion_funciones_espesificas[3] + ("5" + G_caracter_separacion[0] + "6" + G_caracter_separacion[0] + "7" + G_caracter_separacion[0] + "8") + G_caracter_separacion_funciones_espesificas[3] + (total_venta + G_caracter_separacion[0] + total_compra + G_caracter_separacion[0] + total_pagar_imp + G_caracter_separacion[0] + (total_venta - (total_compra + total_pagar_imp))) + G_caracter_separacion_funciones_espesificas[3] + info_agregar);
 
 
 
-                //incremento datos de registros
-                for (int k = 3; k < G_direcciones.Length; k++)
+
+                string año_mes = "";
+                for (int j = 0; j < fecha_o_hora.Length - 6; j++)
                 {
-                    enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[3] + G_caracter_separacion_funciones_espesificas[3] + (año_mes + G_caracter_separacion[0] + tipo_de_operacion) + G_caracter_separacion_funciones_espesificas[3] + ("1" + G_caracter_separacion[0] + "2") + G_caracter_separacion_funciones_espesificas[3] + ("5" + G_caracter_separacion[0] + "6" + G_caracter_separacion[0] + "7" + G_caracter_separacion[0] + "8") + G_caracter_separacion_funciones_espesificas[3] + (total_venta + G_caracter_separacion[0] + total_compra + G_caracter_separacion[0] + total_pagar_imp + G_caracter_separacion[0] + (total_venta - (total_compra + total_pagar_imp))) + G_caracter_separacion_funciones_espesificas[3] + info_agregar);
+                    año_mes = año_mes + fecha_o_hora[j];
                 }
-                
+
+                info_agregar = año_mes + caracter_separacion_string[0] + tipo_de_operacion + caracter_separacion_string[0] + "total_imp" + caracter_separacion_string[2] + total_pagar_imp + caracter_separacion_string[1] + string.Join(caracter_separacion_string[1], impuestos_a_registrar) + caracter_separacion_string[0] + "SIN_COMENTARIOS" + caracter_separacion_string[0] + total_venta + caracter_separacion_string[0] + total_compra + caracter_separacion_string[0] + total_pagar_imp + caracter_separacion_string[0] + "0" + caracter_separacion_string[0] + (total_venta - (total_compra + total_pagar_imp)) + caracter_separacion_string[0] + sucursal;
+
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[4] + G_caracter_separacion_funciones_espesificas[3] + (año_mes + G_caracter_separacion[0] + tipo_de_operacion) + G_caracter_separacion_funciones_espesificas[3] + ("1" + G_caracter_separacion[0] + "2") + G_caracter_separacion_funciones_espesificas[3] + ("5" + G_caracter_separacion[0] + "6" + G_caracter_separacion[0] + "7" + G_caracter_separacion[0] + "8") + G_caracter_separacion_funciones_espesificas[3] + (total_venta + G_caracter_separacion[0] + total_compra + G_caracter_separacion[0] + total_pagar_imp + G_caracter_separacion[0] + (total_venta - (total_compra + total_pagar_imp))) + G_caracter_separacion_funciones_espesificas[3] + info_agregar);
+
+
+
+                string año = "";
+                for (int j = 0; j < fecha_o_hora.Length - 8; j++)
+                {
+                    año = año + fecha_o_hora[j];
+                }
+
+                info_agregar = año + caracter_separacion_string[0] + tipo_de_operacion + caracter_separacion_string[0] + "total_imp" + caracter_separacion_string[2] + total_pagar_imp + caracter_separacion_string[1] + string.Join(caracter_separacion_string[1], impuestos_a_registrar) + caracter_separacion_string[0] + "SIN_COMENTARIOS" + caracter_separacion_string[0] + total_venta + caracter_separacion_string[0] + total_compra + caracter_separacion_string[0] + total_pagar_imp + caracter_separacion_string[0] + "0" + caracter_separacion_string[0] + (total_venta - (total_compra + total_pagar_imp)) + caracter_separacion_string[0] + sucursal;
+
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[5] + G_caracter_separacion_funciones_espesificas[3] + (año + G_caracter_separacion[0] + tipo_de_operacion) + G_caracter_separacion_funciones_espesificas[3] + ("1" + G_caracter_separacion[0] + "2") + G_caracter_separacion_funciones_espesificas[3] + ("5" + G_caracter_separacion[0] + "6" + G_caracter_separacion[0] + "7" + G_caracter_separacion[0] + "8") + G_caracter_separacion_funciones_espesificas[3] + (total_venta + G_caracter_separacion[0] + total_compra + G_caracter_separacion[0] + total_pagar_imp + G_caracter_separacion[0] + (total_venta - (total_compra + total_pagar_imp))) + G_caracter_separacion_funciones_espesificas[3] + info_agregar);
+
+
 
 
 
