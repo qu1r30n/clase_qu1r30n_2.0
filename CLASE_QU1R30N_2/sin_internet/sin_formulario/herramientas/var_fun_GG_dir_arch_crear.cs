@@ -118,7 +118,15 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 /*24*/ { "1", "_24_PROCESO_CREAR", "°°°°NO_VISIBLE" , "NOSE", "TEXTO" },
                 /*25*/ { "1", "_25_DIR_VID_PROC_CREAR", "" , "NOSE", "TEXTO" },
                 /*26*/ { "1", "_26_TIEMPO_FABRICACION", "0" , "-0", "ENTERO_DECIMAL" },
-                /*27*/ { "2", "_27_NO_PONER_NADA", "" , "", "TEXTO" },
+                /*27*/ { "1", "_27_HISTORIAL","" , "0¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬", "TEXTO" },
+                /*28*/ { "1", "_28_RANKING","" , "0", "TEXTO" },
+                /*29*/ { "1", "_29_PROMEDIO","" , "0", "TEXTO" },
+                /*30*/ { "1", "_30_VECES_QUE_SUPERA_PROMEDIO","","7" , "TEXTO" },
+                /*31*/ { "1", "_31_USO_MULTIPLE","" ,"", "TEXTO" },              // Nueva columna
+                /*32*/ { "1", "_32_USOMULTI_TIPO_DE_PRODUCTO","","" , "TEXTO" },  // Nueva columna
+                /*33*/ { "1", "_33_MULTI_COSTO_COMPRA","" , "0", "TEXTO" },        // Nueva columna
+                /*34*/ { "1", "_34_NIVEL_DE_NESECIDAD","" , "0", "TEXTO" },        // Nueva columna
+                /*35*/ { "2", "_35_NO_PONER_NADA", "" , "", "TEXTO" },
         };
         public static void RecargarVentanaEmergenteProductos(string al_finalizar_que_borrar_para_proxima_ventana = "")
         {
@@ -132,7 +140,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 /*5*/ { "2", "_05_COD_BARRAS", GG_variables_string[0], "NOSE" , "TEXTO" },
                 /*6*/ { "1", "_06_CANTIDAD", "1°SOLO_NUMEROS" , "-0", "ENTERO_DECIMAL" },
                 /*7*/ { "1", "_07_COSTO_COMP", "0°SOLO_NUMEROS" , "-0", "ENTERO_DECIMAL" },
-                /*8*/ { "4", "_08_PROVEDOR", "NOSE°TODAS_MAYUSCULAS°" + GG_variables_string[5] + '°' + GG_variables_string[6] , "NOSE", "TEXTO" },
+                /*8*/ { "4", "_08_PROVEDOR", "NOSE°TODAS_MAYUSCULAS°" + GG_variables_string[5] + '°' + GG_variables_string[6] , "NOSE¬0", "TEXTO" },
                 /*9*/ { "4", "_09_GRUPO", "PRODUCTO_PIEZA°°PRODUCTO_PIEZA°PRODUCTO_PIEZA¬PRODUCTO_CANTIDAD¬PRODUCTO_ELABORADO¬VENTA_INGREDIENTE°OCULTAR_CONTROL╦29╦PRODUCTO_ELABORADO¬OCULTAR_CONTROL╦45╦PRODUCTO_ELABORADO", "PRODUCTO_PIEZA", "TEXTO" },
                 /*10*/ { "1", "_10_CANT_X_PAQUET", "1°SOLO_NUMEROS" , "-0", "ENTERO_DECIMAL" },
                 /*11*/ { "4", "_11_ES_PAQUETE", "INDIVIDUAL°°INDIVIDUAL°INDIVIDUAL¬PAQUETE_MAYOREO¬PAQUETE_PROMOCION°OCULTAR_CONTROL╦27╦PAQUETE_MAYOREO╔PAQUETE_PROMOCION", "INDIVIDUAL", "TEXTO" },
@@ -143,15 +151,23 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 /*16*/ { "1", "_16_INGREDIENTES", "°°°°NO_VISIBLE¬PRODUCTO_ELABORADO" , "NOSE", "TEXTO" },
                 /*17*/ { "1", "_17_CADUCIDAD", "0°SOLO_NUMEROS" , "-0", "TEXTO" },
                 /*18*/ { "1", "_18_ULTIMO_MOV", "0°SOLO_NUMEROS" , "-0", "TEXTO" },
-                /*19*/ { "1", "_19_SUCUR_VENT", "" , "NOSE", "TEXTO" },
+                /*19*/ { "1", "_19_SUCUR_VENT", "" , "NOSE¬0", "TEXTO" },
                 /*20*/ { "1", "_20_CLAF_PROD", "" , "-0", "ENTERO_DECIMAL" },
                 /*21*/ { "1", "_21_DIR_IMG_INTER", "" , "NOSE", "TEXTO" },
                 /*22*/ { "1", "_22_DIR_IMG_COMP", "" , "NOSE", "TEXTO" },
                 /*23*/ { "1", "_23_INFO_EXTRA", "" , "NOSE", "TEXTO" },
                 /*24*/ { "1", "_24_PROCESO_CREAR", "°°°°NO_VISIBLE" , "NOSE", "TEXTO" },
                 /*25*/ { "1", "_25_DIR_VID_PROC_CREAR", "" , "NOSE", "TEXTO" },
-                /*26*/ { "1", "_26_TIEMPO_FABRICACION", "0" , "NOSE", "ENTERO_DECIMAL" },
-                /*27*/ { "2", "_27_NO_PONER_NADA", "" , "", "TEXTO" },
+                /*26*/ { "1", "_26_TIEMPO_FABRICACION", "0" , "-0", "ENTERO_DECIMAL" },
+                /*27*/ { "1", "_27_HISTORIAL","" , "0¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬", "TEXTO" },
+                /*28*/ { "1", "_28_RANKING","" , "0", "TEXTO" },
+                /*29*/ { "1", "_29_PROMEDIO","" , "0", "TEXTO" },
+                /*30*/ { "1", "_30_VECES_QUE_SUPERA_PROMEDIO","","7" , "TEXTO" },
+                /*31*/ { "1", "_31_USO_MULTIPLE","" ,"", "TEXTO" },              // Nueva columna
+                /*32*/ { "1", "_32_USOMULTI_TIPO_DE_PRODUCTO","","" , "TEXTO" },  // Nueva columna
+                /*33*/ { "1", "_33_MULTI_COSTO_COMPRA","" , "0", "TEXTO" },        // Nueva columna
+                /*34*/ { "1", "_34_NIVEL_DE_NESECIDAD","" , "0", "TEXTO" },        // Nueva columna
+                /*35*/ { "2", "_35_NO_PONER_NADA", "" , "", "TEXTO" },
             };
 
 
@@ -1219,21 +1235,37 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         static public string[,] GG_ventana_reg_prod_dia =
         {
             { "2", "_00_ID", "" ,"-1", "ENTERO_DECIMAL" },
-            { "1","1_HORA","" ,"0", "TEXTO" },
-            { "1","2_OPERACION_VENTA_COMPRA_RETIRAR_PRODUCTO_INTODUCIR_PRODUCTO","" , "NOSE", "TEXTO" },
-            { "1","3_COD_BAR_CANTIDADES_NOMBRE_PRODUCTO_PLATAFORMA_DATOSPLATAFORMA","" , "NOSE", "TEXTO" },
-
+            { "1","1_NOMBRE_PRODUCTO","","NOSE" , "TEXTO" },
+            { "1","2_CANTIDAD","" , "0", "TEXTO" },
+            { "1","3_COD_BAR","" , "NOSE", "TEXTO" },
+            { "1","4_PROVEDORES","" , "NOSE", "TEXTO" },
+            { "1","5_HISTORIAL","" , "0¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬", "TEXTO" },
+            { "1","6_RANKING","" , "0", "TEXTO" },
+            { "1","7_PROMEDIO","" , "0", "TEXTO" },
+            { "1","8_VECES_QUE_SUPERA_PROMEDIO","","7" , "TEXTO" },
+            { "1","9_USO_MULTIPLE","" ,"", "TEXTO" },              // Nueva columna
+            { "1","10_USOMULTI_TIPO_DE_PRODUCTO","","" , "TEXTO" },  // Nueva columna
+            { "1","11_MULTI_COSTO_COMPRA","" , "0", "TEXTO" },        // Nueva columna
+            { "1","12_NIVEL_DE_NESECIDAD","" , "0", "TEXTO" },        // Nueva columna
 
         };
         public static void RecargarVentanaEmergenteReg_prod_Dia(string al_finalizar_que_borrar_para_proxima_ventana = "")
         {
             GG_ventana_reg_prod_dia = new string[,]
             {
-                { "2", "_00_ID", "", "-1", "ENTERO_DECIMAL" },
-                { "1","1_HORA","" ,"0", "TEXTO" },
-                { "1","2_OPERACION_VENTA_COMPRA_RETIRAR_PRODUCTO_INTODUCIR_PRODUCTO","" , "NOSE", "TEXTO" },
-                { "1","3_COD_BAR_CANTIDADES_NOMBRE_PRODUCTO_PLATAFORMA_DATOSPLATAFORMA","" , "NOSE", "TEXTO" },
-
+                { "2", "_00_ID", "" ,"-1", "ENTERO_DECIMAL" },
+                { "1","1_NOMBRE_PRODUCTO","","NOSE" , "TEXTO" },
+                { "1","2_CANTIDAD","" , "0", "TEXTO" },
+                { "1","3_COD_BAR","" , "NOSE", "TEXTO" },
+                { "1","4_PROVEDORES","" , "NOSE", "TEXTO" },
+                { "1","5_HISTORIAL","" , "0¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬", "TEXTO" },
+                { "1","6_RANKING","" , "0", "TEXTO" },
+                { "1","7_PROMEDIO","" , "0", "TEXTO" },
+                { "1","8_VECES_QUE_SUPERA_PROMEDIO","","7" , "TEXTO" },
+                { "1","9_USO_MULTIPLE","" ,"", "TEXTO" },              // Nueva columna
+                { "1","10_USOMULTI_TIPO_DE_PRODUCTO","","" , "TEXTO" },  // Nueva columna
+                { "1","11_MULTI_COSTO_COMPRA","" , "0", "TEXTO" },        // Nueva columna
+                { "1","12_NIVEL_DE_NESECIDAD","" , "0", "TEXTO" },        // Nueva columna
             };
 
 
