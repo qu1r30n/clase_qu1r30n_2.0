@@ -36,7 +36,7 @@ namespace CLASE_QU1R30N_2
             
         }
 
-        private void crear_archivos_transferencia()
+        public void crear_archivos_transferencia()
         {
 
             for (int i = 0; i < G_dir_arch_transferencia.Length - 1; i++)

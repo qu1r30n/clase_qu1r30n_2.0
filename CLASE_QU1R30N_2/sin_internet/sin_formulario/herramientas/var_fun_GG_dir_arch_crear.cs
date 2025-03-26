@@ -118,15 +118,11 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 /*24*/ { "1", "_24_PROCESO_CREAR", "°°°°NO_VISIBLE" , "NOSE", "TEXTO" },
                 /*25*/ { "1", "_25_DIR_VID_PROC_CREAR", "" , "NOSE", "TEXTO" },
                 /*26*/ { "1", "_26_TIEMPO_FABRICACION", "0" , "-0", "ENTERO_DECIMAL" },
-                /*27*/ { "1", "_27_HISTORIAL","" , "0¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬", "TEXTO" },
-                /*28*/ { "1", "_28_RANKING","" , "0", "TEXTO" },
-                /*29*/ { "1", "_29_PROMEDIO","" , "0", "TEXTO" },
-                /*30*/ { "1", "_30_VECES_QUE_SUPERA_PROMEDIO","","7" , "TEXTO" },
-                /*31*/ { "1", "_31_USO_MULTIPLE","" ,"", "TEXTO" },              // Nueva columna
-                /*32*/ { "1", "_32_USOMULTI_TIPO_DE_PRODUCTO","","" , "TEXTO" },  // Nueva columna
-                /*33*/ { "1", "_33_MULTI_COSTO_COMPRA","" , "0", "TEXTO" },        // Nueva columna
-                /*34*/ { "1", "_34_NIVEL_DE_NESECIDAD","" , "0", "TEXTO" },        // Nueva columna
-                /*35*/ { "2", "_35_NO_PONER_NADA", "" , "", "TEXTO" },
+                /*27*/ { "2", "_27_INDICES_DIA_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
+                /*28*/ { "2", "_28_INDICES_MES_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
+                /*29*/ { "2", "_29_INDICES_AÑO_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
+                /*30*/ { "2", "_30_ULTIMA_VENTA", "" , "", "TEXTO" },
+                /*31*/ { "2", "_31_NO_PONER_NADA", "" , "", "TEXTO" },
         };
         public static void RecargarVentanaEmergenteProductos(string al_finalizar_que_borrar_para_proxima_ventana = "")
         {
@@ -159,16 +155,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 /*24*/ { "1", "_24_PROCESO_CREAR", "°°°°NO_VISIBLE" , "NOSE", "TEXTO" },
                 /*25*/ { "1", "_25_DIR_VID_PROC_CREAR", "" , "NOSE", "TEXTO" },
                 /*26*/ { "1", "_26_TIEMPO_FABRICACION", "0" , "-0", "ENTERO_DECIMAL" },
-                /*27*/ { "1", "_27_HISTORIAL","" , "0¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬", "TEXTO" },
-                /*28*/ { "1", "_28_RANKING","" , "0", "TEXTO" },
-                /*29*/ { "1", "_29_PROMEDIO","" , "0", "TEXTO" },
-                /*30*/ { "1", "_30_VECES_QUE_SUPERA_PROMEDIO","","7" , "TEXTO" },
-                /*31*/ { "1", "_31_USO_MULTIPLE","" ,"", "TEXTO" },              // Nueva columna
-                /*32*/ { "1", "_32_USOMULTI_TIPO_DE_PRODUCTO","","" , "TEXTO" },  // Nueva columna
-                /*33*/ { "1", "_33_MULTI_COSTO_COMPRA","" , "0", "TEXTO" },        // Nueva columna
-                /*34*/ { "1", "_34_NIVEL_DE_NESECIDAD","" , "0", "TEXTO" },        // Nueva columna
-                /*35*/ { "2", "_35_NO_PONER_NADA", "" , "", "TEXTO" },
-            };
+                /*27*/ { "2", "_27_INDICES_DIA_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
+                /*28*/ { "2", "_28_INDICES_MES_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
+                /*29*/ { "2", "_29_INDICES_AÑO_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
+                /*30*/ { "2", "_30_ULTIMA_VENTA", "" , "", "TEXTO" },
+                /*31*/ { "2", "_31_NO_PONER_NADA", "" , "", "TEXTO" },
+        };
 
 
 
@@ -1841,8 +1833,45 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             /*20*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\INVENTARIO\\COSAS_NO_ESTABAN.TXT", columnas_concatenadas(GG_ventana_COSAS_NO_ESTABAN_INVENTARIO,1,var_fun_GG.GG_caracter_separacion[1]),""},
             /*21*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\INVENTARIO\\TIPOS_DE_MEDIDA.TXT", columnas_concatenadas(GG_ventana_HERRAMIENTAS,1,var_fun_GG.GG_caracter_separacion[1]),""},
             /*22*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\DAT\\TRABAJOS_POR_DIA.TXT", columnas_concatenadas(GG_trabajos_dia,1,var_fun_GG.GG_caracter_separacion[1]),""},
-            
+
     };
+
+        static private void RecargarArregloArchivos_dir_nom_archivos()
+        {
+            GG_dir_nom_archivos = new string[,]
+            {
+                /*0*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\INVENTARIO\\INVENTARIO.TXT", columnas_concatenadas(GG_ventana_emergente_productos,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*1*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\DAT\\PROVEDORES.TXT", columnas_concatenadas(GG_ventana_provedor,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*2*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\DAT\\APRENDICES_E.TXT", columnas_concatenadas(GG_ventana_APRENDICES_E,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*3*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\AFILIADOS_SIMPLE.TXT", columnas_concatenadas(GG_ventana_afiliados_simples,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*4*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\AFILIADOS_COMPLEJO.TXT", columnas_concatenadas(GG_ventana_afiliados_complejos,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*5*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\NIVELES_E_ID_HORISONTAL_AFILIADOS_SIMPLE.TXT", columnas_concatenadas(GG_ventana_niv_afiliados_simples,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*6*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\NIVELES_E_ID_HORISONTAL_AFILIADOS_COMPLEJO.TXT", columnas_concatenadas(GG_ventana_niv_afiliados_comp,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*7*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\AFILIADOS_UNIFICADO.TXT", columnas_concatenadas(GG_ventana_afiliados_unificados,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*8*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\NIVELES_E_ID_HORISONTAL_AFILIADOS_UNIFICADO.TXT", columnas_concatenadas(GG_ventana_niv_afiliados_unificado,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*9*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\DAT\\SUCUR.TXT", columnas_concatenadas(GG_ventana_SUCUR,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                //registros
+                /*10*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "\\" + DateTime.Now.ToString("yyyyMM") + "\\" + DateTime.Now.ToString("yyyyMMdd") + "_REGISTRO.TXT", columnas_concatenadas(GG_ventana_reg_dia,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*11*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "\\" + DateTime.Now.ToString("yyyyMM") + "_REGISTRO.TXT", columnas_concatenadas(GG_ventana_reg_mes,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*12*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "_REGISTRO.TXT", columnas_concatenadas(GG_ventana_reg_año,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*13*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\REGISTROS\\ACUMULADO_REGISTRO.TXT", columnas_concatenadas(GG_ventana_reg_total,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                //registro productos
+                /*14*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "\\" + DateTime.Now.ToString("yyyyMM") + "\\" + DateTime.Now.ToString("yyyyMMdd") + "_PRODUC_REGISTRO.TXT", columnas_concatenadas(GG_ventana_reg_prod_dia,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*15*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "\\" + DateTime.Now.ToString("yyyyMM") + "_PRODUC_REGISTRO.TXT", columnas_concatenadas(GG_ventana_reg_prod_mes,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*16*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "_PRODUC_REGISTRO.TXT", columnas_concatenadas(GG_ventana_reg_prod_año,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*17*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\REGISTROS\\ACUMULADO_PRODUC_REGISTRO.TXT", columnas_concatenadas(GG_ventana_reg_prod_total,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                //impuestos
+                /*18*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\IMPUESTOS\\IMPUESTOS.TXT", columnas_concatenadas(GG_ventana_IMPUESTOS,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*19*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\IMPUESTOS\\DEDUSIBLES.TXT", columnas_concatenadas(GG_ventana_DEDUSIBLES,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                //herramientas
+                /*20*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\INVENTARIO\\COSAS_NO_ESTABAN.TXT", columnas_concatenadas(GG_ventana_COSAS_NO_ESTABAN_INVENTARIO,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*21*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\INVENTARIO\\TIPOS_DE_MEDIDA.TXT", columnas_concatenadas(GG_ventana_HERRAMIENTAS,1,var_fun_GG.GG_caracter_separacion[1]),""},
+                /*22*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\DAT\\TRABAJOS_POR_DIA.TXT", columnas_concatenadas(GG_trabajos_dia,1,var_fun_GG.GG_caracter_separacion[1]),""},
+            };
+
+        }
+
+
 
 
         static public string[,] GG_dir_nom_archivos_SIN_ARREGLOS_GG =
@@ -1853,8 +1882,19 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         };
 
+        static private void RecargarArregloArchivos_SIN_ARREGLOS_GG()
+        {
+            GG_dir_nom_archivos_SIN_ARREGLOS_GG = new string[,]
+            {
+                /*0*/{"C:\\XEROX\\CONFIG\\REG\\REG_" + DateTime.Now.ToString("yyyyMMdd") + ".TXT","hora|codbar1°codbar2|total_venta|nom1°nom2|precio_compra|provedor" , "" },//reg_modificacion archivos
+                /*1*/{"CONFIG\\INF\\RECORDATORIO\\RECORDATORIO.TXT","SIN INFORMACION" , "" },//reg_modificacion archivos
+            };
+        }
+
+
+
         //direccion_para_hacer_inventarios
-        public string[,] GG_direccion_hacer_inventarios =
+        static public string[,] GG_direccion_hacer_inventarios =
         {
             { "CONFIG\\INF\\INVENTARIO\\HACER_INVENTARIO\\" + DateTime.Now.ToString("yyyyMMdd") + "_VENTAS_DURANTE_INV.TXT", "CODBAR°nombre_producto°CANTIDA°ULTIMO_MOVIMIENTO" },
             { "CONFIG\\INF\\INVENTARIO\\HACER_INVENTARIO\\" + DateTime.Now.ToString("yyyyMMdd") + "_SOBRANTES.TXT", "CODBAR°nombre_producto°CANTIDA°ULTIMO_MOVIMIENTO" },
@@ -1864,63 +1904,33 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         };
 
-        public static string GG_NUEVA_INFO_DEFAUL(string[,] arreglo_info, string columnas_a_ingresar_info_NO_DEFAUL, string info_NO_DEFAUL, string columnas_que_no_quieres_que_aparescan = "")
+        static private void RecargarArregloDireccionInventarios()
         {
-            string info_a_retornar = "";
-
-
-
-            string[] copia_arreglo = new string[arreglo_info.GetLength(0)];
-
-            for (int i = 0; i < arreglo_info.GetLength(0); i++)
+            GG_direccion_hacer_inventarios = new string[,]
             {
-                copia_arreglo[i] = arreglo_info[i, 3];
-            }
-
-
-            operaciones_textos op_tex = new operaciones_textos();
-            string[] columnas_a_editar = columnas_a_ingresar_info_NO_DEFAUL.Split(var_fun_GG.GG_caracter_separacion[1][0]);
-            string[] info_editar = info_NO_DEFAUL.Split(var_fun_GG.GG_caracter_separacion[1][0]);
-            string[] columnas_a_QUITAR = columnas_que_no_quieres_que_aparescan.Split(var_fun_GG.GG_caracter_separacion[1][0]);
-
-            for (int j = 0; j < columnas_a_editar.Length; j++)
-            {
-                int indice_a_editar = Convert.ToInt32(columnas_a_editar[j]);
-                copia_arreglo[indice_a_editar] = info_editar[j];
-            }
+                { "CONFIG\\INF\\INVENTARIO\\HACER_INVENTARIO\\" + DateTime.Now.ToString("yyyyMMdd") + "_VENTAS_DURANTE_INV.TXT", "CODBAR°nombre_producto°CANTIDA°ULTIMO_MOVIMIENTO" },
+                { "CONFIG\\INF\\INVENTARIO\\HACER_INVENTARIO\\" + DateTime.Now.ToString("yyyyMMdd") + "_SOBRANTES.TXT", "CODBAR°nombre_producto°CANTIDA°ULTIMO_MOVIMIENTO" },
+                { "CONFIG\\INF\\INVENTARIO\\HACER_INVENTARIO\\" + DateTime.Now.ToString("yyyyMMdd") + "_FALTANTES.TXT", "CODBAR°nombre_producto°CANTIDA°ULTIMO_MOVIMIENTO" },
+                { "CONFIG\\INF\\INVENTARIO\\HACER_INVENTARIO\\" + DateTime.Now.ToString("yyyyMMdd") + "_NO_ESTAN_EN_EL_FISICO.TXT", "CODBAR°nombre_producto°CANTIDA°ULTIMO_MOVIMIENTO" },
+                { "CONFIG\\INF\\INVENTARIO\\HACER_INVENTARIO\\" + DateTime.Now.ToString("yyyyMMdd") + "_NO_ESTAN_EN_EL_FISICO_PERO_PUEDE_QUE_FALTEN.TXT", "CODBAR°nombre_producto°CANTIDA°ULTIMO_MOVIMIENTO" },
+            };
+        }
 
 
 
 
-            if (columnas_que_no_quieres_que_aparescan != "")
-            {
-                for (int i = 0; i < copia_arreglo.Length; i++)
-                {
-                    bool agregar = true;
-                    for (int j = 0; j < columnas_a_QUITAR.Length; j++)
-                    {
-                        if ((i + "") == columnas_a_QUITAR[j])
-                        {
-                            agregar = false;
-                            break;
-                        }
 
-                    }
-                    if (agregar == true)
-                    {
-                        info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, copia_arreglo[i], var_fun_GG.GG_caracter_separacion[1]);
-                    }
-                }
-            }
-            else
-            {
-                for (int i = 0; i < copia_arreglo.Length; i++)
-                {
-                    info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, copia_arreglo[i], var_fun_GG.GG_caracter_separacion[1]);
-                }
-            }
+        static public void RecargarTodosLosArreglosYArchivos()
+        {
+            // Recargar los arreglos principales
+            RecargarArregloArchivos_dir_nom_archivos();
+            RecargarArregloArchivos_SIN_ARREGLOS_GG();
+            RecargarArregloDireccionInventarios();
 
-            return info_a_retornar;
+            // Crear archivos iniciales
+            Poner_al_inicio iniciar_Arch = new Poner_al_inicio();
+            iniciar_Arch.crear_archivos_para_punto_de_venta();
+            iniciar_Arch.crear_archivos_transferencia();
         }
     }
 }

@@ -165,11 +165,40 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             string[] caracter_separacion_string = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_obj);
             string info_a_retornar = "";
+            //FIN PARAMETROS-------------------------------------------------------------
+
+            var_fun_GG_dir_arch_crear.RecargarTodosLosArreglosYArchivos();
 
 
 
             //string resultado_archivo = bas.sacar_indice_del_arreglo_de_direccion(direccion_archivo);
             string resultado_archivo = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "SACAR_INDICE_DEL_ARREGLO_DE_DIRECCION_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[2]);
+
+            
+
+            
+
+
+
+            G_direcciones = new string[]
+        {
+                /*0*/
+                var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0],//"config\\inf\\inventario\\inventario.TXT",
+            /*1*/var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[18, 0],//CONFIG\\INF\\IMPUESTOS\\IMPUESTOS.TXT,
+            //registro
+            /*2*/var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[10, 0],//"CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "\\" + DateTime.Now.ToString("yyyyMM") + "\\" + DateTime.Now.ToString("yyyyMMdd") + "_REGISTRO.TXT"
+            /*3*/var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[11, 0],//"CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "\\" + DateTime.Now.ToString("yyyyMM") + "_REGISTRO.TXT"
+            /*4*/var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[12, 0],//"CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "_REGISTRO.TXT"
+            /*5*/var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[13, 0],//"CONFIG\\INF\\REGISTROS\\ACUMULADO_REGISTRO.TXT"
+            //productos
+            /*6*/var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[14, 0],//"CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "\\" + DateTime.Now.ToString("yyyyMM") + "\\" + DateTime.Now.ToString("yyyyMMdd") + "_PRODUC_REGISTRO.TXT"
+            /*7*/var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[15, 0],//"CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "\\" + DateTime.Now.ToString("yyyyMM") + "_PRODUC_REGISTRO.TXT"
+            /*8*/var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[16, 0],//"CONFIG\\INF\\REGISTROS\\FECHAS\\" + DateTime.Now.ToString("yyyy") + "_PRODUC_REGISTRO.TXT"
+            /*9*/var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[17, 0],//"CONFIG\\INF\\REGISTROS\\ACUMULADO_PRODUC_REGISTRO.TXT"
+
+        };
+
+
             string[] res_esp_archivo = resultado_archivo.Split(G_caracter_para_confirmacion_o_error[0][0]);
             //se encontro indice archivo
             if (Convert.ToInt32(res_esp_archivo[0]) > 0)
@@ -212,7 +241,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
                     //string[] res_busq_produc = bas.buscar(, , 5, info_dat[2]).Split(G_caracter_para_confirmacion_o_error[0][0]);                    
-                    string[] res_busq_produc = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "SELECCIONAR_ID" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[0] + G_caracter_separacion_funciones_espesificas[3][0] + id).Split(G_caracter_para_confirmacion_o_error[0][0]);
+                    string[] res_busq_produc = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "SELECCIONAR_ID_INFO_DIVIDIDA_EXTRAE_INFO_ARCHIVO_Y_FILA" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[0] + G_caracter_separacion_funciones_espesificas[3][0] + id).Split(G_caracter_para_confirmacion_o_error[0][0]);
                     //encontro producto
                     if (Convert.ToInt32(res_busq_produc[0]) > 0)
                     {
@@ -320,89 +349,48 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
                             //registro productos--------------------------------------------------------------
-                            /*
-                            string info_agregar =
-                                fecha_o_hora
-                                + caracter_separacion_string[0]
-                                + tipo_de_operacion
-                                + caracter_separacion_string[0]
-                                + string.Join(caracter_separacion_string[1], impuestos_a_registrar)
-                                + caracter_separacion_string[0]
-                                + nombre_produc
-                                + caracter_separacion_string[0]
-                                + "SIN_COMENTARIOS"
-                                + caracter_separacion_string[0]
-                                + total_venta//total_costo_venta
-                                + caracter_separacion_string[0]
-                                + total_compra//total_costo_compra
-                                + caracter_separacion_string[0]
-                                + total_pagar_imp
-                                + caracter_separacion_string[0]
-                                + "0" //total_dedusibles
-                                + caracter_separacion_string[0]
-                                + (total_venta - (total_compra + total_pagar_imp))//ganancia_total
-                                + caracter_separacion_string[0]
-                                + sucursal;
 
-                            //info_a_retornar = bas.Agregar(direccion_archivo, info_agregar);
-                            info_a_retornar = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_INFO_DIV" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[2] + G_caracter_separacion_funciones_espesificas[3][0] + info_agregar);
-
-
-                            string año_mes_dia = "";
-                            for (int j = 0; j < fecha_o_hora.Length - 4; j++)
+                            string indice_reg_dia = produc_bas_esp[27];
+                            string indice_reg_mes = produc_bas_esp[28];
+                            string indice_reg_año = produc_bas_esp[29];
+                            string ultima_venta_del_producto = produc_bas_esp[30];
+                            string fecha_de_la_venta = "";
+                            for (int j = 0; j < fecha_o_hora.Length-4; j++)
                             {
-                                año_mes_dia = año_mes_dia + fecha_o_hora[j];
+                                fecha_de_la_venta = fecha_de_la_venta + fecha_o_hora[j];
                             }
 
-                            info_agregar =
-                                año_mes_dia
-                                + caracter_separacion_string[0]
-                                + tipo_de_operacion
-                                + caracter_separacion_string[0]
-                                + "total_imp" + caracter_separacion_string[2] + total_pagar_imp + caracter_separacion_string[1] + string.Join(caracter_separacion_string[1], impuestos_a_registrar)
-                                + caracter_separacion_string[0]
-                                + "SIN_COMENTARIOS"
-                                + caracter_separacion_string[0]
-                                + total_venta//total_costo_venta
-                                + caracter_separacion_string[0]
-                                + total_compra//total_costo_compra
-                                + caracter_separacion_string[0]
-                                + total_pagar_imp
-                                + caracter_separacion_string[0]
-                                + "0" //total_dedusibles
-                                + caracter_separacion_string[0]
-                                + (total_venta - (total_compra + total_pagar_imp))//ganancia_total
-                                + caracter_separacion_string[0]
-                                + sucursal;
-
-                            enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[3] + G_caracter_separacion_funciones_espesificas[3] + (año_mes_dia + G_caracter_separacion[0] + tipo_de_operacion) + G_caracter_separacion_funciones_espesificas[3] + ("1" + G_caracter_separacion[0] + "2") + G_caracter_separacion_funciones_espesificas[3] + ("5" + G_caracter_separacion[0] + "6" + G_caracter_separacion[0] + "7" + G_caracter_separacion[0] + "8") + G_caracter_separacion_funciones_espesificas[3] + (total_venta + G_caracter_separacion[0] + total_compra + G_caracter_separacion[0] + total_pagar_imp + G_caracter_separacion[0] + (total_venta - (total_compra + total_pagar_imp))) + G_caracter_separacion_funciones_espesificas[3] + info_agregar);
-
-
-
-
-                            string año_mes = "";
-                            for (int j = 0; j < fecha_o_hora.Length - 6; j++)
+                            if (ultima_venta_del_producto != fecha_de_la_venta)
                             {
-                                año_mes = año_mes + fecha_o_hora[j];
+                                string info_agregar_temp = "";
+                                if (ultima_venta_del_producto == "")
+                                {
+                                    
+                                    info_a_retornar = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_INFO_DIV" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[6] + G_caracter_separacion_funciones_espesificas[3][0] + info_agregar_temp);
+
+                                }
+                                else
+                                {
+                                    if (Convert.ToInt32(ultima_venta_del_producto) > Convert.ToInt32(fecha_de_la_venta))
+                                    {
+                                        //aqui va a buscar en el archivo la informacion para editar
+                                    }
+                                    else
+                                    {
+                                        
+                                    }
+                                }
                             }
 
-                            info_agregar = año_mes + caracter_separacion_string[0] + tipo_de_operacion + caracter_separacion_string[0] + "total_imp" + caracter_separacion_string[2] + total_pagar_imp + caracter_separacion_string[1] + string.Join(caracter_separacion_string[1], impuestos_a_registrar) + caracter_separacion_string[0] + "SIN_COMENTARIOS" + caracter_separacion_string[0] + total_venta + caracter_separacion_string[0] + total_compra + caracter_separacion_string[0] + total_pagar_imp + caracter_separacion_string[0] + "0" + caracter_separacion_string[0] + (total_venta - (total_compra + total_pagar_imp)) + caracter_separacion_string[0] + sucursal;
+                            //info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i] + G_caracter_separacion_funciones_espesificas[3] + "6" + G_caracter_separacion_funciones_espesificas[3] + "-" + cantidades_espliteados[i]), G_caracter_para_confirmacion_o_error[1]);
 
-                            enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[4] + G_caracter_separacion_funciones_espesificas[3] + (año_mes + G_caracter_separacion[0] + tipo_de_operacion) + G_caracter_separacion_funciones_espesificas[3] + ("1" + G_caracter_separacion[0] + "2") + G_caracter_separacion_funciones_espesificas[3] + ("5" + G_caracter_separacion[0] + "6" + G_caracter_separacion[0] + "7" + G_caracter_separacion[0] + "8") + G_caracter_separacion_funciones_espesificas[3] + (total_venta + G_caracter_separacion[0] + total_compra + G_caracter_separacion[0] + total_pagar_imp + G_caracter_separacion[0] + (total_venta - (total_compra + total_pagar_imp))) + G_caracter_separacion_funciones_espesificas[3] + info_agregar);
+                            enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_ID_FILA_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + res_busq_produc[2] + G_caracter_separacion_funciones_espesificas[3] + res_busq_produc[3] + G_caracter_separacion_funciones_espesificas[3] + "2" + G_caracter_separacion_funciones_espesificas[3] + ("5"));
 
 
 
-                            string año = "";
-                            for (int j = 0; j < fecha_o_hora.Length - 8; j++)
-                            {
-                                año = año + fecha_o_hora[j];
-                            }
 
-                            info_agregar = año + caracter_separacion_string[0] + tipo_de_operacion + caracter_separacion_string[0] + "total_imp" + caracter_separacion_string[2] + total_pagar_imp + caracter_separacion_string[1] + string.Join(caracter_separacion_string[1], impuestos_a_registrar) + caracter_separacion_string[0] + "SIN_COMENTARIOS" + caracter_separacion_string[0] + total_venta + caracter_separacion_string[0] + total_compra + caracter_separacion_string[0] + total_pagar_imp + caracter_separacion_string[0] + "0" + caracter_separacion_string[0] + (total_venta - (total_compra + total_pagar_imp)) + caracter_separacion_string[0] + sucursal;
-
-                            enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[5] + G_caracter_separacion_funciones_espesificas[3] + (año + G_caracter_separacion[0] + tipo_de_operacion) + G_caracter_separacion_funciones_espesificas[3] + ("1" + G_caracter_separacion[0] + "2") + G_caracter_separacion_funciones_espesificas[3] + ("5" + G_caracter_separacion[0] + "6" + G_caracter_separacion[0] + "7" + G_caracter_separacion[0] + "8") + G_caracter_separacion_funciones_espesificas[3] + (total_venta + G_caracter_separacion[0] + total_compra + G_caracter_separacion[0] + total_pagar_imp + G_caracter_separacion[0] + (total_venta - (total_compra + total_pagar_imp))) + G_caracter_separacion_funciones_espesificas[3] + info_agregar);
-
-                            */
+                            
+                            
 
                             //fin_registro_producto-----------------------------------------------------------------------------
 
@@ -1576,7 +1564,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         }
 
 
-
+        
 
 
         //fin clase-----------------------------------------------------------------

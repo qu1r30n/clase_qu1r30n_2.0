@@ -306,7 +306,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             string productos_no_encontrados = "";
             for (int i = 0; i < id.Length; i++)
             {
-                string[] res = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "SELECCIONAR_ID" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i]).Split(G_caracter_para_confirmacion_o_error[0][0]);
+                string[] res = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "SELECCIONAR_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i]).Split(G_caracter_para_confirmacion_o_error[0][0]);
                 if (res[0]=="1")
                 {
                     string[] fila = res[1].Split(G_caracter_separacion[0][0]);

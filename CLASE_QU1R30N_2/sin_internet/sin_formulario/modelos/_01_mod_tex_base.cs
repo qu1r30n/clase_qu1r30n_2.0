@@ -81,13 +81,29 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.LEER_INFO_DIVIDIDA, datos);
 
             }
-            else if (proceso == "SELECCIONAR_ID")
+            else if (proceso == "SELECCIONAR_ID_INFO_DIVIDIDA")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
 
                 info_a_retornar = EjecutarFuncionEnDatos(bas.seleccionar_id_info_dividida, datos);
 
             }
+
+            else if (proceso == "SELECCIONAR_ID_INFO_DIVIDIDA_EXTRAE_INFO_ARCHIVO_Y_FILA")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+
+                info_a_retornar = EjecutarFuncionEnDatos(bas.seleccionar_id_info_dividida_extrae_info_archivo_y_fila, datos);
+            }
+
+            else if (proceso == "INCREMENTA_CELDA_ID_FILA_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+
+                info_a_retornar = EjecutarFuncionEnDatos(bas.INCREMENTA_CELDA_ID_FILA_SOLO_PROG, datos);
+
+            }
+
             else if (proceso == "INCREMENTA_CELDA_ID_INFO_DIVIDIDA")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -98,7 +114,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
 
             else if (proceso == "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA")
             {
-                
+
 
                 info_a_retornar = EjecutarFuncionEnDatos(bas.INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA, datos);
 
@@ -138,7 +154,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
 
-                info_a_retornar = EjecutarFuncionEnDatos(bas.Editar_incr_o_agrega_COMPARACION_YY_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_es_multiple_con_comparacion_final_BUSQUEDA_ID, datos);
+                info_a_retornar = EjecutarFuncionEnDatos(bas.SOLO_PROG_Editar_incr_o_agrega_COMPARACION_YY_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_es_multiple_con_comparacion_final_BUSQUEDA_ID, datos);
 
             }
 
@@ -146,7 +162,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
 
-                info_a_retornar = EjecutarFuncionEnDatos(bas.Editar_incr_o_agrega_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_es_multiple_con_comparacion_final_BUSQUEDA_ID, datos);
+                info_a_retornar = EjecutarFuncionEnDatos(bas.SOLO_PROG_Editar_incr_o_agrega_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_es_multiple_con_comparacion_final_BUSQUEDA_ID, datos);
 
             }
 
@@ -154,7 +170,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
 
-                info_a_retornar = EjecutarFuncionEnDatos(bas.Editar_incr_o_agrega_MULTIPLESCOMPARACIONES_AL_FINAL_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_BUSQUEDA_ID, datos);
+                info_a_retornar = EjecutarFuncionEnDatos(bas.SOLO_PROG_Editar_incr_o_agrega_MULTIPLESCOMPARACIONES_AL_FINAL_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_BUSQUEDA_ID, datos);
 
             }
 
@@ -173,7 +189,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.BUSCAR_INFO_DIVIDIDA, datos);
 
             }
-            
+
 
 
             else if (proceso == "GENERAR_RUTA_ARCHIVO")
@@ -264,7 +280,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 G_caracter_para_enter[1] + "LEER_INFO_DIVIDIDA" + G_caracter_para_enter[0] +
                     "*direccion_archivo" +
 
-                    G_caracter_para_enter[1] + "SELECCIONAR_ID" + G_caracter_para_enter[0] +
+                    G_caracter_para_enter[1] + "SELECCIONAR_ID_INFO_DIVIDIDA" + G_caracter_para_enter[0] +
                     "*direccion_archivos" + G_caracter_para_enter[0] +
                     "*id" + G_caracter_para_enter[0] +
                     "info_a_comparar" + G_caracter_para_enter[0] +
