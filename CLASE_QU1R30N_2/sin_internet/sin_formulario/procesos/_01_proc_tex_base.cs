@@ -569,8 +569,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 }
                 try
                 {
-
-                    sw.WriteLine((Convert.ToInt64(id_total) + 1) + G_caracter_separacion[0] + agregando);
+                    string inf_agregar = (Convert.ToInt64(id_total) + 1) + G_caracter_separacion[0] + agregando;
+                    sw.WriteLine(inf_agregar);
 
                     string datos_enviar = direccion_archivos + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "ID_TOT" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "";
                     sw.Close();
@@ -582,7 +582,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
 
-                    return "1" + G_caracter_para_confirmacion_o_error[0] + agregando;
+                    return "1" + G_caracter_para_confirmacion_o_error[0] + inf_agregar;
                 }
                 catch (Exception)
                 {
