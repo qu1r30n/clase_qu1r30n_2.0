@@ -363,7 +363,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                             fecha_de_la_venta_total = fecha_de_la_venta_año + fecha_de_la_venta_mes + fecha_de_la_venta_dia;
 
 
-                            if (ultima_venta_del_producto != fecha_de_la_venta_total)
+                            if (Convert.ToInt32(ultima_venta_del_producto) < Convert.ToInt32(fecha_de_la_venta_total))
                             {
                                 AgregarRegistro(indice_reg_dia, indice_reg_mes, indice_reg_año, nombre_produc, "" + cantidad, cod_bar, produc_bas_esp[8], ultima_venta_del_producto, fecha_de_la_venta_total, id + "");
                             }
@@ -1622,7 +1622,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return info_a_retornar;
         }
 
-        private string incremento_registro_producto(string id_arc_total, string id_año, string id_mes, string id_dia,  string nombre_produc, string cantidad, string cod_bar, string provedor, string ultima_venta_del_producto, string fecha_de_la_venta_total, string id)
+        private string incremento_registro_producto(string id_arc_total, string id_año, string id_mes, string id_dia, string nombre_produc, string cantidad, string cod_bar, string provedor, string ultima_venta_del_producto, string fecha_de_la_venta_total, string id)
         {
             string info_a_retornar = "";
 
@@ -1676,14 +1676,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             }
             else
             {
-                string año_ultima_vent = ultima_venta_del_producto[0] + "" + ultima_venta_del_producto[1] + "" + ultima_venta_del_producto[2] + "" + ultima_venta_del_producto[3];
-                string año_de_la_venta= fecha_de_la_venta_total[0] + "" + fecha_de_la_venta_total[1] + "" + fecha_de_la_venta_total[2] + "" + fecha_de_la_venta_total[3];
-
-                string mes_ultima_vent = ultima_venta_del_producto[4] + "" + ultima_venta_del_producto[5];
-                string mes_de_la_venta= fecha_de_la_venta_total[4] + "" + fecha_de_la_venta_total[5];
-
-                string dia_ultima_vent = ultima_venta_del_producto[6] + "" + ultima_venta_del_producto[7];
-                string dia_de_la_venta = fecha_de_la_venta_total[6] + "" + fecha_de_la_venta_total[7];
 
                 if (Convert.ToInt32(ultima_venta_del_producto) > Convert.ToInt32(fecha_de_la_venta_total))
                 {
@@ -1720,7 +1712,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
                     info_editar_temp =
                     dir_tem + G_caracter_separacion_funciones_espesificas[3] +
-                        id_dia + G_caracter_separacion_funciones_espesificas[3] +
+                        id_mes + G_caracter_separacion_funciones_espesificas[3] +
                         "2" + G_caracter_separacion_funciones_espesificas[4] + "5" + G_caracter_separacion_funciones_espesificas[5] + "0" + G_caracter_separacion_funciones_espesificas[3] +
                         cantidad + G_caracter_separacion_funciones_espesificas[4] + cantidad;
 
@@ -1738,7 +1730,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
                     info_editar_temp =
                     dir_tem + G_caracter_separacion_funciones_espesificas[3] +
-                        id_dia + G_caracter_separacion_funciones_espesificas[3] +
+                        id_año + G_caracter_separacion_funciones_espesificas[3] +
                         "2" + G_caracter_separacion_funciones_espesificas[4] + "5" + G_caracter_separacion_funciones_espesificas[5] + "0" + G_caracter_separacion_funciones_espesificas[3] +
                         cantidad + G_caracter_separacion_funciones_espesificas[4] + cantidad;
 
@@ -1749,7 +1741,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
                     info_editar_temp =
                     G_direcciones[9] + G_caracter_separacion_funciones_espesificas[3] +
-                        id_dia + G_caracter_separacion_funciones_espesificas[3] +
+                        id_arc_total + G_caracter_separacion_funciones_espesificas[3] +
                         "2" + G_caracter_separacion_funciones_espesificas[4] + "5" + G_caracter_separacion_funciones_espesificas[5] + "0" + G_caracter_separacion_funciones_espesificas[3] +
                         cantidad + G_caracter_separacion_funciones_espesificas[4] + cantidad;
 
@@ -1760,19 +1752,9 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
                     //info_a_retornar = "-1" + G_caracter_para_confirmacion_o_error[0] + "es_un_archivo_anterior";
                 }
-                else
+                else if (Convert.ToInt32(ultima_venta_del_producto) < Convert.ToInt32(fecha_de_la_venta_total))
                 {
-                    
-                    
-                    info_a_retornar = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_INFO_DIV" + G_caracter_separacion_funciones_espesificas[1] + G_direcciones[6] + G_caracter_separacion_funciones_espesificas[3][0] + info_agregar_temp);
 
-
-                    string info_editar_temp = G_direcciones[0] + G_caracter_separacion_funciones_espesificas[3] +
-                        id + G_caracter_separacion_funciones_espesificas[3] +
-                        "30" + G_caracter_separacion_funciones_espesificas[3] +
-                        fecha_de_la_venta_total;
-
-                    info_a_retornar = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "EDITAR_CELDA_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + info_editar_temp);
                 }
             }
             return info_a_retornar;
