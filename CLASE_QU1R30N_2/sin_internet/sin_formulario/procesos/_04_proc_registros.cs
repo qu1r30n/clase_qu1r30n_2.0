@@ -132,7 +132,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
         public string registrar_venta(string datos)
         {
-
+            string info_a_retornar = "";
             string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
 
             // PARAMETROS---------------------------------------------------------------------------
@@ -164,7 +164,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
             string[] caracter_separacion_string = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_obj);
-            string info_a_retornar = "";
+            
             //FIN PARAMETROS-------------------------------------------------------------
 
             var_fun_GG_dir_arch_crear.RecargarTodosLosArreglosYArchivos();
@@ -1683,8 +1683,63 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     //o la agrega mejor en un archivo diferente
 
                     //pero si son diferentes puntos de venta y venden varios productos iguales  masomenos al mismo tiempo  tiene que editarse
+
+                    //dia--------------------------------------------------------------------------------------
+                    string dir_tem = consigue_la_direccion_del_registro_productos_de_la_fecha(fecha_de_la_venta_total);
+
+                    enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] +
+                        dir_tem + G_caracter_separacion_funciones_espesificas[3] + 
+                        cod_bar + G_caracter_separacion_funciones_espesificas[3] + 
+                        "3" + G_caracter_separacion_funciones_espesificas[3] + 
+                        ("2" + G_caracter_separacion[0] + "5" ) + G_caracter_separacion_funciones_espesificas[3] + 
+                        (cantidad + G_caracter_separacion[0] + cantidad));
+                    
+                    //mes-------------------------------------------------------------------------------
+                    dir_tem = "";
+                    for (int j = 0; j < fecha_de_la_venta_total.Length - 2; j++)
+                    {
+                        dir_tem = dir_tem + fecha_de_la_venta_total[j];
+                    }
+
+                    dir_tem = consigue_la_direccion_del_registro_productos_de_la_fecha(fecha_de_la_venta_total);
+
+                    enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] +
+                        dir_tem + G_caracter_separacion_funciones_espesificas[3] +
+                        cod_bar + G_caracter_separacion_funciones_espesificas[3] +
+                        "3" + G_caracter_separacion_funciones_espesificas[3] +
+                        ("2" + G_caracter_separacion[0] + "5") + G_caracter_separacion_funciones_espesificas[3] +
+                        (cantidad + G_caracter_separacion[0] + cantidad));
+
+                    //año-----------------------------------------------------------------------------------
+                    dir_tem = "";
+                    for (int j = 0; j < fecha_de_la_venta_total.Length - 4; j++)
+                    {
+                        dir_tem = dir_tem + fecha_de_la_venta_total[j];
+                    }
+
+                    dir_tem = consigue_la_direccion_del_registro_productos_de_la_fecha(fecha_de_la_venta_total);
+
+                    enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] +
+                        dir_tem + G_caracter_separacion_funciones_espesificas[3] +
+                        cod_bar + G_caracter_separacion_funciones_espesificas[3] +
+                        "3" + G_caracter_separacion_funciones_espesificas[3] +
+                        ("2" + G_caracter_separacion[0] + "5") + G_caracter_separacion_funciones_espesificas[3] +
+                        (cantidad + G_caracter_separacion[0] + cantidad));
+
+                    //actual--------------------------------------------------------------------------------
+                    enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] +
+                        G_direcciones[9] + G_caracter_separacion_funciones_espesificas[3] +
+                        cod_bar + G_caracter_separacion_funciones_espesificas[3] +
+                        "3" + G_caracter_separacion_funciones_espesificas[3] +
+                        ("2" + G_caracter_separacion[0] + "5") + G_caracter_separacion_funciones_espesificas[3] +
+                        (cantidad + G_caracter_separacion[0] + cantidad));
+
+
+
                     info_a_retornar = "-1" + G_caracter_para_confirmacion_o_error[0] + "es_un_archivo_anterior";
                 }
+
+
                 else if (Convert.ToInt32(ultima_venta_del_producto) == Convert.ToInt32(fecha_de_la_venta_total))
                 {
                     //dia_-------------------------------------------------------------------------------------
