@@ -897,7 +897,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         {
             
 
-            string[] arr_col_rec = columnas_a_recorrer.Split(G_caracter_separacion[1][0]);
+            string[] arr_col_rec = columnas_a_recorrer.Split(G_caracter_separacion[0][0]);
 
             int j = 0;
             string[][] niveles_de_profundidad = null;

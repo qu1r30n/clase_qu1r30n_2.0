@@ -318,7 +318,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                         string dat_para_el_registro = codigos_espliteados[i] + G_caracter_separacion_funciones_espesificas[5] + cantidades[i] + G_caracter_separacion_funciones_espesificas[5] + fila[4] + G_caracter_separacion_funciones_espesificas[5] + fila[4] + G_caracter_separacion_funciones_espesificas[5] + fila[0];
                         enl_princ.enlasador("MODELO_REGISTROS" + G_caracter_separacion_funciones_espesificas[0] + "REGISTRO_VENTAS" + G_caracter_separacion_funciones_espesificas[1] + dat_para_el_registro + G_caracter_separacion_funciones_espesificas[3] + año_mes_dia_hora);
 
-                    }
+                     }
                 }
                 else
                 {

@@ -537,7 +537,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 }
                 else
                 {
-                    espliteado_columnas_recorrer = columnas_a_recorrer.ToString().Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
+                    espliteado_columnas_recorrer = columnas_a_recorrer.ToString().Split(G_caracter_separacion[0][0]);
                 }
 
             }
@@ -628,7 +628,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             for (int k = 0; k < indices_a_editar_esp.Length; k++)
             {
                 string res_ext = op_arr.extraer_arreglo_dentro_de_un_string_y_ponerolo_en_string(texto, indices_a_editar_esp[k]);
-                string[] res_ext_esp = res_ext.Split(G_caracter_separacion_para_funciones_espesificas[0][0]);
+                string[] res_ext_esp = res_ext.Split(G_caracter_para_confirmacion_o_error[0][0]);
                 int indice_caracter = Convert.ToInt32(res_ext_esp[2]);
 
                 if (Convert.ToInt32(res_ext_esp[0]) > 0)//si res es mayor a 0 la operacioon fue exitosa si no hubo un error

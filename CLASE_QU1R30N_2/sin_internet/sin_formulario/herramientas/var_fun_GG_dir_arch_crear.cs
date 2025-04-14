@@ -122,7 +122,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 /*28*/ { "2", "_28_INDICES_MES_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
                 /*29*/ { "2", "_29_INDICES_AÑO_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
                 /*30*/ { "2", "_30_ULTIMA_VENTA", "" , "", "TEXTO" },
-                /*31*/ { "2", "_31_NO_PONER_NADA", "" , "", "TEXTO" },
+                /*31*/ { "2", "_31_INDICES_TOTAL_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
+                /*32*/ { "2", "_32_NO_PONER_NADA", "" , "", "TEXTO" },
         };
         public static void RecargarVentanaEmergenteProductos(string al_finalizar_que_borrar_para_proxima_ventana = "")
         {
@@ -159,7 +160,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                 /*28*/ { "2", "_28_INDICES_MES_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
                 /*29*/ { "2", "_29_INDICES_AÑO_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
                 /*30*/ { "2", "_30_ULTIMA_VENTA", "" , "", "TEXTO" },
-                /*31*/ { "2", "_31_NO_PONER_NADA", "" , "", "TEXTO" },
+                /*31*/ { "2", "_31_INDICES_TOTAL_REGISTRO_PRODUC_VENDIDO","" , "0", "TEXTO" },
+                /*32*/ { "2", "_32_NO_PONER_NADA", "" , "", "TEXTO" },
         };
 
 

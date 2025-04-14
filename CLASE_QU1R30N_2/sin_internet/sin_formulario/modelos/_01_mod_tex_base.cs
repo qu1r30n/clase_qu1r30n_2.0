@@ -112,6 +112,23 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
 
             }
 
+            else if (proceso == "EDITAR_CELDA_ID_FILA_SOLO_PROG")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+
+                info_a_retornar = EjecutarFuncionEnDatos(bas.EDITAR_CELDA_ID_FILA_SOLO_PROG, datos);
+
+            }
+
+            else if (proceso == "EDITAR_CELDA_ID_INFO_DIVIDIDA")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+
+                info_a_retornar = EjecutarFuncionEnDatos(bas.EDITAR_CELDA_ID_INFO_DIVIDIDA, datos);
+
+            }
+
+
             else if (proceso == "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA")
             {
 
