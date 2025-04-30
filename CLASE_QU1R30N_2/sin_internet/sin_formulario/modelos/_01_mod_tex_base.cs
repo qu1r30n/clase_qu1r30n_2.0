@@ -109,6 +109,14 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
 
                 info_a_retornar = EjecutarFuncionEnDatos(bas.INCREMENTA_CELDA_ID_INFO_DIVIDIDA, datos);
+            }
+
+            else if (proceso == "INCREMENTA_CELDA_ID_INFO_DIVIDIDA_COPEA_CELDA_SI_ESTA_EN_0")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+
+                info_a_retornar = EjecutarFuncionEnDatos(bas.INCREMENTA_CELDA_ID_INFO_DIVIDIDA_COPEA_CELDA_SI_ESTA_EN_0, datos);
+                
 
             }
 

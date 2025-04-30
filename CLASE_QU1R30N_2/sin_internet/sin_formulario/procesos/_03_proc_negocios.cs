@@ -312,8 +312,95 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     string[] fila = res[1].Split(G_caracter_separacion[0][0]);
                     if (fila[5] == codigos_espliteados[i])
                     {
-                        info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i] + G_caracter_separacion_funciones_espesificas[3] + "6" + G_caracter_separacion_funciones_espesificas[3] + "-" + cantidades_espliteados[i]), G_caracter_para_confirmacion_o_error[1]);
-                        //_00_ID|_01_PRODUCTO|_02_CONTENIDO|_03_TIPO_MEDIDA|_04_PRECIO_VENTA|_05_COD_BARRAS|_06_CANTIDAD|_07_COSTO_COMP|_08_PROVEDOR|_09_GRUPO|_10_CANT_X_PAQUET|_11_ES_PAQUETE|_12_CODBAR_PAQUETE|_13_COD_BAR_INDIVIDUAL_ES_PAQ|_14_LIGAR_PROD_SAB|_15_IMPUESTOS|_16_INGREDIENTES|_17_CADUCIDAD|_18_ULTIMO_MOV|_19_SUCUR_VENT|_20_CLAF_PROD|_21_DIR_IMG_INTER|_22_DIR_IMG_COMP|_23_INFO_EXTRA|_24_PROCESO_CREAR|_25_DIR_VID_PROC_CREAR|_26_TIEMPO_FABRICACION|_27_NO_PONER_NADA
+                        //tipo de producto
+                        if (fila[9]== "PRODUCTO_PIEZA")
+                        {
+
+                            info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i] + G_caracter_separacion_funciones_espesificas[3] + "6" + G_caracter_separacion_funciones_espesificas[3] + "-" + cantidades_espliteados[i]), G_caracter_para_confirmacion_o_error[1]);
+                            //_00_ID|_01_PRODUCTO|_02_CONTENIDO|_03_TIPO_MEDIDA|_04_PRECIO_VENTA|_05_COD_BARRA
+                        }
+                        else if (fila[9] == "PRODUCTO_CANTIDAD")
+                        {
+                            info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, 
+
+                                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_ID_INFO_DIVIDIDA_COPEA_CELDA_SI_ESTA_EN_0" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i] + G_caracter_separacion_funciones_espesificas[3] + "6" + G_caracter_separacion_funciones_espesificas[3] + "-" + cantidades_espliteados[i]), G_caracter_para_confirmacion_o_error[1]
+                                
+                                );
+
+
+                        }
+
+                        else if (fila[9] == "VENTA_UNIDAD_PARTE_DE_PAQUETE")
+                        {
+                            info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, 
+                                
+                                enl_princ.enlasador
+                                (
+                                    "TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] +
+                                    "INCREMENTA_CELDA_ID_INFO_DIVIDIDA_COPEA_CELDA_SI_ESTA_EN_0" + G_caracter_separacion_funciones_espesificas[1] + 
+                                    var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + 
+                                    id[i] + G_caracter_separacion_funciones_espesificas[3] + 
+                                    "6" + G_caracter_separacion_funciones_espesificas[3] + 
+                                    "-" + cantidades_espliteados[i] + G_caracter_separacion_funciones_espesificas[3] +
+                                    "10"
+                                )
+                                
+                                , G_caracter_para_confirmacion_o_error[1]
+                            );
+
+                            string[] se_editara_paquete = info_a_retornar.Split(G_caracter_para_confirmacion_o_error[0][0]);
+                            if (se_editara_paquete[0] == "2")
+                            {
+                                string[] temp_produc = se_editara_paquete[1].Split(G_caracter_separacion[0][0]);
+                                string[] cod_e_id_paqu = temp_produc[12].Split(G_caracter_separacion[1][0]);
+                                
+                                enl_princ.enlasador
+                                (
+                                    "TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] +
+                                    "INCREMENTA_CELDA_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] +
+                                    var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] +
+                                    cod_e_id_paqu[1] + G_caracter_separacion_funciones_espesificas[3] +
+                                    "6" + G_caracter_separacion_funciones_espesificas[3] +
+                                    "-" + se_editara_paquete[2]
+                                );
+
+                            }
+                        }
+
+
+                        else if (fila[9] == "PRODUCTO_ELABORADO")
+                        {
+
+                        }
+                        
+                        else if (fila[9] == "RENTA")
+                        {
+
+                        }
+                        else if (fila[9] == "ABONO")
+                        {
+
+                        }
+
+                        else if (fila[9] == "PEDIDO")
+                        {
+
+                        }
+
+                        else if (fila[9] == "")
+                        {
+
+                        }
+
+                        else if (fila[9] == "")
+                        {
+
+                        }
+                        else
+                        {
+                            info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i] + G_caracter_separacion_funciones_espesificas[3] + "6" + G_caracter_separacion_funciones_espesificas[3] + "-" + cantidades_espliteados[i]), G_caracter_para_confirmacion_o_error[1]);
+                        }
+                        //fin tipo de productos-----------------------------------------------------------S|_06_CANTIDAD|_07_COSTO_COMP|_08_PROVEDOR|_09_GRUPO|_10_CANT_X_PAQUET|_11_ES_PAQUETE|_12_CODBAR_PAQUETE|_13_COD_BAR_INDIVIDUAL_ES_PAQ|_14_LIGAR_PROD_SAB|_15_IMPUESTOS|_16_INGREDIENTES|_17_CADUCIDAD|_18_ULTIMO_MOV|_19_SUCUR_VENT|_20_CLAF_PROD|_21_DIR_IMG_INTER|_22_DIR_IMG_COMP|_23_INFO_EXTRA|_24_PROCESO_CREAR|_25_DIR_VID_PROC_CREAR|_26_TIEMPO_FABRICACION|_27_NO_PONER_NADA
 
                         string dat_para_el_registro = codigos_espliteados[i] + G_caracter_separacion_funciones_espesificas[5] + cantidades[i] + G_caracter_separacion_funciones_espesificas[5] + fila[4] + G_caracter_separacion_funciones_espesificas[5] + fila[4] + G_caracter_separacion_funciones_espesificas[5] + fila[0];
                         enl_princ.enlasador("MODELO_REGISTROS" + G_caracter_separacion_funciones_espesificas[0] + "REGISTRO_VENTAS" + G_caracter_separacion_funciones_espesificas[1] + dat_para_el_registro + G_caracter_separacion_funciones_espesificas[3] + año_mes_dia_hora);

@@ -1631,12 +1631,222 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                         producto_editado = op_tex.editar_inc_agregar_edicion_profunda_multiple_comparacion_final_string(producto_editado, colum_a_editar[i], cant_a_inc[i], "", "1");
                     }
 
-                    
-                    
+
+
                     sw2.WriteLine(producto_editado);
                     sw2.Flush();
                     encontro_informacion = true;
                     info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + producto_editado;
+
+                }
+
+                else
+                {
+                    sw2.WriteLine(linea2);
+                    sw2.Flush();
+                }
+
+            }
+
+            if (encontro_informacion == false)
+            {
+                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
+            }
+
+            sw2.Close();
+            sr2.Close();
+            fs2.Close();
+
+
+
+            return info_retornar;
+        }
+
+        public string INCREMENTA_CELDA_ID_INFO_DIVIDIDA_COPEA_CELDA_SI_ESTA_EN_0(string datos)
+        {
+            string info_retornar = "";
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //parametros------------------------------------------------------------------------------------
+            string direccion_archivos = datos_epliteados[0];
+
+
+            string id = null;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    id = datos_epliteados[1];
+                }
+            }
+
+            string columnas_a_incrementar = "";
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    columnas_a_incrementar = datos_epliteados[2];
+                }
+            }
+
+            string cantidades_a_incrementar = "";
+            if (datos_epliteados.Length >= 4)
+            {
+                if (datos_epliteados[3] != "")
+                {
+                    cantidades_a_incrementar = datos_epliteados[3];
+                }
+            }
+
+            string columna_a_copiar = "";
+            if (datos_epliteados.Length >= 5)
+            {
+                if (datos_epliteados[4] != "")
+                {
+                    columna_a_copiar = datos_epliteados[4];
+                }
+            }
+
+
+            //fin parametros-----------------------------------------------------------------------------
+
+            string[] direccion_espliteada = direccion_archivos.Split('.');
+            string carpetas = direccion_espliteada[0] + "_DAT";
+
+            FileStream fs = null;
+            StreamReader sr = null;
+            while (fs == null)
+            {
+                try
+                {
+                    fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr = new StreamReader(fs);
+
+            string linea;
+            List<string> filas_configuaracion = new List<string>();
+            // Lee cada línea del archivo hasta el final
+            while ((linea = sr.ReadLine()) != null)
+            {
+                // Aquí puedes procesar cada línea
+                filas_configuaracion.Add(linea);
+            }
+
+            sr.Close();
+            fs.Close();
+
+            string datos_ordenados_configuracion = ORDEN_INFORMACION_SOLO_PROG(filas_configuaracion, "CANT_POR_ARCH");
+            string[] datos_config_esp = datos_ordenados_configuracion.Split(G_caracter_separacion[0][0]);
+
+            string cantidad_por_archivo = datos_config_esp[0];
+            string direccion = carpetas + "\\" + GENERAR_RUTA_ARCHIVO(id + G_caracter_separacion_funciones_espesificas[3] + cantidad_por_archivo);
+
+
+
+
+
+
+            FileStream fs2 = null;
+            StreamReader sr2 = null;
+            StreamWriter sw2 = null;
+            while (fs2 == null)
+            {
+                try
+                {
+                    fs2 = new FileStream(direccion, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr2 = new StreamReader(fs2);
+            sw2 = new StreamWriter(fs2);
+
+
+
+            Int64 posicion_id_archivo = 0;
+            if (id.Length >= 2)
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "" + id[1]);
+            }
+            else
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "");
+            }
+
+
+
+
+
+            List<string> lineas = new List<string>();
+            bool encontro_informacion = false;
+
+            string fila = "";
+            while ((fila = sr2.ReadLine()) != null)
+            {
+                lineas.Add(fila);
+            }
+
+            fs2.Seek(0, SeekOrigin.Begin);
+
+            for (int j = 0; j < lineas.Count; j++)
+            {
+                string linea2 = lineas[j];
+                if (posicion_id_archivo == j)
+                {
+
+                    columnas_a_incrementar = columnas_a_incrementar.Replace(G_caracter_separacion_funciones_espesificas[5], G_caracter_separacion[0]);
+                    string[] colum_a_editar = columnas_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    string[] cant_a_inc = cantidades_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    string[] columnas_a_cop= columna_a_copiar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    string producto_editado = linea2;
+
+                    bool decrementa_paquete = false;
+                    int bultosCompletos_a_quitar = 0;
+                    for (int i = 0; i < colum_a_editar.Length; i++)
+                    {
+                        string[] prod_esp = producto_editado.Split(G_caracter_separacion[0][0]);
+                        
+                        // Primero calculamos cuántos kilos tenemos en total (vendidos + kilos en el bulto abierto)
+                        double kilosTotalesDisponibles = Convert.ToDouble(prod_esp[6]) + Convert.ToDouble(cant_a_inc[i]);
+                        
+                        if (kilosTotalesDisponibles <= 0 || prod_esp[Convert.ToInt32(colum_a_editar[i])] == "")
+                        {
+                            if ((kilosTotalesDisponibles * -1) > Convert.ToDouble(prod_esp[10]))
+                            {
+                                // Calcular cuántos bultos completos podemos formar
+                                bultosCompletos_a_quitar = (int)(((kilosTotalesDisponibles) / Convert.ToDouble(prod_esp[10]))) + 1;
+
+                            }
+
+                            producto_editado = op_tex.editar_inc_agregar_edicion_profunda_multiple_comparacion_final_string(producto_editado, colum_a_editar[i], prod_esp[Convert.ToInt32(columnas_a_cop[i])], "", "0");
+                            decrementa_paquete = true;
+                        }
+                        producto_editado = op_tex.editar_inc_agregar_edicion_profunda_multiple_comparacion_final_string(producto_editado, colum_a_editar[i], kilosTotalesDisponibles+"", "", "1");
+                    }
+
+
+
+                    sw2.WriteLine(producto_editado);
+                    sw2.Flush();
+                    encontro_informacion = true;
+                    if (decrementa_paquete)
+                    {
+                        info_retornar = "2" + G_caracter_para_confirmacion_o_error[0] + producto_editado + G_caracter_para_confirmacion_o_error[0] + bultosCompletos_a_quitar;
+                    }
+                    else
+                    {
+                        info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + producto_editado;
+                    }
 
                 }
 
