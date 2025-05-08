@@ -316,7 +316,9 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                         if (fila[9]== "PRODUCTO_PIEZA")
                         {
 
-                            info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i] + G_caracter_separacion_funciones_espesificas[3] + "6" + G_caracter_separacion_funciones_espesificas[3] + "-" + cantidades_espliteados[i]), G_caracter_para_confirmacion_o_error[1]);
+                            info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, 
+                                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + 
+                                "INCREMENTA_CELDA_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i] + G_caracter_separacion_funciones_espesificas[3] + "6" + G_caracter_separacion_funciones_espesificas[3] + "-" + cantidades_espliteados[i]), G_caracter_para_confirmacion_o_error[1]);
                             //_00_ID|_01_PRODUCTO|_02_CONTENIDO|_03_TIPO_MEDIDA|_04_PRECIO_VENTA|_05_COD_BARRA
                         }
                         else if (fila[9] == "PRODUCTO_CANTIDAD")
@@ -367,6 +369,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                             }
                         }
 
+                        
+
 
                         else if (fila[9] == "PRODUCTO_ELABORADO")
                         {
@@ -387,15 +391,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
                         }
 
-                        else if (fila[9] == "")
-                        {
-
-                        }
-
-                        else if (fila[9] == "")
-                        {
-
-                        }
+                        
                         else
                         {
                             info_a_retornar = op_tex.concatenacion_caracter_separacion(info_a_retornar, enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "INCREMENTA_CELDA_ID_INFO_DIVIDIDA" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[0, 0] + G_caracter_separacion_funciones_espesificas[3] + id[i] + G_caracter_separacion_funciones_espesificas[3] + "6" + G_caracter_separacion_funciones_espesificas[3] + "-" + cantidades_espliteados[i]), G_caracter_para_confirmacion_o_error[1]);

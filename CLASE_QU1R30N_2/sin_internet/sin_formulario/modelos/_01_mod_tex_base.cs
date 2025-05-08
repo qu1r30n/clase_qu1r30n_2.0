@@ -88,14 +88,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.seleccionar_id_info_dividida, datos);
 
             }
-
             else if (proceso == "SELECCIONAR_ID_INFO_DIVIDIDA_EXTRAE_INFO_ARCHIVO_Y_FILA")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
 
                 info_a_retornar = EjecutarFuncionEnDatos(bas.seleccionar_id_info_dividida_extrae_info_archivo_y_fila, datos);
             }
-
             else if (proceso == "INCREMENTA_CELDA_ID_FILA_SOLO_PROG")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -103,14 +101,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.INCREMENTA_CELDA_ID_FILA_SOLO_PROG, datos);
 
             }
-
             else if (proceso == "INCREMENTA_CELDA_ID_INFO_DIVIDIDA")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
 
                 info_a_retornar = EjecutarFuncionEnDatos(bas.INCREMENTA_CELDA_ID_INFO_DIVIDIDA, datos);
             }
-
             else if (proceso == "INCREMENTA_CELDA_ID_INFO_DIVIDIDA_COPEA_CELDA_SI_ESTA_EN_0")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -119,7 +115,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 
 
             }
-
             else if (proceso == "EDITAR_CELDA_ID_FILA_SOLO_PROG")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -127,7 +122,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.EDITAR_CELDA_ID_FILA_SOLO_PROG, datos);
 
             }
-
             else if (proceso == "EDITAR_CELDA_ID_INFO_DIVIDIDA")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -135,8 +129,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.EDITAR_CELDA_ID_INFO_DIVIDIDA, datos);
 
             }
-
-
             else if (proceso == "INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA")
             {
 
@@ -144,7 +136,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA, datos);
 
             }
-
             else if (proceso == "ELIMINAR_FILA_PARA_MULTIPLES_PROGRAMAS_SOLO_PROG")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -174,7 +165,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.SACAR_INDICE_DEL_ARREGLO_DE_DIRECCION_SOLO_PROG, datos);
 
             }
-
             else if (proceso == "EDITAR_INCR_O_AGREGA_COMPARACION_YY_INFO_DENTRO_DE_CELDA_Y_AGREGA_FILA_SI_NO_ESTA_Y_NO_ES_VACIA_LA_VARIABLE_ES_MULTIPLE_CON_COMPARACION_FINAL_BUSQUEDA_ID")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -182,7 +172,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.SOLO_PROG_Editar_incr_o_agrega_COMPARACION_YY_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_es_multiple_con_comparacion_final_BUSQUEDA_ID, datos);
 
             }
-
             else if (proceso == "EDITAR_INCR_O_AGREGA_INFO_DENTRO_DE_CELDA_Y_AGREGA_FILA_SI_NO_ESTA_Y_NO_ES_VACIA_LA_VARIABLE_ES_MULTIPLE_CON_COMPARACION_FINAL_BUSQUEDA_ID")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -190,7 +179,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.SOLO_PROG_Editar_incr_o_agrega_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_es_multiple_con_comparacion_final_BUSQUEDA_ID, datos);
 
             }
-
             else if (proceso == "EDITAR_INCR_O_AGREGA_MULTIPLESCOMPARACIONES_AL_FINAL_INFO_DENTRO_DE_CELDA_Y_AGREGA_FILA_SI_NO_ESTA_Y_NO_ES_VACIA_LA_VARIABLE_BUSQUEDA_ID")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -198,7 +186,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.SOLO_PROG_Editar_incr_o_agrega_MULTIPLESCOMPARACIONES_AL_FINAL_info_dentro_de_celda_Y_AGREGA_fila_SI_NO_ESTA_y_no_es_vacia_la_variable_BUSQUEDA_ID, datos);
 
             }
-
             else if (proceso == "BUSCAR_SOLO_PROG")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -206,7 +193,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.BUSCAR_SOLO_PROG, datos);
 
             }
-
             else if (proceso == "BUSCAR_INFO_DIVIDIDA")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -214,9 +200,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.BUSCAR_INFO_DIVIDIDA, datos);
 
             }
-
-
-
             else if (proceso == "GENERAR_RUTA_ARCHIVO")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
@@ -224,7 +207,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(bas.GENERAR_RUTA_ARCHIVO, datos);
 
             }
-
             else if (proceso == "MOSTRAR_PROCESOS")
             {
 

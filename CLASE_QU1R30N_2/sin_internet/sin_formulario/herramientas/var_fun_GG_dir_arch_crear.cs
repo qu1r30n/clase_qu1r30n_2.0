@@ -1812,7 +1812,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             /*1*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\DAT\\PROVEDORES.TXT", columnas_concatenadas(GG_ventana_provedor,1,var_fun_GG.GG_caracter_separacion[1]),""},
             /*2*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\DAT\\APRENDICES_E.TXT", columnas_concatenadas(GG_ventana_APRENDICES_E,1,var_fun_GG.GG_caracter_separacion[1]),""},
             /*3*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\AFILIADOS_SIMPLE.TXT", columnas_concatenadas(GG_ventana_afiliados_simples,1,var_fun_GG.GG_caracter_separacion[1]),""},
-            /*4*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\AFILIADOS_COMPLEJO.TXT", columnas_concatenadas(GG_ventana_afiliados_complejos,1,var_fun_GG.GG_caracter_separacion[1]),""},
+            /*4*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\REG_A_CONFIRMAR_.TXT", columnas_concatenadas(GG_ventana_afiliados_complejos,1,var_fun_GG.GG_caracter_separacion[1]),"" },
             /*5*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\NIVELES_E_ID_HORISONTAL_AFILIADOS_SIMPLE.TXT", columnas_concatenadas(GG_ventana_niv_afiliados_simples,1,var_fun_GG.GG_caracter_separacion[1]),""},
             /*6*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\NIVELES_E_ID_HORISONTAL_AFILIADOS_COMPLEJO.TXT", columnas_concatenadas(GG_ventana_niv_afiliados_comp,1,var_fun_GG.GG_caracter_separacion[1]),""},
             /*7*/{ GG_direccion_carpetas_base[0] + "CONFIG\\AFILIADOS\\AFILIADOS_UNIFICADO.TXT", columnas_concatenadas(GG_ventana_afiliados_unificados,1,var_fun_GG.GG_caracter_separacion[1]),""},
@@ -1895,6 +1895,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
 
 
+
         //direccion_para_hacer_inventarios
         static public string[,] GG_direccion_hacer_inventarios =
         {
@@ -1918,6 +1919,25 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             };
         }
 
+
+        //-------------------------------------------------------------------------------------------------------
+        static public string[,] GG_dir_de_archivos_tipo_1_solo_archivo =
+        {
+
+            /*0*/{ GG_direccion_carpetas_base[0] + "CONFIG\\PROCESO_ESPERA_A_CONFIRMAR.TXT","FOLIO|DATOS|FECHA|APROBADOR_O_GRUPO_ESPESIFICO1°APROBADOR_O_GRUPO_ESPESIFICO2|SI_NO_HAY_APROBADOR_ESPESIFICO_NIVELES_0_MAS_IMPORTANTE" },//leer respuestas
+            
+        };
+
+
+        static public string[] GG_dir_arch_transferencia =
+        {
+            
+            /*0*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\1.TXT",//leer respuestas
+            /*1*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\2.TXT",//enviar preguntas
+            /*2*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\BANDERAS.TXT",
+        };
+
+        //-------------------------------------------------------------------------------------------------------
 
 
 

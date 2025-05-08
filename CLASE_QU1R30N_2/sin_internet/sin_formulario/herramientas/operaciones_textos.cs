@@ -1194,31 +1194,73 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         }
 
 
-        public string recorrer_caracter_separacion(string contenidoFila, string izquierda_o_derecha = "izquierda")
+        public string recorrer_caracter_separacion(string contenidoFila, string izquierda_o_derecha = "izquierda", int numero_de_veses = 1)
         {
-            if (izquierda_o_derecha == "izquierda")
+            for (int k = 0; k < numero_de_veses; k++)
             {
 
 
-                // Recorremos el arreglo de caracteres de separación
-                for (int i = 0; i < G_caracter_separacion.Length - 1; i++)
+                if (izquierda_o_derecha == "izquierda")
                 {
-                    // Reemplazamos los caracteres en contenido_fila
-                    contenidoFila = contenidoFila.Replace(
-                        G_caracter_separacion[i + 1],
-                        G_caracter_separacion[i]
-                    );
+
+
+                    // Recorremos el arreglo de caracteres de separación
+                    for (int i = 0; i < G_caracter_separacion.Length - 1; i++)
+                    {
+                        // Reemplazamos los caracteres en contenido_fila
+                        contenidoFila = contenidoFila.Replace(
+                            G_caracter_separacion[i + 1],
+                            G_caracter_separacion[i]
+                        );
+                    }
+                }
+                else
+                {
+                    for (int i = G_caracter_separacion.Length - 1; i > 0; i--)
+                    {
+                        // Reemplazamos los caracteres en contenido_fila
+                        contenidoFila = contenidoFila.Replace(
+                            G_caracter_separacion[i - 1],
+                            G_caracter_separacion[i]
+                        );
+                    }
                 }
             }
-            else
+            // Devolvemos el contenido procesado
+            return contenidoFila;
+        }
+        
+
+        public string recorrer_caracter_separacion_funciones_espesificas(string contenidoFila, string izquierda_o_derecha = "izquierda", int numero_de_veses = 1)
+        {
+            for (int k = 0; k < numero_de_veses; k++)
             {
-                for (int i = G_caracter_separacion.Length - 1; i > 0; i--)
+
+
+                if (izquierda_o_derecha == "izquierda")
                 {
-                    // Reemplazamos los caracteres en contenido_fila
-                    contenidoFila = contenidoFila.Replace(
-                        G_caracter_separacion[i - 1],
-                        G_caracter_separacion[i]
-                    );
+
+
+                    // Recorremos el arreglo de caracteres de separación
+                    for (int i = 0; i < G_caracter_separacion_para_funciones_espesificas.Length - 1; i++)
+                    {
+                        // Reemplazamos los caracteres en contenido_fila
+                        contenidoFila = contenidoFila.Replace(
+                            G_caracter_separacion_para_funciones_espesificas[i + 1],
+                            G_caracter_separacion[i]
+                        );
+                    }
+                }
+                else
+                {
+                    for (int i = G_caracter_separacion_para_funciones_espesificas.Length - 1; i > 0; i--)
+                    {
+                        // Reemplazamos los caracteres en contenido_fila
+                        contenidoFila = contenidoFila.Replace(
+                            G_caracter_separacion_para_funciones_espesificas[i - 1],
+                            G_caracter_separacion_para_funciones_espesificas[i]
+                        );
+                    }
                 }
             }
             // Devolvemos el contenido procesado
@@ -1252,6 +1294,49 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         }
 
 
+        public string generar_folio(string añomesdiahoraminseg = null)
+        {
+            string folio = "";
 
+            if (añomesdiahoraminseg == null)
+            {
+                folio = GenerarCadenaConFechaHoraAleatoria(4) + "" + DateTime.Now.ToString("yyMMddHHmmss");
+            }
+            else
+            {
+                folio = GenerarCadenaConFechaHoraAleatoria(4) + "" + DateTime.Now.ToString(añomesdiahoraminseg);
+            }
+
+            folio = folio.ToUpper();
+            return folio;
+        }
+
+        private string GenerarCadenaConFechaHoraAleatoria(int cant_caracteres = 4)
+        {
+            // Obtiene la hora actual con segundos
+            string HoraConSegundos = DateTime.Now.ToString("HHmmss");
+
+            // Inicializa la semilla usando el reloj del sistema
+            int semilla = Environment.TickCount;
+            Random aleatorio = new Random(semilla);
+
+            // Genera una cadena aleatoria de longitud variable (entre 0 y 10 caracteres)
+            int longitud = aleatorio.Next(cant_caracteres);
+            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            char[] cadenaAleatoria = new char[longitud];
+
+            for (int i = 0; i < longitud; i++)
+            {
+                cadenaAleatoria[i] = caracteres[aleatorio.Next(caracteres.Length)];
+            }
+
+            // Combina la fecha y hora con la cadena aleatoria
+            string resultado = HoraConSegundos + new string(cadenaAleatoria);
+
+            return resultado;
+        }
+
+
+        //fin clase------------------------------------------------------------------------
     }
 }

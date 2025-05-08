@@ -1,19 +1,17 @@
-﻿using System;
+﻿using CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos;
+using CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-using CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas;
-
-using CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos.sub_modelo;
-using CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos;
-
 namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
 {
-    internal class _03_mod_negocios
+    internal class _05_mod_aprobaciones_de_proceso
     {
+
+
         string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
         string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
         string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
@@ -29,29 +27,28 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             string proceso = datos_spliteados[0];
             string datos = datos_spliteados[1];
 
-            
 
-            if (proceso == "TIENDA")
+
+            if (proceso == "GUARDARPEDIDOACONFIRMAR")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _03_sub_mod_negocio_tienda sub_mod_tienda = new _03_sub_mod_negocio_tienda();
-                info_a_retornar = EjecutarFuncionEnDatos_SUB_MODELO(sub_mod_tienda.operacion_a_hacer, datos);
-            }
-            else if (proceso == "RESTAURANTE")
-            {
-                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _03_sub_mod_negocio_restaurante sub_mod_restaurante = new _03_sub_mod_negocio_restaurante();
-                info_a_retornar = EjecutarFuncionEnDatos_SUB_MODELO(sub_mod_restaurante.operacion_a_hacer, datos);
+                _05_proc_aprobaciones_de_proceso proc_apro = new _05_proc_aprobaciones_de_proceso();
+                info_a_retornar = EjecutarFuncionEnDatos(proc_apro.GuardarPedidoAConfirmar, datos);
             }
 
-            else if (proceso == "VENTAS")
+            if (proceso == "CONFIRMAR")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _03_proc_negocios proc_neg= new _03_proc_negocios();
-                info_a_retornar = EjecutarFuncionEnDatos(proc_neg.ventas, datos);
+                _05_proc_aprobaciones_de_proceso proc_apro = new _05_proc_aprobaciones_de_proceso();
+                info_a_retornar = EjecutarFuncionEnDatos(proc_apro.Confirmar, datos);
             }
 
-            
+            if (proceso == "ELIMINAR")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _05_proc_aprobaciones_de_proceso proc_apro = new _05_proc_aprobaciones_de_proceso();
+                info_a_retornar = EjecutarFuncionEnDatos(proc_apro.Eliminar, datos);
+            }
 
 
             return info_a_retornar;
@@ -62,7 +59,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
             string info_a_retornar = null;
 
             info_a_retornar = funcion(datos);
-            
+
 
             return info_a_retornar;
         }
@@ -81,31 +78,5 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
         }
 
 
-        public string mostrar_procesos()
-        {
-            string info_a_retornar = "";
-
-
-            info_a_retornar =
-                "TIENDA" + G_caracter_para_enter[0] +
-                "  EXTRAER_INVENTARIO" + G_caracter_para_enter[0] +
-
-
-                "RESTAURANTE" + G_caracter_para_enter[0] +
-                "  EXTRAER_INVENTARIO" + G_caracter_para_enter[0] 
-
-
-
-            ;
-
-
-
-
-            return info_a_retornar;
-        }
-
-
-
-        //fin clase--------------------------------------------------------
     }
 }

@@ -15,9 +15,11 @@ namespace CLASE_QU1R30N_2
         string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
         string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
         string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
-        string[] G_dir_arch_transferencia = var_fun_GG.GG_dir_arch_transferencia;
+        string[] G_dir_arch_transferencia = var_fun_GG_dir_arch_crear.GG_dir_arch_transferencia;
+        
+        string[,] GG_dir_de_archivos_tipo_1_solo_archivo = var_fun_GG_dir_arch_crear.GG_dir_de_archivos_tipo_1_solo_archivo;
 
-        int G_donde_inicia_la_tabla = var_fun_GG.GG_indice_donde_comensar;
+        
 
         operaciones_arreglos op_arr = new operaciones_arreglos();
 
@@ -28,6 +30,7 @@ namespace CLASE_QU1R30N_2
         public void iniciar()
         {
             crear_archivos_transferencia();
+            crear_archivos_de_un_solo_archivo_solo_prog();
             crear_archivos_para_punto_de_venta();
 
             
@@ -64,6 +67,16 @@ namespace CLASE_QU1R30N_2
             }
         }
 
+        public void crear_archivos_de_un_solo_archivo_solo_prog()
+        {
+
+            for (int i = 0; i < GG_dir_de_archivos_tipo_1_solo_archivo.Length - 1; i++)
+            {
+                //bas.Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(G_dir_arch_transferencia[i], "sin_informacion", leer_y_agrega_al_arreglo: false);
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + GG_dir_de_archivos_tipo_1_solo_archivo[i,0] + G_caracter_separacion_funciones_espesificas[3] + GG_dir_de_archivos_tipo_1_solo_archivo[i, 1]);
+            }
+
+        }
 
         public void crear_archivos_para_punto_de_venta()
         {
@@ -125,9 +138,16 @@ namespace CLASE_QU1R30N_2
         public void pruebas()
         {
             //enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "TIENDA" + G_caracter_separacion_funciones_espesificas[1] + "EXTRAER_INVENTARIO" + G_caracter_separacion_funciones_espesificas[2] + G_dir_arch_transferencia[i]);
-            string resp = enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "VENTAS" + G_caracter_separacion_funciones_espesificas[1] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "1");
 
+            string proceso = "MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "VENTAS" + G_caracter_separacion_funciones_espesificas[1] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "1";
 
+            string proceso2 = op_tex.recorrer_caracter_separacion_funciones_espesificas(proceso,"derecha",5);
+
+            string proceso3 = "MODELO_APROBACION" + G_caracter_separacion_funciones_espesificas[0] + "GUARDARPEDIDOACONFIRMAR" + G_caracter_separacion_funciones_espesificas[1] + proceso2 + G_caracter_separacion_funciones_espesificas[4] + proceso2 + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "ADMINISTRADOR";
+
+            string resp = enl_princ.enlasador(proceso3);
+
+            
 
 
         }
