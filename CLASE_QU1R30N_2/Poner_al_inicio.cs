@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -138,18 +139,19 @@ namespace CLASE_QU1R30N_2
         public void pruebas()
         {
             //enl_princ.enlasador("MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "TIENDA" + G_caracter_separacion_funciones_espesificas[1] + "EXTRAER_INVENTARIO" + G_caracter_separacion_funciones_espesificas[2] + G_dir_arch_transferencia[i]);
-
+            /*
             string proceso = "MODELO_NEGOCIOS" + G_caracter_separacion_funciones_espesificas[0] + "VENTAS" + G_caracter_separacion_funciones_espesificas[1] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "1" + G_caracter_separacion_funciones_espesificas[3] + "NOSE" + G_caracter_separacion_funciones_espesificas[3] + "1";
 
-            string proceso2 = op_tex.recorrer_caracter_separacion_funciones_espesificas(proceso,"derecha",5);
+            string proceso2 = op_tex.recorrer_caracter_separacion_funciones_espesificas(proceso,"derecha",7);
 
-            string proceso3 = "MODELO_APROBACION" + G_caracter_separacion_funciones_espesificas[0] + "GUARDARPEDIDOACONFIRMAR" + G_caracter_separacion_funciones_espesificas[1] + proceso2 + G_caracter_separacion_funciones_espesificas[4] + proceso2 + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "ADMINISTRADOR";
+            string proceso3 = "MODELO_APROBACION" + G_caracter_separacion_funciones_espesificas[0] + "GUARDARPEDIDOACONFIRMAR" + G_caracter_separacion_funciones_espesificas[1] + proceso2 + G_caracter_separacion_funciones_espesificas[5] + proceso2 + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "ADMINISTRADOR";
 
             string resp = enl_princ.enlasador(proceso3);
-
+            */
             
-
-
+            string proceso = "MODELO_APROBACION" + G_caracter_separacion_funciones_espesificas[0] + "CONFIRMAR" + G_caracter_separacion_funciones_espesificas[1] + "223644Z9250508223644" + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "ADMINISTRADOR";
+            string resp = enl_princ.enlasador(proceso);
+            
         }
 
 

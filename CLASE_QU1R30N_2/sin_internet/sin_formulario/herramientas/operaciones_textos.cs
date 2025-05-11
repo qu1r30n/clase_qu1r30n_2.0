@@ -1247,7 +1247,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
                         // Reemplazamos los caracteres en contenido_fila
                         contenidoFila = contenidoFila.Replace(
                             G_caracter_separacion_para_funciones_espesificas[i + 1],
-                            G_caracter_separacion[i]
+                            G_caracter_separacion_para_funciones_espesificas[i]
                         );
                     }
                 }

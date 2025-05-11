@@ -504,39 +504,39 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             string[] carpetas_ultimo_nom_archivo = direccion_extencion_espliteada[0].Split(separadores_de_directorios);
             string nombre_archivo = carpetas_ultimo_nom_archivo[carpetas_ultimo_nom_archivo.Length - 1];
 
-            FileStream fs = null;
-            StreamReader sr = null;
+                FileStream fs = null;
+                StreamReader sr = null;
 
 
 
 
-            while (fs == null)
-            {
-                try
+                while (fs == null)
                 {
-                    fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
+                    try
+                    {
+                        fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
+                    }
+                    catch
+                    {
+
+
+                    }
                 }
-                catch
+                sr = new StreamReader(fs);
+
+
+
+
+
+                List<string> lista_datos = new List<string>();
+                string linea;
+                string id_total = null;
+                string columnas = null;
+                string cantidad_filas_por_archivo = "100";
+                while ((linea = sr.ReadLine()) != null)
                 {
-
-
+                    lista_datos.Add(linea);
                 }
-            }
-            sr = new StreamReader(fs);
-
-
-
-
-
-            List<string> lista_datos = new List<string>();
-            string linea;
-            string id_total = null;
-            string columnas = null;
-            string cantidad_filas_por_archivo = "100";
-            while ((linea = sr.ReadLine()) != null)
-            {
-                lista_datos.Add(linea);
-            }
 
             string resul = ORDEN_INFORMACION_SOLO_PROG(lista_datos);
 
@@ -2307,7 +2307,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             }
 
             sr = new StreamReader(fs);
-
+                
 
             StreamWriter sw = new StreamWriter(fs);
 

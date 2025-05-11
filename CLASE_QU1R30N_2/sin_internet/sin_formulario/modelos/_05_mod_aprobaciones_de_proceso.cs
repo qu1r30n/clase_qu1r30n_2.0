@@ -36,7 +36,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(proc_apro.GuardarPedidoAConfirmar, datos);
             }
 
-            if (proceso == "CONFIRMAR")
+            else if (proceso == "CONFIRMAR")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
                 _05_proc_aprobaciones_de_proceso proc_apro = new _05_proc_aprobaciones_de_proceso();
@@ -50,6 +50,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
                 info_a_retornar = EjecutarFuncionEnDatos(proc_apro.Eliminar, datos);
             }
 
+            else if (proceso == "EDITAR")
+            {
+                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
+                _05_proc_aprobaciones_de_proceso proc_apro = new _05_proc_aprobaciones_de_proceso();
+                info_a_retornar = EjecutarFuncionEnDatos(proc_apro.Editar, datos);
+            }
 
             return info_a_retornar;
         }
