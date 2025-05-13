@@ -72,6 +72,13 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios
                 info_a_retornar = mod_apro.operacion_a_hacer(info);
             }
 
+            else if (modelo == "MODELO_RECORDATORIO")
+            {
+                _06_mod_recordatorios mod_reco = new _06_mod_recordatorios();
+                info_a_retornar = mod_reco.operacion_a_hacer(info);
+            }
+
+
             else if (modelo == "MOSTRAR_MODELOS")
             {
                 info_a_retornar = mostrar_modelos();

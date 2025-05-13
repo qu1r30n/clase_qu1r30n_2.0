@@ -1876,23 +1876,9 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
 
 
-        static public string[,] GG_dir_nom_archivos_SIN_ARREGLOS_GG =
-        {
-            
-            /*0*/{"C:\\XEROX\\CONFIG\\REG\\REG_" + DateTime.Now.ToString("yyyyMMdd") + ".TXT","hora|codbar1°codbar2|total_venta|nom1°nom2|precio_compra|provedor" , "" },//reg_modificacion archivos
-            /*1*/{"CONFIG\\INF\\RECORDATORIO\\RECORDATORIO.TXT","SIN INFORMACION" , "" },//reg_modificacion archivos
+        
 
-        };
-
-        static private void RecargarArregloArchivos_SIN_ARREGLOS_GG()
-        {
-            GG_dir_nom_archivos_SIN_ARREGLOS_GG = new string[,]
-            {
-                /*0*/{"C:\\XEROX\\CONFIG\\REG\\REG_" + DateTime.Now.ToString("yyyyMMdd") + ".TXT","hora|codbar1°codbar2|total_venta|nom1°nom2|precio_compra|provedor" , "" },//reg_modificacion archivos
-                /*1*/{"CONFIG\\INF\\RECORDATORIO\\RECORDATORIO.TXT","SIN INFORMACION" , "" },//reg_modificacion archivos
-            };
-        }
-
+        
 
 
 
@@ -1925,16 +1911,16 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         {
 
             /*0*/{ GG_direccion_carpetas_base[0] + "CONFIG\\PROCESO_ESPERA_A_CONFIRMAR.TXT","FOLIO|DATOS|FECHA|APROBADOR_O_GRUPO_ESPESIFICO1°APROBADOR_O_GRUPO_ESPESIFICO2|SI_NO_HAY_APROBADOR_ESPESIFICO_NIVELES_0_MAS_IMPORTANTE" },//leer respuestas
-            
+            /*1*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\RECORDATORIO\\RECORDATORIO.TXT","SIN INFORMACION" },//reg_modificacion archivos
         };
 
 
-        static public string[] GG_dir_arch_transferencia =
+        static public string[,] GG_dir_arch_transferencia =
         {
-            
-            /*0*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\1.TXT",//leer respuestas
-            /*1*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\2.TXT",//enviar preguntas
-            /*2*/"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2\\BANDERAS.TXT",
+            /*0*/{ "C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2_\\BANDERAS.TXT", var_fun_GG.GG_id_programa, var_fun_GG.GG_id_programa},//no_hacer_caso
+            /*1*/{ "C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2_\\1.TXT", "SIN_INFO", ""},//preguntas
+            /*2*/{"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2_\\2.TXT", "SIN_INFO", ""},//respuestas
+
         };
 
         //-------------------------------------------------------------------------------------------------------
@@ -1946,7 +1932,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         {
             // Recargar los arreglos principales
             RecargarArregloArchivos_dir_nom_archivos();
-            RecargarArregloArchivos_SIN_ARREGLOS_GG();
             RecargarArregloDireccionInventarios();
 
             // Crear archivos iniciales

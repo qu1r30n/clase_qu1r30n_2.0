@@ -239,7 +239,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
                 bool esta = false;
 
-                string[] info_archivo = LEER_SOLO_PROG(direccion_archivo).Split(G_caracter_separacion[0][0]);
+                string[] info_archivo = LEER_SOLO_PROG(direccion_archivo).Split(G_caracter_separacion_funciones_espesificas[4][0]);
 
                 if (info_archivo == null)
                 {
@@ -2405,6 +2405,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 }
             }
 
+            
             object caracter_separacion_objeto = null;
             if (datos_epliteados.Length >= 4)
             {
@@ -2423,6 +2424,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 }
             }
 
+            string[] caracter_separacion = vf_GG.GG_funcion_caracter_separacion(caracter_separacion_objeto);
 
             StreamReader sr = null;
             while (sr == null)
@@ -2458,7 +2460,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     {
                         if (cont >= donde_inica)
                         {
-                            string[] linea_espliteada = linea.Split(G_caracter_separacion[0][0]);
+                            string[] linea_espliteada = linea.Split(caracter_separacion[0][0]);
                             if (linea_espliteada[columna_a_comparar] != comparar)
                             {
                                 sw.WriteLine(linea);

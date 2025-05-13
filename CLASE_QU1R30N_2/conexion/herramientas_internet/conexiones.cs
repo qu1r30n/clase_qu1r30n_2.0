@@ -17,9 +17,9 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
 
         public string[] G_dir_arch_transferencia =
         {
-            var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[0,0],
-            var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[1,0],
-            var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[2,0],
+            var_fun_GG_dir_arch_crear.GG_dir_arch_transferencia[0,0],
+            var_fun_GG_dir_arch_crear.GG_dir_arch_transferencia[1,0],
+            var_fun_GG_dir_arch_crear.GG_dir_arch_transferencia[2,0],
         };
 
 
@@ -50,7 +50,7 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
             int[] arr_devolver = { -1, -1, -1 };
 
 
-            if (G_dir_arch_transferencia.Length <= numero_adelante_posision)
+            if (G_dir_arch_transferencia.GetLength(0) <= numero_adelante_posision)
             {
                 if (numero_adelante_posision < 3)
                 {
@@ -67,7 +67,7 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
             }
             if (1 > numero_actual_posision - 3)
             {
-                numero_atras_posision = (G_dir_arch_transferencia.Length - 4) + posicion_bandera;
+                numero_atras_posision = (G_dir_arch_transferencia.GetLength(0) - 4) + posicion_bandera;
             }
             arr_devolver[0] = numero_atras_posision;
             arr_devolver[1] = numero_actual_posision;

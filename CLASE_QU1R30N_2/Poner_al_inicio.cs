@@ -16,7 +16,7 @@ namespace CLASE_QU1R30N_2
         string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
         string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
         string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
-        string[] G_dir_arch_transferencia = var_fun_GG_dir_arch_crear.GG_dir_arch_transferencia;
+        string[,] G_dir_arch_transferencia = var_fun_GG_dir_arch_crear.GG_dir_arch_transferencia;
         
         string[,] GG_dir_de_archivos_tipo_1_solo_archivo = var_fun_GG_dir_arch_crear.GG_dir_de_archivos_tipo_1_solo_archivo;
 
@@ -43,35 +43,35 @@ namespace CLASE_QU1R30N_2
         public void crear_archivos_transferencia()
         {
 
-            for (int i = 0; i < G_dir_arch_transferencia.Length - 1; i++)
+            for (int i = 1; i < G_dir_arch_transferencia.GetLength(0); i++)
             {
                 //bas.Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(G_dir_arch_transferencia[i], "sin_informacion", leer_y_agrega_al_arreglo: false);
-                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[i]);
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[i,0]);
             }
 
             //bas.Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(G_dir_arch_transferencia[2], leer_y_agrega_al_arreglo: false);
-            enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[2]);
+            enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0,0]);
 
 
 
             //string[] info = bas.Leer(G_dir_arch_transferencia[2]);
-            string[] info = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[2]).Split(G_caracter_separacion[0][0]);
-            if (info == null)
+            string[] info = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0,0]).Split(G_caracter_separacion[0][0]);
+            if (info == null || (info.Length == 1 && info[0] == "")) 
             {
                 //bas.Agregar_a_archivo_sin_arreglo(G_dir_arch_transferencia[2], var_fun_GG.GG_id_programa + "\n" + var_fun_GG.GG_id_programa);
-                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_USO_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[2] + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_id_programa + "\n" + var_fun_GG.GG_id_programa);
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_USO_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0, 0] + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_id_programa + "\n" + var_fun_GG.GG_id_programa);
             }
             else
             {
                 //bas.Agregar_sino_existe(G_dir_arch_transferencia[2], 0, var_fun_GG.GG_id_programa, var_fun_GG.GG_id_programa);
-                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_SINO_EXISTE_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[2] + G_caracter_separacion_funciones_espesificas[3] + "0"+ G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_id_programa + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_id_programa);
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_SINO_EXISTE_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0, 0] + G_caracter_separacion_funciones_espesificas[3] + "0"+ G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_id_programa + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_id_programa);
             }
         }
 
         public void crear_archivos_de_un_solo_archivo_solo_prog()
         {
 
-            for (int i = 0; i < GG_dir_de_archivos_tipo_1_solo_archivo.Length - 1; i++)
+            for (int i = 0; i < GG_dir_de_archivos_tipo_1_solo_archivo.GetLength(0) - 1; i++)
             {
                 //bas.Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(G_dir_arch_transferencia[i], "sin_informacion", leer_y_agrega_al_arreglo: false);
                 enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + GG_dir_de_archivos_tipo_1_solo_archivo[i,0] + G_caracter_separacion_funciones_espesificas[3] + GG_dir_de_archivos_tipo_1_solo_archivo[i, 1]);
@@ -110,29 +110,6 @@ namespace CLASE_QU1R30N_2
 
 
 
-            //bas.Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[0, 0], var_fun_GG.GG_id_programa, new string[] { var_fun_GG.GG_id_programa }, leer_y_agrega_al_arreglo: false);
-            //enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[0, 0] + G_caracter_separacion_funciones_espesificas[4] + var_fun_GG.GG_id_programa + G_caracter_separacion_funciones_espesificas[4] + var_fun_GG.GG_id_programa + G_caracter_separacion_funciones_espesificas[4] + "false");
-
-
-
-            // Crear archivos del programa SIN ARREGLO GG
-            for (int i = 0; i < var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG.GetLength(0); i++)
-            {
-                /*
-                bas.Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(
-                    var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 0],
-                    var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 1],
-                    var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 2].Split(G_caracter_separacion_funciones_espesificas[1][0]), leer_y_agrega_al_arreglo: false);
-                */
-                string[] direccion_extencion_espliteada = var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 0].Split('.');
-                string dir_info_bas = direccion_extencion_espliteada[0] + "_DAT\\" + enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "GENERAR_RUTA_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + "0" + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_cantidado_por_archivo);
-
-                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 0] + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 1] + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos_SIN_ARREGLOS_GG[i, 2]);
-
-                string contenido_fila = op_tex.recorrer_caracter_separacion(var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[i, 1]);
-                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + dir_info_bas + G_caracter_separacion_funciones_espesificas[3] + contenido_fila + G_caracter_separacion_funciones_espesificas[3] + var_fun_GG_dir_arch_crear.GG_dir_nom_archivos[i, 2]);
-
-            }
 
         }
 
@@ -148,10 +125,19 @@ namespace CLASE_QU1R30N_2
 
             string resp = enl_princ.enlasador(proceso3);
             */
-            
+            /*
             string proceso = "MODELO_APROBACION" + G_caracter_separacion_funciones_espesificas[0] + "CONFIRMAR" + G_caracter_separacion_funciones_espesificas[1] + "223644Z9250508223644" + G_caracter_separacion_funciones_espesificas[3] + "0" + G_caracter_separacion_funciones_espesificas[3] + "ADMINISTRADOR";
             string resp = enl_princ.enlasador(proceso);
-            
+            */
+            /*
+            string proceso = "MODELO_RECORDATORIO" + G_caracter_separacion_funciones_espesificas[0] + "GUARDAR_RECORDATORIO" + G_caracter_separacion_funciones_espesificas[1] + "mensaje" + G_caracter_separacion_funciones_espesificas[3] + "202505121740" + G_caracter_separacion_funciones_espesificas[3] + "ADMINISTRADOR" + G_caracter_separacion_funciones_espesificas[3] + "NEXOPORTALARCANO";
+            string resp = enl_princ.enlasador(proceso);
+            */
+            string proceso = "MODELO_RECORDATORIO" + G_caracter_separacion_funciones_espesificas[0] + "CHECAR_RECORDATORIOS" ;
+            string resp = enl_princ.enlasador(proceso);
+
+
+
         }
 
 
