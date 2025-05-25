@@ -1804,8 +1804,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
 
         static public string[] GG_direccion_carpetas_base = { "" };
 
-
-
         static public string[,] GG_dir_nom_archivos =
         {
             /*0*/{ GG_direccion_carpetas_base[0] + "CONFIG\\INF\\INVENTARIO\\INVENTARIO.TXT", columnas_concatenadas(GG_ventana_emergente_productos,1,var_fun_GG.GG_caracter_separacion[1]),""},
@@ -1874,14 +1872,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         }
 
 
-
-
-        
-
-        
-
-
-
         //direccion_para_hacer_inventarios
         static public string[,] GG_direccion_hacer_inventarios =
         {
@@ -1906,7 +1896,18 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         }
 
 
+
         //-------------------------------------------------------------------------------------------------------
+
+        static public string[,] GG_dir_de_carpetas =
+        {
+
+            /*0*/ { "CONFIG\\INTERMEDIARIOS\\","0_ID|1_COD_BAR|2_NOMBRE|3_PROVEDOR¬PRECIO¬CALIDAD°PROVEDOR2¬PRECIO2¬CALIDAD|" },//PRODUCTO
+            /*1*/ { "CONFIG\\INTERMEDIARIOS\\","0_ID|1_NOMBRE_PROVEDOR|2_UBICACION|3_HORA_APERTURA|4_HORA_CIERRE|5_CALIDAD_GENERAL|6_PRECIOS_GENERALES_ALTOS_MEDIOS_O_BAJOS|" },//PROVEDOR
+
+        };
+
+
         static public string[,] GG_dir_de_archivos_tipo_1_solo_archivo =
         {
 
@@ -1922,6 +1923,9 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             /*2*/{"C:\\XEROX\\CONFIG\\INF\\CLASE_QU1R30N_2_\\2.TXT", "SIN_INFO", ""},//respuestas
 
         };
+
+        
+
 
         //-------------------------------------------------------------------------------------------------------
 
@@ -1939,5 +1943,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
             iniciar_Arch.crear_archivos_para_punto_de_venta();
             iniciar_Arch.crear_archivos_transferencia();
         }
+
+        //fin_clase
     }
 }

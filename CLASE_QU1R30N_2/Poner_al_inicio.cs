@@ -18,9 +18,10 @@ namespace CLASE_QU1R30N_2
         string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;
         string[,] G_dir_arch_transferencia = var_fun_GG_dir_arch_crear.GG_dir_arch_transferencia;
         
-        string[,] GG_dir_de_archivos_tipo_1_solo_archivo = var_fun_GG_dir_arch_crear.GG_dir_de_archivos_tipo_1_solo_archivo;
+        string[,] G_dir_de_archivos_tipo_1_solo_archivo = var_fun_GG_dir_arch_crear.GG_dir_de_archivos_tipo_1_solo_archivo;
+        string[,] G_dir_de_carpetas = var_fun_GG_dir_arch_crear.GG_dir_de_carpetas;
 
-        
+
 
         operaciones_arreglos op_arr = new operaciones_arreglos();
 
@@ -33,13 +34,15 @@ namespace CLASE_QU1R30N_2
             crear_archivos_transferencia();
             crear_archivos_de_un_solo_archivo_solo_prog();
             crear_archivos_para_punto_de_venta();
+            crear_directorios_sin_archivos();
 
-            
+
+
             pruebas();
             
             
         }
-
+        
         public void crear_archivos_transferencia()
         {
 
@@ -71,13 +74,25 @@ namespace CLASE_QU1R30N_2
         public void crear_archivos_de_un_solo_archivo_solo_prog()
         {
 
-            for (int i = 0; i < GG_dir_de_archivos_tipo_1_solo_archivo.GetLength(0) - 1; i++)
+            for (int i = 0; i < G_dir_de_archivos_tipo_1_solo_archivo.GetLength(0) - 1; i++)
             {
                 //bas.Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(G_dir_arch_transferencia[i], "sin_informacion", leer_y_agrega_al_arreglo: false);
-                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + GG_dir_de_archivos_tipo_1_solo_archivo[i,0] + G_caracter_separacion_funciones_espesificas[3] + GG_dir_de_archivos_tipo_1_solo_archivo[i, 1]);
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + G_dir_de_archivos_tipo_1_solo_archivo[i,0] + G_caracter_separacion_funciones_espesificas[3] + G_dir_de_archivos_tipo_1_solo_archivo[i, 1]);
             }
 
         }
+
+        public void crear_directorios_sin_archivos()
+        {
+
+            for (int i = 0; i < G_dir_de_carpetas.GetLength(0) - 1; i++)
+            {
+                //bas.Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(G_dir_arch_transferencia[i], "sin_informacion", leer_y_agrega_al_arreglo: false);
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + G_dir_de_carpetas[i, 0] + G_caracter_separacion_funciones_espesificas[3] + G_dir_de_archivos_tipo_1_solo_archivo[i, 1]);
+            }
+
+        }
+
 
         public void crear_archivos_para_punto_de_venta()
         {
@@ -133,10 +148,12 @@ namespace CLASE_QU1R30N_2
             string proceso = "MODELO_RECORDATORIO" + G_caracter_separacion_funciones_espesificas[0] + "GUARDAR_RECORDATORIO" + G_caracter_separacion_funciones_espesificas[1] + "mensaje" + G_caracter_separacion_funciones_espesificas[3] + "202505121740" + G_caracter_separacion_funciones_espesificas[3] + "ADMINISTRADOR" + G_caracter_separacion_funciones_espesificas[3] + "NEXOPORTALARCANO";
             string resp = enl_princ.enlasador(proceso);
             */
+            /*
             string proceso = "MODELO_RECORDATORIO" + G_caracter_separacion_funciones_espesificas[0] + "CHECAR_RECORDATORIOS" ;
             string resp = enl_princ.enlasador(proceso);
-
-
+            */
+            string proceso = "MODELO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[0] + "PRUEBA";
+            string resp = enl_princ.enlasador(proceso);
 
         }
 

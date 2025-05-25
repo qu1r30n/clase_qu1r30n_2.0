@@ -818,7 +818,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return info_retornar;
         }
 
-        public string editar_id(string datos)
+        public string editar_id_info_dividida(string datos)
         {
             string info_retornar = "";
 
@@ -991,6 +991,313 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             fs2.Close();
             return info_retornar;
         }
+
+        public string EDITAR_CELDA_ID_FILA_SOLO_PROG(string datos)
+        {
+            string info_retornar = "";
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //parametros------------------------------------------------------------------------------------
+            string direccion_archivos = datos_epliteados[0];
+
+
+            string id = null;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    id = datos_epliteados[1];
+                }
+            }
+
+            string columnas_a_incrementar = "";
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    columnas_a_incrementar = datos_epliteados[2];
+                }
+            }
+
+            string cantidades_a_incrementar = "";
+            if (datos_epliteados.Length >= 4)
+            {
+                if (datos_epliteados[3] != "")
+                {
+                    cantidades_a_incrementar = datos_epliteados[3];
+                }
+            }
+
+
+
+
+            //fin parametros-----------------------------------------------------------------------------
+
+            string[] direccion_espliteada = direccion_archivos.Split('.');
+            string carpetas = direccion_espliteada[0] + "_DAT";
+
+            FileStream fs = null;
+            StreamReader sr = null;
+            StreamWriter sw = null;
+            while (fs == null)
+            {
+                try
+                {
+                    fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr = new StreamReader(fs);
+            sw = new StreamWriter(fs);
+
+            string linea;
+            List<string> lineas = new List<string>();
+            // Lee cada línea del archivo hasta el final
+            while ((linea = sr.ReadLine()) != null)
+            {
+                // Aquí puedes procesar cada línea
+                lineas.Add(linea);
+            }
+
+
+
+            Int64 posicion_id_archivo = 0;
+            if (id.Length >= 2)
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "" + id[1]);
+            }
+            else
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "");
+            }
+
+
+
+
+
+            bool encontro_informacion = false;
+            fs.Seek(0, SeekOrigin.Begin);
+
+            for (int j = 0; j < lineas.Count; j++)
+            {
+                string linea2 = lineas[j];
+                if (posicion_id_archivo == j)
+                {
+                    string[] producto_espliteado = linea2.Split(G_caracter_separacion[0][0]);
+                    string[] colum_a_editar = columnas_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    string[] cantidades_a_editar = cantidades_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    for (int i = 0; i < colum_a_editar.Length; i++)
+                    {
+                        Int32 columna_int = Convert.ToInt32(colum_a_editar[i]);
+                        producto_espliteado[columna_int] = cantidades_a_editar[i];
+                    }
+                    string producto_editado = string.Join(G_caracter_separacion[0], producto_espliteado);
+                    sw.WriteLine(producto_editado);
+                    sw.Flush();
+                    encontro_informacion = true;
+                    info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + producto_editado;
+
+                }
+
+                else
+                {
+                    sw.WriteLine(linea2);
+                    sw.Flush();
+                }
+
+            }
+
+            if (encontro_informacion == false)
+            {
+                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
+            }
+
+            sw.Close();
+            sr.Close();
+            fs.Close();
+
+
+
+            return info_retornar;
+        }
+
+        public string EDITAR_CELDA_ID_INFO_DIVIDIDA(string datos)
+        {
+            string info_retornar = "";
+
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
+
+            //parametros------------------------------------------------------------------------------------
+            string direccion_archivos = datos_epliteados[0];
+
+
+            string id = null;
+            if (datos_epliteados.Length >= 2)
+            {
+                if (datos_epliteados[1] != "")
+                {
+                    id = datos_epliteados[1];
+                }
+            }
+
+            string columnas_a_incrementar = "";
+            if (datos_epliteados.Length >= 3)
+            {
+                if (datos_epliteados[2] != "")
+                {
+                    columnas_a_incrementar = datos_epliteados[2];
+                }
+            }
+
+            string info_a_editar = "";
+            if (datos_epliteados.Length >= 4)
+            {
+                if (datos_epliteados[3] != "")
+                {
+                    info_a_editar = datos_epliteados[3];
+                }
+            }
+
+
+
+
+            //fin parametros-----------------------------------------------------------------------------
+
+            string[] direccion_espliteada = direccion_archivos.Split('.');
+            string carpetas = direccion_espliteada[0] + "_DAT";
+
+            FileStream fs = null;
+            StreamReader sr = null;
+            while (fs == null)
+            {
+                try
+                {
+                    fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr = new StreamReader(fs);
+
+            string linea;
+            List<string> filas_configuaracion = new List<string>();
+            // Lee cada línea del archivo hasta el final
+            while ((linea = sr.ReadLine()) != null)
+            {
+                // Aquí puedes procesar cada línea
+                filas_configuaracion.Add(linea);
+            }
+
+            sr.Close();
+            fs.Close();
+
+            string datos_ordenados_configuracion = ORDEN_INFORMACION_SOLO_PROG(filas_configuaracion, "CANT_POR_ARCH");
+            string[] datos_config_esp = datos_ordenados_configuracion.Split(G_caracter_separacion[0][0]);
+
+            string cantidad_por_archivo = datos_config_esp[0];
+            string direccion = carpetas + "\\" + GENERAR_RUTA_ARCHIVO(id + G_caracter_separacion_funciones_espesificas[3] + cantidad_por_archivo);
+
+
+
+
+
+
+            FileStream fs2 = null;
+            StreamReader sr2 = null;
+            StreamWriter sw2 = null;
+            while (fs2 == null)
+            {
+                try
+                {
+                    fs2 = new FileStream(direccion, FileMode.Open, FileAccess.ReadWrite);
+                }
+                catch
+                {
+
+
+                }
+            }
+            sr2 = new StreamReader(fs2);
+            sw2 = new StreamWriter(fs2);
+
+
+
+            Int64 posicion_id_archivo = 0;
+            if (id.Length >= 2)
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "" + id[1]);
+            }
+            else
+            {
+                posicion_id_archivo = Convert.ToInt64(id[0] + "");
+            }
+
+
+
+
+
+            List<string> lineas = new List<string>();
+            bool encontro_informacion = false;
+
+            string fila = "";
+            while ((fila = sr2.ReadLine()) != null)
+            {
+                lineas.Add(fila);
+            }
+
+            fs2.Seek(0, SeekOrigin.Begin);
+
+            for (int j = 0; j < lineas.Count; j++)
+            {
+                string linea2 = lineas[j];
+                if (posicion_id_archivo == j)
+                {
+                    string[] producto_espliteado = linea2.Split(G_caracter_separacion[0][0]);
+                    string[] colum_a_editar = columnas_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    string[] cantidades_a_editar = info_a_editar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                    for (int i = 0; i < colum_a_editar.Length; i++)
+                    {
+                        Int32 columna_int = Convert.ToInt32(colum_a_editar[i]);
+                        producto_espliteado[columna_int] = cantidades_a_editar[i];
+                    }
+                    string producto_editado = string.Join(G_caracter_separacion[0], producto_espliteado);
+                    sw2.WriteLine(producto_editado);
+                    sw2.Flush();
+                    encontro_informacion = true;
+                    info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + producto_editado;
+
+                }
+
+                else
+                {
+                    sw2.WriteLine(linea2);
+                    sw2.Flush();
+                }
+
+            }
+
+            if (encontro_informacion == false)
+            {
+                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
+            }
+
+            sw2.Close();
+            sr2.Close();
+            fs2.Close();
+
+
+
+            return info_retornar;
+        }
+
 
 
         public string borrar_contenido_excepto_id(string datos)
@@ -1874,312 +2181,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
 
 
-        public string EDITAR_CELDA_ID_FILA_SOLO_PROG(string datos)
-        {
-            string info_retornar = "";
-
-            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
-
-            //parametros------------------------------------------------------------------------------------
-            string direccion_archivos = datos_epliteados[0];
-
-
-            string id = null;
-            if (datos_epliteados.Length >= 2)
-            {
-                if (datos_epliteados[1] != "")
-                {
-                    id = datos_epliteados[1];
-                }
-            }
-
-            string columnas_a_incrementar = "";
-            if (datos_epliteados.Length >= 3)
-            {
-                if (datos_epliteados[2] != "")
-                {
-                    columnas_a_incrementar = datos_epliteados[2];
-                }
-            }
-
-            string cantidades_a_incrementar = "";
-            if (datos_epliteados.Length >= 4)
-            {
-                if (datos_epliteados[3] != "")
-                {
-                    cantidades_a_incrementar = datos_epliteados[3];
-                }
-            }
-
-
-
-
-            //fin parametros-----------------------------------------------------------------------------
-
-            string[] direccion_espliteada = direccion_archivos.Split('.');
-            string carpetas = direccion_espliteada[0] + "_DAT";
-
-            FileStream fs = null;
-            StreamReader sr = null;
-            StreamWriter sw = null;
-            while (fs == null)
-            {
-                try
-                {
-                    fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
-                }
-                catch
-                {
-
-
-                }
-            }
-            sr = new StreamReader(fs);
-            sw = new StreamWriter(fs);
-
-            string linea;
-            List<string> lineas = new List<string>();
-            // Lee cada línea del archivo hasta el final
-            while ((linea = sr.ReadLine()) != null)
-            {
-                // Aquí puedes procesar cada línea
-                lineas.Add(linea);
-            }
-
-
-
-            Int64 posicion_id_archivo = 0;
-            if (id.Length >= 2)
-            {
-                posicion_id_archivo = Convert.ToInt64(id[0] + "" + id[1]);
-            }
-            else
-            {
-                posicion_id_archivo = Convert.ToInt64(id[0] + "");
-            }
-
-
-
-
-
-            bool encontro_informacion = false;
-            fs.Seek(0, SeekOrigin.Begin);
-
-            for (int j = 0; j < lineas.Count; j++)
-            {
-                string linea2 = lineas[j];
-                if (posicion_id_archivo == j)
-                {
-                    string[] producto_espliteado = linea2.Split(G_caracter_separacion[0][0]);
-                    string[] colum_a_editar = columnas_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
-                    string[] cantidades_a_editar = cantidades_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
-                    for (int i = 0; i < colum_a_editar.Length; i++)
-                    {
-                        Int32 columna_int = Convert.ToInt32(colum_a_editar[i]);
-                        producto_espliteado[columna_int] = cantidades_a_editar[i];
-                    }
-                    string producto_editado = string.Join(G_caracter_separacion[0], producto_espliteado);
-                    sw.WriteLine(producto_editado);
-                    sw.Flush();
-                    encontro_informacion = true;
-                    info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + producto_editado;
-
-                }
-
-                else
-                {
-                    sw.WriteLine(linea2);
-                    sw.Flush();
-                }
-
-            }
-
-            if (encontro_informacion == false)
-            {
-                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
-            }
-
-            sw.Close();
-            sr.Close();
-            fs.Close();
-
-
-
-            return info_retornar;
-        }
-
-        public string EDITAR_CELDA_ID_INFO_DIVIDIDA(string datos)
-        {
-            string info_retornar = "";
-
-            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
-
-            //parametros------------------------------------------------------------------------------------
-            string direccion_archivos = datos_epliteados[0];
-
-
-            string id = null;
-            if (datos_epliteados.Length >= 2)
-            {
-                if (datos_epliteados[1] != "")
-                {
-                    id = datos_epliteados[1];
-                }
-            }
-
-            string columnas_a_incrementar = "";
-            if (datos_epliteados.Length >= 3)
-            {
-                if (datos_epliteados[2] != "")
-                {
-                    columnas_a_incrementar = datos_epliteados[2];
-                }
-            }
-
-            string info_a_editar = "";
-            if (datos_epliteados.Length >= 4)
-            {
-                if (datos_epliteados[3] != "")
-                {
-                    info_a_editar = datos_epliteados[3];
-                }
-            }
-
-
-
-
-            //fin parametros-----------------------------------------------------------------------------
-
-            string[] direccion_espliteada = direccion_archivos.Split('.');
-            string carpetas = direccion_espliteada[0] + "_DAT";
-
-            FileStream fs = null;
-            StreamReader sr = null;
-            while (fs == null)
-            {
-                try
-                {
-                    fs = new FileStream(direccion_archivos, FileMode.Open, FileAccess.ReadWrite);
-                }
-                catch
-                {
-
-
-                }
-            }
-            sr = new StreamReader(fs);
-
-            string linea;
-            List<string> filas_configuaracion = new List<string>();
-            // Lee cada línea del archivo hasta el final
-            while ((linea = sr.ReadLine()) != null)
-            {
-                // Aquí puedes procesar cada línea
-                filas_configuaracion.Add(linea);
-            }
-
-            sr.Close();
-            fs.Close();
-
-            string datos_ordenados_configuracion = ORDEN_INFORMACION_SOLO_PROG(filas_configuaracion, "CANT_POR_ARCH");
-            string[] datos_config_esp = datos_ordenados_configuracion.Split(G_caracter_separacion[0][0]);
-
-            string cantidad_por_archivo = datos_config_esp[0];
-            string direccion = carpetas + "\\" + GENERAR_RUTA_ARCHIVO(id + G_caracter_separacion_funciones_espesificas[3] + cantidad_por_archivo);
-
-
-
-
-
-
-            FileStream fs2 = null;
-            StreamReader sr2 = null;
-            StreamWriter sw2 = null;
-            while (fs2 == null)
-            {
-                try
-                {
-                    fs2 = new FileStream(direccion, FileMode.Open, FileAccess.ReadWrite);
-                }
-                catch
-                {
-
-
-                }
-            }
-            sr2 = new StreamReader(fs2);
-            sw2 = new StreamWriter(fs2);
-
-
-
-            Int64 posicion_id_archivo = 0;
-            if (id.Length >= 2)
-            {
-                posicion_id_archivo = Convert.ToInt64(id[0] + "" + id[1]);
-            }
-            else
-            {
-                posicion_id_archivo = Convert.ToInt64(id[0] + "");
-            }
-
-
-
-
-
-            List<string> lineas = new List<string>();
-            bool encontro_informacion = false;
-
-            string fila = "";
-            while ((fila = sr2.ReadLine()) != null)
-            {
-                lineas.Add(fila);
-            }
-
-            fs2.Seek(0, SeekOrigin.Begin);
-
-            for (int j = 0; j < lineas.Count; j++)
-            {
-                string linea2 = lineas[j];
-                if (posicion_id_archivo == j)
-                {
-                    string[] producto_espliteado = linea2.Split(G_caracter_separacion[0][0]);
-                    string[] colum_a_editar = columnas_a_incrementar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
-                    string[] cantidades_a_editar = info_a_editar.Split(G_caracter_separacion_funciones_espesificas[4][0]);
-                    for (int i = 0; i < colum_a_editar.Length; i++)
-                    {
-                        Int32 columna_int = Convert.ToInt32(colum_a_editar[i]);
-                        producto_espliteado[columna_int] = cantidades_a_editar[i];
-                    }
-                    string producto_editado = string.Join(G_caracter_separacion[0], producto_espliteado);
-                    sw2.WriteLine(producto_editado);
-                    sw2.Flush();
-                    encontro_informacion = true;
-                    info_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + producto_editado;
-
-                }
-
-                else
-                {
-                    sw2.WriteLine(linea2);
-                    sw2.Flush();
-                }
-
-            }
-
-            if (encontro_informacion == false)
-            {
-                info_retornar = "0" + G_caracter_para_confirmacion_o_error[0] + "no_se_encontro_informacion";
-            }
-
-            sw2.Close();
-            sr2.Close();
-            fs2.Close();
-
-
-
-            return info_retornar;
-        }
-
+        
 
 
 
