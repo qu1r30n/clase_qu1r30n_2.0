@@ -327,7 +327,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             string[] temp_colum = texto_a_agregar_si_no_esta.Split(G_caracter_separacion[0][0]);
 
-            Crear_archivo_y_directorio(direccion_archivos + G_caracter_separacion_funciones_espesificas[3] + "tipo_info|info" + G_caracter_separacion_funciones_espesificas[3] + "ID_TOT|0\nCOLUMNAS|" + nom_columnas_si_no_existe_archivo + "\nCANT_POR_ARCH|" + var_fun_GG.GG_cantidado_por_archivo);
+            Crear_archivo_y_directorio(direccion_archivos + G_caracter_separacion_funciones_espesificas[3] + G_caracter_separacion_funciones_espesificas[3] + "ID_TOT|0\nCOLUMNAS|" + nom_columnas_si_no_existe_archivo + "\nCANT_POR_ARCH|" + var_fun_GG.GG_cantidado_por_archivo);
 
             string[] direccion_extencion_espliteada = direccion_archivos.Split('.');
             char[] separadores_de_directorios = { '/', '\\' };//estos seran los parametros de separacion de el split
@@ -402,7 +402,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
                 string dir_info_bas = direccion_extencion_espliteada[0] + "_DAT\\" + GENERAR_RUTA_ARCHIVO(id_total + G_caracter_separacion_funciones_espesificas[3] + cantidad_filas_por_archivo);
 
-                string res_crear_archivo = Crear_archivo_y_directorio(dir_info_bas + G_caracter_separacion_funciones_espesificas[3] + columnas + G_caracter_separacion_funciones_espesificas[3] + texto_a_agregar_si_no_esta);
+                string res_crear_archivo = Crear_archivo_y_directorio(dir_info_bas + G_caracter_separacion_funciones_espesificas[3] + op_tex.recorrer_caracter_separacion(columnas) + G_caracter_separacion_funciones_espesificas[3] + texto_a_agregar_si_no_esta);
 
                 string[] res_esp = res_crear_archivo.Split(G_caracter_para_confirmacion_o_error[0][0]);
                 if (res_esp[0] == "1")

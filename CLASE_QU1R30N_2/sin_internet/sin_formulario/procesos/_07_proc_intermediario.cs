@@ -59,7 +59,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 id_intermediario = datos_epliteados[0];
             }
 
-                string cod_bar = "";
+            string cod_bar = "";
             if (datos_epliteados.Length >= 2 && datos_epliteados[1] != "")
             {
                 cod_bar = datos_epliteados[1];
@@ -107,7 +107,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 G_caracter_separacion_funciones_espesificas[3] + "1" +
                 G_caracter_separacion_funciones_espesificas[3] + cod_bar +
                 G_caracter_separacion_funciones_espesificas[3] + "" +
-                G_caracter_separacion_funciones_espesificas[3] + G_dir_carpetas_y_columnas_para_archivos[0,1]
+                G_caracter_separacion_funciones_espesificas[3] + op_tex.recorrer_caracter_separacion(G_dir_carpetas_y_columnas_para_archivos[0,1],"derecha")
             );
 
 
@@ -179,14 +179,17 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             bool existe = false;
 
             // Enlace a un sistema central para registrar el proveedor
-            principal enl_princ = new principal();
+
+            string info_a_agregar_sino_esta = nombre;
+
             enl_princ.enlasador(
                 "TEX_BASE" +
-                G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_SINO_EXISTE_INFO_DIVIDIDA" +
-                G_caracter_separacion_funciones_espesificas[1] + G_dir_carpetas_y_columnas_para_archivos[1, 0] + id_intermediario + ".txt" +
-                G_caracter_separacion_funciones_espesificas[3] + "0" +
-                G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_id_programa +
-                G_caracter_separacion_funciones_espesificas[3] + var_fun_GG.GG_id_programa
+                G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_SINO_EXISTE_INFO_DIV" +
+                G_caracter_separacion_funciones_espesificas[1] + G_dir_carpetas_y_columnas_para_archivos[0, 0] + id_intermediario + "\\provedores.txt" +
+                G_caracter_separacion_funciones_espesificas[3] + "1" +
+                G_caracter_separacion_funciones_espesificas[3] + "nombre" +
+                G_caracter_separacion_funciones_espesificas[3] + info_a_agregar_sino_esta +
+                G_caracter_separacion_funciones_espesificas[3] + op_tex.recorrer_caracter_separacion(G_dir_carpetas_y_columnas_para_archivos[0, 1], "derecha")
             );
 
 
