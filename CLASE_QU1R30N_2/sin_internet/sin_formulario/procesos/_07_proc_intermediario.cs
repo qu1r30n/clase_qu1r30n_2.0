@@ -106,7 +106,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 G_caracter_separacion_funciones_espesificas[1] + G_dir_carpetas_y_columnas_para_archivos[0,0] + id_intermediario + "\\" + id_intermediario + ".txt" +
                 G_caracter_separacion_funciones_espesificas[3] + "1" +
                 G_caracter_separacion_funciones_espesificas[3] + cod_bar +
-                G_caracter_separacion_funciones_espesificas[3] + "" +
+                G_caracter_separacion_funciones_espesificas[3] + info_a_agregar_si_no_esta +
                 G_caracter_separacion_funciones_espesificas[3] + op_tex.recorrer_caracter_separacion(G_dir_carpetas_y_columnas_para_archivos[0,1],"derecha")
             );
 
@@ -185,7 +185,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             enl_princ.enlasador(
                 "TEX_BASE" +
                 G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_SINO_EXISTE_INFO_DIV" +
-                G_caracter_separacion_funciones_espesificas[1] + G_dir_carpetas_y_columnas_para_archivos[0, 0] + id_intermediario + "\\provedores.txt" +
+                G_caracter_separacion_funciones_espesificas[1] + G_dir_carpetas_y_columnas_para_archivos[1, 0] + id_intermediario + "\\provedores.txt" +
                 G_caracter_separacion_funciones_espesificas[3] + "1" +
                 G_caracter_separacion_funciones_espesificas[3] + "nombre" +
                 G_caracter_separacion_funciones_espesificas[3] + info_a_agregar_sino_esta +
