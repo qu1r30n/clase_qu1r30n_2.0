@@ -38,11 +38,11 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         {
             
             // Llamada al método con parámetros
-            agregar_producto_intermediario("1"+ G_caracter_separacion_funciones_espesificas[3] + "123" + G_caracter_separacion_funciones_espesificas[3] + "Coca-Cola"+ G_caracter_separacion_funciones_espesificas[3] +  "Proveedor2"+ G_caracter_separacion_funciones_espesificas[3] +  "6.20"+ G_caracter_separacion_funciones_espesificas[3] +  "productos"+ G_caracter_separacion_funciones_espesificas[3] +  "proveedores");
+            agregar_producto_intermediario("1"+ G_caracter_separacion_funciones_espesificas[3] + "123" + G_caracter_separacion_funciones_espesificas[3] + "COCA-COLA"+ G_caracter_separacion_funciones_espesificas[3] +  "PROVEEDOR2"+ G_caracter_separacion_funciones_espesificas[3] +  "6.20"+ G_caracter_separacion_funciones_espesificas[3] +  "CALIDAD");
             
 
             // Llamada a la función para agregar un proveedor
-            agregar_proveedor_intermediario("1"+ G_caracter_separacion_funciones_espesificas[3] +  "Proveedor3"+ G_caracter_separacion_funciones_espesificas[3] +  "UbicacionC"+ G_caracter_separacion_funciones_espesificas[3] +  "07:30"+ G_caracter_separacion_funciones_espesificas[3] +  "19:30"+ G_caracter_separacion_funciones_espesificas[3] +  "555-3333"+ G_caracter_separacion_funciones_espesificas[3] +  "Baja"+ G_caracter_separacion_funciones_espesificas[3] +  "intermedio"+ G_caracter_separacion_funciones_espesificas[3] +  "proveedores");
+            agregar_proveedor_intermediario("1"+ G_caracter_separacion_funciones_espesificas[3] + "PROVEEDOR2" + G_caracter_separacion_funciones_espesificas[3] +  "UBICACION"+ G_caracter_separacion_funciones_espesificas[3] +  "07:30"+ G_caracter_separacion_funciones_espesificas[3] +  "19:30"+ G_caracter_separacion_funciones_espesificas[3] +  "555-3333"+ G_caracter_separacion_funciones_espesificas[3] +  "BAJA"+ G_caracter_separacion_funciones_espesificas[3] +  "INTERMEDIO"+ G_caracter_separacion_funciones_espesificas[3] +  "PROVEDORES");
             return "";
         }
 
@@ -96,7 +96,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             // Variable para indicar si el producto ya está en la lista
 
             //"0_ID|1_COD_BAR|2_NOMBRE|3_PROVEDOR¬PRECIO¬CALIDAD°PROVEDOR2¬PRECIO2¬CALIDAD|"
-            string info_a_agregar_si_no_esta = cod_bar + G_caracter_separacion[0] + nombre_producto + G_caracter_separacion[0] + nombre_producto+G_caracter_separacion[3]+precio_proveedor;
+            string info_a_agregar_si_no_esta = cod_bar + G_caracter_separacion[0] + nombre_producto + G_caracter_separacion[0] + nom_proveedor + G_caracter_separacion[2] + precio_proveedor + G_caracter_separacion[2] + calidad;
 
             // Enlace a un sistema central para registrar datos en archivo
             principal enl_princ = new principal();
@@ -179,8 +179,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             bool existe = false;
 
             // Enlace a un sistema central para registrar el proveedor
-
-            string info_a_agregar_sino_esta = nombre;
+            //0_ID|1_NOMBRE_PROVEDOR|2_UBICACION|3_HORA_APERTURA|4_HORA_CIERRE|5_CALIDAD_GENERAL|6_PRECIOS_GENERALES_ALTOS_MEDIOS_O_BAJOS|"
+            string info_a_agregar_sino_esta = nombre + G_caracter_separacion[0] + ubicacion + G_caracter_separacion[0] + hora_apertura + G_caracter_separacion[0] + hora_cierre + G_caracter_separacion[0] + calidad + G_caracter_separacion[0] + precio_tipo;
 
             enl_princ.enlasador(
                 "TEX_BASE" +
@@ -189,7 +189,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                 G_caracter_separacion_funciones_espesificas[3] + "1" +
                 G_caracter_separacion_funciones_espesificas[3] + "nombre" +
                 G_caracter_separacion_funciones_espesificas[3] + info_a_agregar_sino_esta +
-                G_caracter_separacion_funciones_espesificas[3] + op_tex.recorrer_caracter_separacion(G_dir_carpetas_y_columnas_para_archivos[0, 1], "derecha")
+                G_caracter_separacion_funciones_espesificas[3] + op_tex.recorrer_caracter_separacion(G_dir_carpetas_y_columnas_para_archivos[1, 1], "derecha")
             );
 
 

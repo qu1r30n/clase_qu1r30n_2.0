@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|c:\\users\\qu1r30n\\documents\\github\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_07_proc_intermediario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|c:\\users\\qu1r30n\\documents\\github\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\poner_al_inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\poner_al_inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_07_proc_intermediario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_07_proc_intermediario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\poner_al_inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\poner_al_inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_textos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_05_proc_aprobaciones_de_proceso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\procesos\\_05_proc_aprobaciones_de_proceso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|solutionrelative:clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C88CBB87-D492-4939-A18B-ACA54359D77E}|CLASE_QU1R30N_2\\CLASE_QU1R30N_2.csproj|C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\clase_qu1r30n_2\\sin_internet\\sin_formulario\\modelos\\_01_mod_tex_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,50 +90,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Poner_al_inicio.cs",
               "DocumentMoniker": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Poner_al_inicio.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\Poner_al_inicio.cs",
               "ToolTip": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\Poner_al_inicio.cs",
               "RelativeToolTip": "CLASE_QU1R30N_2\\Poner_al_inicio.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAQwJsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAAAJ8AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-06T19:45:55.766Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "_07_proc_intermediario.cs",
               "DocumentMoniker": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_07_proc_intermediario.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_07_proc_intermediario.cs",
               "ToolTip": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_07_proc_intermediario.cs",
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_07_proc_intermediario.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAAAGQAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAADwvywAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:42:23.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-15T12:42:23.185Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "principal.cs",
-              "DocumentMoniker": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
-              "ToolTip": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAUwBsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T18:49:54.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "_01_proc_tex_base.cs",
               "DocumentMoniker": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
@@ -141,12 +127,11 @@
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_01_proc_tex_base.cs",
               "ViewState": "AgIAABEBAAAAAAAAAADwvxoBAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T19:45:55.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T19:45:55.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "operaciones_textos.cs",
               "DocumentMoniker": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_textos.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_textos.cs",
@@ -154,12 +139,11 @@
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\herramientas\\operaciones_textos.cs",
               "ViewState": "AgIAAMgEAAAAAAAAAADwv84EAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T03:50:45.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-08T03:50:45.929Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "_05_proc_aprobaciones_de_proceso.cs",
               "DocumentMoniker": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_05_proc_aprobaciones_de_proceso.cs",
               "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_05_proc_aprobaciones_de_proceso.cs",
@@ -167,8 +151,31 @@
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_05_proc_aprobaciones_de_proceso.cs",
               "ViewState": "AgIAAJoAAAAAAAAAAAArwKUAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T19:32:02.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T19:32:02.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_07_mod_intermediario.cs",
+              "DocumentMoniker": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs",
+              "ToolTip": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAswEUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T17:45:27.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "principal.cs",
+              "DocumentMoniker": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
+              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
+              "ToolTip": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
+              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\principal.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAUwBsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T18:49:54.584Z"
             },
             {
               "$type": "Document",
@@ -192,20 +199,7 @@
               "RelativeToolTip": "CLASE_QU1R30N_2\\Form1.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAAACIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T15:06:19.766Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_07_mod_intermediario.cs",
-              "DocumentMoniker": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs",
-              "RelativeDocumentMoniker": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs",
-              "ToolTip": "C:\\Users\\qu1r30n\\Documents\\GitHub\\clase_qu1r30n_2.0\\CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs",
-              "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\modelos\\_07_mod_intermediario.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T17:45:27.567Z"
+              "WhenOpened": "2025-03-21T15:06:19.766Z"
             },
             {
               "$type": "Document",
@@ -229,8 +223,7 @@
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_04_proc_registros.cs",
               "ViewState": "AgIAABEGAAAAAAAAAAAvwBcGAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T18:50:27.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T18:50:27.481Z"
             },
             {
               "$type": "Document",
@@ -254,8 +247,7 @@
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_06_proc_recordatorios.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T05:43:03.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T05:43:03.54Z"
             },
             {
               "$type": "Document",
@@ -279,8 +271,7 @@
               "RelativeToolTip": "CLASE_QU1R30N_2\\conexion\\herramientas_internet\\conexiones.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T00:07:48.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-08T00:07:48.076Z"
             },
             {
               "$type": "Document",
@@ -316,8 +307,7 @@
               "RelativeToolTip": "CLASE_QU1R30N_2\\sin_internet\\sin_formulario\\procesos\\_03_proc_negocios.cs",
               "ViewState": "AgIAADABAAAAAAAAAAArwDkBAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T18:38:53.062Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T18:38:53.062Z"
             },
             {
               "$type": "Document",

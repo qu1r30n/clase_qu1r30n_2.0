@@ -152,9 +152,12 @@ namespace CLASE_QU1R30N_2
             string proceso = "MODELO_RECORDATORIO" + G_caracter_separacion_funciones_espesificas[0] + "CHECAR_RECORDATORIOS" ;
             string resp = enl_princ.enlasador(proceso);
             */
-            string proceso = "MODELO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[0] + "PRUEBA";
+            /*
+            string proceso = "MODELO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_PRODUCTO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[1] + "1" + G_caracter_separacion_funciones_espesificas[3] + "123" + G_caracter_separacion_funciones_espesificas[3] + "COCA-COLA" + G_caracter_separacion_funciones_espesificas[3] + "PROVEEDOR2" + G_caracter_separacion_funciones_espesificas[3] + "6.20" + G_caracter_separacion_funciones_espesificas[3] + "CALIDAD";
             string resp = enl_princ.enlasador(proceso);
-
+            proceso = "MODELO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_PROVEEDOR_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[1] + "1" + G_caracter_separacion_funciones_espesificas[3] + "PROVEEDOR2" + G_caracter_separacion_funciones_espesificas[3] + "UBICACION" + G_caracter_separacion_funciones_espesificas[3] + "07:30" + G_caracter_separacion_funciones_espesificas[3] + "19:30" + G_caracter_separacion_funciones_espesificas[3] + "555-3333" + G_caracter_separacion_funciones_espesificas[3] + "BAJA" + G_caracter_separacion_funciones_espesificas[3] + "INTERMEDIO" + G_caracter_separacion_funciones_espesificas[3] + "PROVEDORES";
+            resp = enl_princ.enlasador(proceso);
+            */
         }
 
 

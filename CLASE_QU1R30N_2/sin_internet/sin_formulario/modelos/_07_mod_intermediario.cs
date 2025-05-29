@@ -35,14 +35,8 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
 
 
 
-            if (proceso == "PRUEBA")
-            {
-                // Caso específico para un proceso llamado "CREAR_ARCHIVO"
-                _07_proc_intermediario proc_intermediario = new _07_proc_intermediario();
-                info_a_retornar = EjecutarFuncionEnDatos(proc_intermediario.prueba, datos);
-            }
-
-            else if (proceso == "AGREGAR_PRODUCTO_INTERMEDIARIO")
+            
+            if (proceso == "AGREGAR_PRODUCTO_INTERMEDIARIO")
             {
                 // Caso específico para un proceso llamado "CREAR_ARCHIVO"
                 _07_proc_intermediario proc_intermediario = new _07_proc_intermediario();
