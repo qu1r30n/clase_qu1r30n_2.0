@@ -33,19 +33,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
 
             operaciones_arreglos op_arr = new operaciones_arreglos();
 
-
-        public string prueba(string datos)
-        {
-            
-            // Llamada al método con parámetros
-            agregar_producto_intermediario("1"+ G_caracter_separacion_funciones_espesificas[3] + "123" + G_caracter_separacion_funciones_espesificas[3] + "COCA-COLA"+ G_caracter_separacion_funciones_espesificas[3] +  "PROVEEDOR2"+ G_caracter_separacion_funciones_espesificas[3] +  "6.20"+ G_caracter_separacion_funciones_espesificas[3] +  "CALIDAD");
-            
-
-            // Llamada a la función para agregar un proveedor
-            agregar_proveedor_intermediario("1"+ G_caracter_separacion_funciones_espesificas[3] + "PROVEEDOR2" + G_caracter_separacion_funciones_espesificas[3] +  "UBICACION"+ G_caracter_separacion_funciones_espesificas[3] +  "07:30"+ G_caracter_separacion_funciones_espesificas[3] +  "19:30"+ G_caracter_separacion_funciones_espesificas[3] +  "555-3333"+ G_caracter_separacion_funciones_espesificas[3] +  "BAJA"+ G_caracter_separacion_funciones_espesificas[3] +  "INTERMEDIO"+ G_caracter_separacion_funciones_espesificas[3] +  "PROVEDORES");
-            return "";
-        }
-
         public string agregar_producto_intermediario(string datos)
         {
             string info_a_retornar = "";
@@ -103,7 +90,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             enl_princ.enlasador(
                 "TEX_BASE" +
                 G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_SINO_EXISTE_INFO_DIV" +
-                G_caracter_separacion_funciones_espesificas[1] + G_dir_carpetas_y_columnas_para_archivos[0,0] + id_intermediario + "\\" + id_intermediario + ".txt" +
+                G_caracter_separacion_funciones_espesificas[1] + G_dir_carpetas_y_columnas_para_archivos[0,0] + id_intermediario + "\\" + id_intermediario + "_INVENTARIO.txt" +
                 G_caracter_separacion_funciones_espesificas[3] + "1" +
                 G_caracter_separacion_funciones_espesificas[3] + cod_bar +
                 G_caracter_separacion_funciones_espesificas[3] + info_a_agregar_si_no_esta +
@@ -260,14 +247,82 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
         {
             string info_a_retornar = "";
 
-            return info_a_retornar;
+            string[] datos_epliteados = datos.Split(G_caracter_separacion_funciones_espesificas[3][0]);
 
+            // PARAMETROS---------------------------------------------------------------------------
+            string id_intermediario = "";
+            if (datos_epliteados.Length >= 1 && datos_epliteados[0] != "")
+            {
+                id_intermediario = datos_epliteados[0];
+            }
+
+            string id_producto = "";
+            if (datos_epliteados.Length >= 2 && datos_epliteados[1] != "")
+            {
+                id_producto = datos_epliteados[1];
+            }
+
+            string cod_bar = "";
+            if (datos_epliteados.Length >= 3 && datos_epliteados[2] != "")
+            {
+                cod_bar = datos_epliteados[2];
+            }
+
+            string cantidad = "";
+            if (datos_epliteados.Length >= 4 && datos_epliteados[3] != "")
+            {
+                cantidad = datos_epliteados[3];
+            }
+
+            string provedor = "";
+            if (datos_epliteados.Length >= 5 && datos_epliteados[4] != "")
+            {
+                provedor = datos_epliteados[4];
+            }
+
+            //---------------------------------------------------------------------------------------
+
+            // Validación mínima (como hacen las otras funciones solo si quieres)
+            if (id_intermediario == "" || cod_bar == "" || cantidad == "" )
+            {
+                return G_caracter_para_confirmacion_o_error[1] + "Faltan datos obligatorios para registrar la venta.";
+            }
+
+            // Construcción del texto de venta
+            string info_venta = id_producto + G_caracter_separacion[0]
+                              + cod_bar + G_caracter_separacion[0]
+                              + cantidad + G_caracter_separacion[0]
+                              + provedor + G_caracter_separacion[0];
+
+            // Ruta del archivo de ventas (posicion [2, 0] debe estar reservada para "ventas")
+            string ruta_archivo = G_dir_carpetas_y_columnas_para_archivos[1, 0] + id_intermediario + "\\" + id_intermediario + "_INVENTARIO.txt";
+
+
+
+            string seleccion = enl_princ.enlasador
+            (
+                "TEX_BASE" +
+                G_caracter_separacion_funciones_espesificas[0] + "SELECCIONAR_ID_INFO_DIVIDIDA" +
+                G_caracter_separacion_funciones_espesificas[1] + ruta_archivo +
+                G_caracter_separacion_funciones_espesificas[3] + id_producto
+            );
+            string[] res_product = seleccion.Split(G_caracter_para_confirmacion_o_error[0][0]);
+            if (Convert.ToDouble(res_product[0])>0)
+            {
+                if (res_product[0] == "1")
+                {
+
+                }
+            }
+
+            return info_a_retornar;
         }
 
-        
 
 
-        
+
+
+
         //fin clase--------------------------------------------------------------
     }
 }

@@ -2182,12 +2182,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
             return info_retornar;
         }
 
-
-
-        
-
-
-
         public string INCREMENTA_CELDA_BUSQUEDA_INFO_DIVIDIDA(string datos)
         {
             string inf_retornar = "";

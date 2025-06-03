@@ -158,7 +158,23 @@ namespace CLASE_QU1R30N_2
             proceso = "MODELO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_PROVEEDOR_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[1] + "1" + G_caracter_separacion_funciones_espesificas[3] + "PROVEEDOR2" + G_caracter_separacion_funciones_espesificas[3] + "UBICACION" + G_caracter_separacion_funciones_espesificas[3] + "07:30" + G_caracter_separacion_funciones_espesificas[3] + "19:30" + G_caracter_separacion_funciones_espesificas[3] + "555-3333" + G_caracter_separacion_funciones_espesificas[3] + "BAJA" + G_caracter_separacion_funciones_espesificas[3] + "INTERMEDIO" + G_caracter_separacion_funciones_espesificas[3] + "PROVEDORES";
             resp = enl_princ.enlasador(proceso);
             */
+
+            string resultado = enl_princ.enlasador
+            (
+                "MODELO_INTERMEDIARIO" +
+                G_caracter_separacion_funciones_espesificas[0] + // ← separador entre modelo y función (~)
+                "VENTA_INTERMEDIARIO" +
+                G_caracter_separacion_funciones_espesificas[1] + // ← separador entre función y datos (§)
+                "1" + G_caracter_separacion_funciones_espesificas[3] +
+                "1" + G_caracter_separacion_funciones_espesificas[3] +
+                "123" + G_caracter_separacion_funciones_espesificas[3] +
+                "2" + G_caracter_separacion_funciones_espesificas[3] +
+                "PROVEEDOR2"
+            );
+
+
         }
+
 
 
         //fin clase-----------------------------------------------------------------------------------------------------
