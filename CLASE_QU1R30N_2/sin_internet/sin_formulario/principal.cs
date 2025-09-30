@@ -83,6 +83,12 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios
                 _07_mod_intermediario mod_inter = new _07_mod_intermediario();
                 info_a_retornar = mod_inter.operacion_a_hacer(info);
             }
+            
+            else if (modelo == "MODELO_MENSAJES")
+            {
+                _08_mod_mandar_mensajes mod_mensajes = new _08_mod_mandar_mensajes();
+                info_a_retornar = mod_mensajes.operacion_a_hacer(info);
+            }
 
             else if (modelo == "MOSTRAR_MODELOS")
             {

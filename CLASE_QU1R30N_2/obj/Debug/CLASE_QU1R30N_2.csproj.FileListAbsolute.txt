@@ -9,3 +9,15 @@ C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\bin\Debug\CL
 C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.exe
 C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.pdb
 C:\Users\QU1R30N\Documents\GitHub\clase_qu1r30n_2.0\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.sin_internet.con_formulario.tienda.punto_de_venta._00_punto_de_venta.resources
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\bin\Debug\CLASE_QU1R30N_2.exe.config
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\bin\Debug\CLASE_QU1R30N_2.exe
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\bin\Debug\CLASE_QU1R30N_2.pdb
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.csproj.AssemblyReference.cache
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.exe.config
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.Form1.resources
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.Properties.Resources.resources
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.sin_internet.con_formulario.tienda.punto_de_venta._00_punto_de_venta.resources
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.csproj.GenerateResource.cache
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.csproj.CoreCompileInputs.cache
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.exe
+C:\Users\1\Downloads\clase_qu1r30n_2.0-main\clase_qu1r30n_2.0-main\CLASE_QU1R30N_2\obj\Debug\CLASE_QU1R30N_2.pdb

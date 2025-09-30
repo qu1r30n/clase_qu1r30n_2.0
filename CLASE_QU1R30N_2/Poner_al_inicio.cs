@@ -88,8 +88,11 @@ namespace CLASE_QU1R30N_2
             for (int i = 0; i < G_dir_de_carpetas.GetLength(0) - 1; i++)
             {
                 //bas.Crear_archivo_y_directorio_opcion_leer_y_agrega_arreglo(G_dir_arch_transferencia[i], "sin_informacion", leer_y_agrega_al_arreglo: false);
-                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] + G_dir_de_carpetas[i, 0] + G_caracter_separacion_funciones_espesificas[3] + G_dir_de_archivos_tipo_1_solo_archivo[i, 1]);
+                enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "CREAR_ARCHIVO" + G_caracter_separacion_funciones_espesificas[1] +
+                    G_dir_de_carpetas[i, 0] + G_caracter_separacion_funciones_espesificas[3] +
+                    G_dir_de_carpetas[i, 1]);
             }
+
 
         }
 
@@ -153,25 +156,28 @@ namespace CLASE_QU1R30N_2
             string resp = enl_princ.enlasador(proceso);
             */
             /*
-            string proceso = "MODELO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_PRODUCTO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[1] + "1" + G_caracter_separacion_funciones_espesificas[3] + "123" + G_caracter_separacion_funciones_espesificas[3] + "COCA-COLA" + G_caracter_separacion_funciones_espesificas[3] + "PROVEEDOR2" + G_caracter_separacion_funciones_espesificas[3] + "6.20" + G_caracter_separacion_funciones_espesificas[3] + "CALIDAD";
+            string proceso = "MODELO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_PRODUCTO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[1] + "1" + G_caracter_separacion_funciones_espesificas[3] + "123" + G_caracter_separacion_funciones_espesificas[3] + "COCA-COLA" + G_caracter_separacion_funciones_espesificas[3] + "PROVEEDOR2" + G_caracter_separacion_funciones_espesificas[3] +   G_caracter_separacion_funciones_espesificas[3] + "6.20" + G_caracter_separacion_funciones_espesificas[3] + "CALIDAD";
             string resp = enl_princ.enlasador(proceso);
             proceso = "MODELO_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[0] + "AGREGAR_PROVEEDOR_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[1] + "1" + G_caracter_separacion_funciones_espesificas[3] + "PROVEEDOR2" + G_caracter_separacion_funciones_espesificas[3] + "UBICACION" + G_caracter_separacion_funciones_espesificas[3] + "07:30" + G_caracter_separacion_funciones_espesificas[3] + "19:30" + G_caracter_separacion_funciones_espesificas[3] + "555-3333" + G_caracter_separacion_funciones_espesificas[3] + "BAJA" + G_caracter_separacion_funciones_espesificas[3] + "INTERMEDIO" + G_caracter_separacion_funciones_espesificas[3] + "PROVEDORES";
             resp = enl_princ.enlasador(proceso);
             */
 
+            string venta =
+                "1" + G_caracter_separacion_funciones_espesificas[4] + "1" + G_caracter_separacion_funciones_espesificas[4] + "123" + G_caracter_separacion_funciones_espesificas[4] + "2" + G_caracter_separacion_funciones_espesificas[4] + "PROVEEDOR2"
+                + G_caracter_separacion_funciones_espesificas[3] +
+                "1" + G_caracter_separacion_funciones_espesificas[4] + "1" + G_caracter_separacion_funciones_espesificas[4] + "123" + G_caracter_separacion_funciones_espesificas[4] + "2" + G_caracter_separacion_funciones_espesificas[4] + "PROVEEDOR2"
+                + G_caracter_separacion_funciones_espesificas[3] +
+                "1" + G_caracter_separacion_funciones_espesificas[4] + "1" + G_caracter_separacion_funciones_espesificas[4] + "123" + G_caracter_separacion_funciones_espesificas[4] + "2" + G_caracter_separacion_funciones_espesificas[4] + "PROVEEDOR2"
+                ;
+
             string resultado = enl_princ.enlasador
             (
                 "MODELO_INTERMEDIARIO" +
                 G_caracter_separacion_funciones_espesificas[0] + // ← separador entre modelo y función (~)
-                "VENTA_INTERMEDIARIO" +
-                G_caracter_separacion_funciones_espesificas[1] + // ← separador entre función y datos (§)
-                "1" + G_caracter_separacion_funciones_espesificas[3] +
-                "1" + G_caracter_separacion_funciones_espesificas[3] +
-                "123" + G_caracter_separacion_funciones_espesificas[3] +
-                "2" + G_caracter_separacion_funciones_espesificas[3] +
-                "PROVEEDOR2"
+                "VENTA_INTERMEDIARIO" + G_caracter_separacion_funciones_espesificas[1] +
+                venta
             );
-
+            
 
         }
 

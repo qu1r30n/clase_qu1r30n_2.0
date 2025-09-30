@@ -11,8 +11,6 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.modelos
     internal class _07_mod_intermediario
     {
 
-
-
         string[] G_caracter_separacion = var_fun_GG.GG_caracter_separacion;
         string[] G_caracter_separacion_funciones_espesificas = var_fun_GG.GG_caracter_separacion_funciones_espesificas;
         string[] G_caracter_para_confirmacion_o_error = var_fun_GG.GG_caracter_para_confirmacion_o_error;

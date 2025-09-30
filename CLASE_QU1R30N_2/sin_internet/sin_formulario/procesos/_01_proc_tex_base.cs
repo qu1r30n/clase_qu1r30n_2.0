@@ -2690,7 +2690,7 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formulario.procesos
                     string[] info_produc_esp = todo_el_archivo[i].Split(G_caracter_separacion[0][0]);
                     if (dato_a_buscar == info_produc_esp[columna])
                     {
-                        inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + todo_el_archivo[i] + G_caracter_para_confirmacion_o_error[0] + i;
+                        inf_retornar = "1" + G_caracter_para_confirmacion_o_error[0] + todo_el_archivo[i] + G_caracter_para_confirmacion_o_error[0] + (i + 1);
                         encontro_producto = true;
                         break;
                     }

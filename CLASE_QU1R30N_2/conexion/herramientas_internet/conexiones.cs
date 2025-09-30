@@ -41,10 +41,10 @@ namespace CLASE_QU1R30N_2.conexion.herramientas_internet
         {
             
             //string[] banderas = bas.Leer(G_dir_arch_transferencia[0]);
-            string[] banderas = enl_princ.enlasador("TEX_BASE" + G_caracter_separacion_funciones_espesificas[0] + "LEER_SOLO_PROG" + G_caracter_separacion_funciones_espesificas[1] + G_dir_arch_transferencia[0]).Split(G_caracter_separacion_funciones_espesificas[4][0]);
+                
 
 
-            int numero_actual_posision = Convert.ToInt32(banderas[posicion_bandera]);
+            int numero_actual_posision = Convert.ToInt32("banderas[posicion_bandera]");
             int numero_adelante_posision = numero_actual_posision + 3;
             int numero_atras_posision = numero_actual_posision - 3;
             int[] arr_devolver = { -1, -1, -1 };

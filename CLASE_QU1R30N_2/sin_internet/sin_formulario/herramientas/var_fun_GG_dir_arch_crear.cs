@@ -1902,8 +1902,17 @@ namespace CLASE_QU1R30N_2.sin_internet.sin_formularios.herramientas
         static public string[,] GG_dir_de_carpetas =
         {
 
-            /*0*/ { "CONFIG\\INTERMEDIARIOS\\","0_ID|1_COD_BAR|2_NOMBRE|3_PROVEDOR¬PRECIO¬CALIDAD°PROVEDOR2¬PRECIO2¬CALIDAD|" },//PRODUCTO
-            /*1*/ { "CONFIG\\INTERMEDIARIOS\\","0_ID|1_NOMBRE_PROVEDOR|2_UBICACION|3_HORA_APERTURA|4_HORA_CIERRE|5_CALIDAD_GENERAL|6_PRECIOS_GENERALES_ALTOS_MEDIOS_O_BAJOS|" },//PROVEDOR
+            /*0*/ { "CONFIG\\INTERMEDIARIOS\\","0_ID|1_COD_BAR|2_NOMBRE|3_PROVEDOR¬PRECIO_VENTA¬PRECIO_PROVEDOR¬CALIDAD°PROVEDOR2¬PRECIO_VENTA2¬PRECIO_PROVEDOR2¬CALIDAD|" },//PRODUCTO
+            /*1*/ { "CONFIG\\INTERMEDIARIOS\\","0_ID|1_NOMBRE_PROVEDOR|2_UBICACION|3_HORA_APERTURA|4_HORA_CIERRE|5_CALIDAD_GENERAL|6_PRECIOS_GENERALES_ALTOS_MEDIOS_O_BAJOS|7_NUMERO|"},//PROVEDOR
+            /*2*/ { "CONFIG\\INTERMEDIARIOS\\",columnas_concatenadas(GG_ventana_reg_dia,1,var_fun_GG.GG_caracter_separacion[1]) },//REGISTROS DIA
+            /*3*/ { "CONFIG\\INTERMEDIARIOS\\",columnas_concatenadas(GG_ventana_reg_mes,1,var_fun_GG.GG_caracter_separacion[1]) },//REGISTROS MES
+            /*4*/ { "CONFIG\\INTERMEDIARIOS\\",columnas_concatenadas(GG_ventana_reg_año,1,var_fun_GG.GG_caracter_separacion[1]) },//REGISTROS AÑO
+            /*5*/ { "CONFIG\\INTERMEDIARIOS\\",columnas_concatenadas(GG_ventana_reg_total,1,var_fun_GG.GG_caracter_separacion[1]) },//REGISTROS TOTAL
+
+            /*6*/ { "CONFIG\\INTERMEDIARIOS\\",columnas_concatenadas(GG_ventana_reg_prod_dia,1,var_fun_GG.GG_caracter_separacion[1]) },//REGISTROS PRODUCTO DIA
+            /*7*/ { "CONFIG\\INTERMEDIARIOS\\",columnas_concatenadas(GG_ventana_reg_prod_mes,1,var_fun_GG.GG_caracter_separacion[1]) },//REGISTROS PRODUCTO MES
+            /*8*/ { "CONFIG\\INTERMEDIARIOS\\",columnas_concatenadas(GG_ventana_reg_prod_año,1,var_fun_GG.GG_caracter_separacion[1]) },//REGISTROS PRODUCTO AÑO
+            /*9*/ { "CONFIG\\INTERMEDIARIOS\\",columnas_concatenadas(GG_ventana_reg_prod_total,1,var_fun_GG.GG_caracter_separacion[1]) },//REGISTROS PRODUCTO TOTAL
 
         };
 
